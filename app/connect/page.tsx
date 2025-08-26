@@ -236,11 +236,11 @@ export default function page() {
       <div className="bg-gray-50 py-16">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mt-16">
-            <h1 className="font-['Poppins',Helvetica] font-black text-4xl lg:text-6xl text-[#03336d] mb-8 tracking-tight leading-tight">
-              Speak to US
+            <h1 className="font-poppins font-black text-4xl lg:text-6xl text-[#03336d] mb-8 tracking-tight leading-tight">
+              Speak to Us
             </h1>
             <div className="max-w-4xl mx-auto text-left">
-              <p className="font-['Poppins',Helvetica] text-lg lg:text-xl text-gray-700 leading-relaxed mb-6">
+              <p className="font-poppins text-lg lg:text-xl text-gray-700 leading-relaxed mb-6">
                 Our job is to make high quality impact in getting undergraduate and graduate applicants to their dream universities. Starting <span className="text-green-400 underline">Earlier</span> always makes a difference.
               </p>
             </div>
@@ -254,26 +254,26 @@ export default function page() {
           <form className="text-gray-700">
             {/* Name of Student */}
             <div className="mb-8 text-gray-700">
-              <Label className="font-['Poppins',Helvetica] text-lg font-semibold text-[#03336d] mb-4 block">
+              <Label className="font-poppins text-lg font-semibold text-[#03336d] mb-4 block">
                 Name of Student: <span className="text-red-500">*</span>
               </Label>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <div>
                   <Input
                     placeholder=""
-                    className="w-full h-12 border-2 border-gray-300 rounded-md px-4 text-base focus:border-[#03336d] focus:outline-none focus:ring-0 font-['Poppins',Helvetica]"
+                    className="w-full h-12 border-2 border-gray-300 rounded-md px-4 text-base focus:border-[#03336d] focus:outline-none focus:ring-0 font-poppins"
                   />
 
-                  <span className="font-['Poppins',Helvetica] text-sm text-gray-600 mt-2 block">
+                  <span className="font-poppins text-sm text-gray-600 mt-2 block">
                     First
                   </span>
                 </div>
                 <div>
                   <Input
                     placeholder=""
-                    className="w-full h-12 border-2 border-gray-300 rounded-md px-4 text-base focus:border-[#03336d] focus:outline-none focus:ring-0 font-['Poppins',Helvetica]"
+                    className="w-full h-12 border-2 border-gray-300 rounded-md px-4 text-base focus:border-[#03336d] focus:outline-none focus:ring-0 font-poppins"
                   />
-                  <span className="font-['Poppins',Helvetica] text-sm text-gray-600 mt-2 block">
+                  <span className="font-poppins text-sm text-gray-600 mt-2 block">
                     Last
                   </span>
                 </div>
@@ -282,7 +282,7 @@ export default function page() {
 
             {/* Gender */}
             <div className="mb-8">
-              <Label className="font-['Poppins',Helvetica] text-lg font-semibold text-[#03336d] mb-4 block">
+              <Label className="font-poppins text-lg font-semibold text-[#03336d] mb-4 block">
                 Gender: <span className="text-red-500">*</span>
               </Label>
               <RadioGroup defaultValue="" className="space-y-3">
@@ -294,7 +294,7 @@ export default function page() {
                   />
                   <Label
                     htmlFor="male"
-                    className="font-['Poppins',Helvetica] text-base text-gray-700"
+                    className="font-poppins text-base text-gray-700"
                   >
                     Male
                   </Label>
@@ -307,7 +307,7 @@ export default function page() {
                   />
                   <Label
                     htmlFor="female"
-                    className="font-['Poppins',Helvetica] text-base text-gray-700"
+                    className="font-poppins text-base text-gray-700"
                   >
                     Female
                   </Label>
@@ -317,11 +317,11 @@ export default function page() {
 
             {/* Admissions Need */}
             <div className="mb-8">
-              <Label className="font-['Poppins',Helvetica] text-lg font-semibold text-[#03336d] mb-4 block">
+              <Label className="font-poppins text-lg font-semibold text-[#03336d] mb-4 block">
                 Admissions Need: <span className="text-red-500">*</span>
               </Label>
               <Select>
-                <SelectTrigger className="w-full h-12 border-2 border-gray-300 rounded-md px-4 text-base focus:border-[#03336d] focus:outline-none focus:ring-0 font-['Poppins',Helvetica]">
+                <SelectTrigger className="w-full h-12 border-2 border-gray-300 rounded-md px-4 text-base focus:border-[#03336d] focus:outline-none focus:ring-0 font-poppins">
                   <SelectValue placeholder="Choose Admissions" />
                 </SelectTrigger>
                 <SelectContent>
@@ -336,25 +336,25 @@ export default function page() {
 
             {/* Name of Parent */}
             <div className="mb-8">
-              <Label className="font-['Poppins',Helvetica] text-lg font-semibold text-[#03336d] mb-4 block">
+              <Label className="font-poppins text-lg font-semibold text-[#03336d] mb-4 block">
                 Name of Parent: <span className="text-red-500">*</span>
               </Label>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <div>
                   <Input
                     placeholder=""
-                    className="w-full h-12 border-2 border-gray-300 rounded-md px-4 text-base focus:border-[#03336d] focus:outline-none focus:ring-0 font-['Poppins',Helvetica]"
+                    className="w-full h-12 border-2 border-gray-300 rounded-md px-4 text-base focus:border-[#03336d] focus:outline-none focus:ring-0 font-poppins"
                   />
-                  <span className="font-['Poppins',Helvetica] text-sm text-gray-600 mt-2 block">
+                  <span className="font-poppins text-sm text-gray-600 mt-2 block">
                     First
                   </span>
                 </div>
                 <div>
                   <Input
                     placeholder=""
-                    className="w-full h-12 border-2 border-gray-300 rounded-md px-4 text-base focus:border-[#03336d] focus:outline-none focus:ring-0 font-['Poppins',Helvetica]"
+                    className="w-full h-12 border-2 border-gray-300 rounded-md px-4 text-base focus:border-[#03336d] focus:outline-none focus:ring-0 font-poppins"
                   />
-                  <span className="font-['Poppins',Helvetica] text-sm text-gray-600 mt-2 block">
+                  <span className="font-poppins text-sm text-gray-600 mt-2 block">
                     Last
                   </span>
                 </div>
@@ -363,7 +363,7 @@ export default function page() {
 
             {/* Email */}
             <div className="mb-8">
-              <Label className="font-['Poppins',Helvetica] text-lg font-semibold text-[#03336d] mb-4 block">
+              <Label className="font-poppins text-lg font-semibold text-[#03336d] mb-4 block">
                 Email: <span className="text-red-500">*</span>
               </Label>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -371,9 +371,9 @@ export default function page() {
                   <Input
                     type="email"
                     placeholder=""
-                    className="w-full h-12 border-2 border-gray-300 rounded-md px-4 text-base focus:border-[#03336d] focus:outline-none focus:ring-0 font-['Poppins',Helvetica]"
+                    className="w-full h-12 border-2 border-gray-300 rounded-md px-4 text-base focus:border-[#03336d] focus:outline-none focus:ring-0 font-poppins"
                   />
-                  <span className="font-['Poppins',Helvetica] text-sm text-gray-600 mt-2 block">
+                  <span className="font-poppins text-sm text-gray-600 mt-2 block">
                     Email
                   </span>
                 </div>
@@ -381,9 +381,9 @@ export default function page() {
                   <Input
                     type="email"
                     placeholder=""
-                    className="w-full h-12 border-2 border-gray-300 rounded-md px-4 text-base focus:border-[#03336d] focus:outline-none focus:ring-0 font-['Poppins',Helvetica]"
+                    className="w-full h-12 border-2 border-gray-300 rounded-md px-4 text-base focus:border-[#03336d] focus:outline-none focus:ring-0 font-poppins"
                   />
-                  <span className="font-['Poppins',Helvetica] text-sm text-gray-600 mt-2 block">
+                  <span className="font-poppins text-sm text-gray-600 mt-2 block">
                     Confirm Email
                   </span>
                 </div>
@@ -392,22 +392,22 @@ export default function page() {
 
             {/* Phone Number */}
             <div className="mb-8">
-              <Label className="font-['Poppins',Helvetica] text-lg font-semibold text-[#03336d] mb-4 block">
+              <Label className="font-poppins text-lg font-semibold text-[#03336d] mb-4 block">
                 Phone Number: <span className="text-red-500">*</span>
               </Label>
               <Input
                 type="tel"
-                className="w-full max-w-md h-12 border-2 border-gray-300 rounded-md px-4 text-base focus:border-[#03336d] focus:outline-none focus:ring-0 font-['Poppins',Helvetica]"
+                className="w-full max-w-md h-12 border-2 border-gray-300 rounded-md px-4 text-base focus:border-[#03336d] focus:outline-none focus:ring-0 font-poppins"
               />
             </div>
 
             {/* Country */}
             <div className="mb-8">
-              <Label className="font-['Poppins',Helvetica] text-lg font-semibold text-[#03336d] mb-4 block">
+              <Label className="font-poppins text-lg font-semibold text-[#03336d] mb-4 block">
                 Country: <span className="text-red-500">*</span>
               </Label>
               <Select>
-                <SelectTrigger className="w-full max-w-md h-12 border-2 border-gray-300 rounded-md px-4 text-base focus:border-[#03336d] focus:outline-none focus:ring-0 font-['Poppins',Helvetica]">
+                <SelectTrigger className="w-full max-w-md h-12 border-2 border-gray-300 rounded-md px-4 text-base focus:border-[#03336d] focus:outline-none focus:ring-0 font-poppins">
                   <SelectValue placeholder="United States" />
                 </SelectTrigger>
                 <SelectContent>
@@ -422,43 +422,43 @@ export default function page() {
 
             {/* City */}
             <div className="mb-8">
-              <Label className="font-['Poppins',Helvetica] text-lg font-semibold text-[#03336d] mb-4 block">
+              <Label className="font-poppins text-lg font-semibold text-[#03336d] mb-4 block">
                 City: <span className="text-red-500">*</span>
               </Label>
-              <Input className="w-full max-w-md h-12 border-2 border-gray-300 rounded-md px-4 text-base focus:border-[#03336d] focus:outline-none focus:ring-0 font-['Poppins',Helvetica]" />
+              <Input className="w-full max-w-md h-12 border-2 border-gray-300 rounded-md px-4 text-base focus:border-[#03336d] focus:outline-none focus:ring-0 font-poppins" />
             </div>
 
             {/* Curent clg/uni */}
             <div className="mb-8">
-              <Label className="font-['Poppins',Helvetica] text-lg font-semibold text-[#03336d] mb-4 block">
+              <Label className="font-poppins text-lg font-semibold text-[#03336d] mb-4 block">
                 Current School/University: <span className="text-red-500">*</span>
               </Label>
-              <Input className="w-full max-w-md h-12 border-2 border-gray-300 rounded-md px-4 text-base focus:border-[#03336d] focus:outline-none focus:ring-0 font-['Poppins',Helvetica]" />
+              <Input className="w-full max-w-md h-12 border-2 border-gray-300 rounded-md px-4 text-base focus:border-[#03336d] focus:outline-none focus:ring-0 font-poppins" />
             </div>
 
             {/* Current Year in School */}
             <div className="mb-8">
-              <Label className="font-['Poppins',Helvetica] text-lg font-semibold text-[#03336d] mb-4 block">
+              <Label className="font-poppins text-lg font-semibold text-[#03336d] mb-4 block">
                 Current Year in School /University: <span className="text-red-500">*</span>
               </Label>
-              <Input className="w-full max-w-md h-12 border-2 border-gray-300 rounded-md px-4 text-base focus:border-[#03336d] focus:outline-none focus:ring-0 font-['Poppins',Helvetica]" placeholder="Enter your current year" />
+              <Input className="w-full max-w-md h-12 border-2 border-gray-300 rounded-md px-4 text-base focus:border-[#03336d] focus:outline-none focus:ring-0 font-poppins" placeholder="Enter your current year" />
             </div>
 
             {/* Year of High School Graduation */}
             <div className="mb-8">
-              <Label className="font-['Poppins',Helvetica] text-lg font-semibold text-[#03336d] mb-4 block">
+              <Label className="font-poppins text-lg font-semibold text-[#03336d] mb-4 block">
                 Year of Graduation: <span className="text-red-500">*</span>
               </Label>
-              <Input className="w-full max-w-md h-12 border-2 border-gray-300 rounded-md px-4 text-base focus:border-[#03336d] focus:outline-none focus:ring-0 font-['Poppins',Helvetica]" placeholder="Enter your graduation year" />
+              <Input className="w-full max-w-md h-12 border-2 border-gray-300 rounded-md px-4 text-base focus:border-[#03336d] focus:outline-none focus:ring-0 font-poppins" placeholder="Enter your graduation year" />
             </div>
 
             {/* Comments */}
             <div className="mb-8">
-              <label className="font-['Poppins',Helvetica] text-lg font-semibold text-[#03336d] mb-4 block">
+              <label className="font-poppins text-lg font-semibold text-[#03336d] mb-4 block">
                 Comments:
               </label>
               <textarea
-                className="w-full h-32 border-2 border-gray-300 rounded-md px-4 py-3 text-base focus:border-[#03336d] focus:outline-none focus:ring-0 resize-none font-['Poppins',Helvetica]"
+                className="w-full h-32 border-2 border-gray-300 rounded-md px-4 py-3 text-base focus:border-[#03336d] focus:outline-none focus:ring-0 resize-none font-poppins"
                 value={comment}
                 onChange={handleChange}
                 placeholder="Write your comment here..."
@@ -471,19 +471,19 @@ export default function page() {
             {/* Privacy Notice */}
             <div className="mb-8">
               <div>
-                <p className="font-['Poppins',Helvetica] text-sm text-gray-700 mb-4">
+                <p className="font-poppins text-sm text-gray-700 mb-4">
                   <strong>Note:</strong> IF YOU DON'T HEAR FROM US INSTANTLY
                   WITH AN AUTOMATIC EMAIL CORRESPONDING TO YOUR SITUATION,
                   PLEASE CHECK YOUR SPAM FOLDER. IT'S LIKELY THERE.
                 </p>
-                <p className="font-['Poppins',Helvetica] text-sm text-gray-700 mb-4">
+                <p className="font-poppins text-sm text-gray-700 mb-4">
                   Lorem ipsum dolor, sit amet consectetur adipisicing elit.
                   Itaque, placeat quibusdam dicta autem ea eius, quasi
                   praesentium eos porro iste blanditiis fugiat! Eligendi, unde
                   inventore! Repudiandae perferendis alias deserunt eveniet
                   expedita illum vitae, sunt nam.
                 </p>
-                <p className="font-['Poppins',Helvetica] text-sm text-gray-700 mb-6 font-semibold">
+                <p className="font-poppins text-sm text-gray-700 mb-6 font-semibold">
                   Please confirm you have read and acknowledged Navo's Privacy
                   Policy.
                 </p>
@@ -494,7 +494,7 @@ export default function page() {
                   />
                   <Label
                     htmlFor="privacy"
-                    className="font-['Poppins',Helvetica] text-sm text-gray-700 leading-relaxed flex-1"
+                    className="font-poppins text-sm text-gray-700 leading-relaxed flex-1"
                   >
                     I understand that I will receive an automatic email when I
                     submit this form that will require my response to move
@@ -506,7 +506,7 @@ export default function page() {
 
             {/* Submit Button */}
             <div className="text-center">
-              <Button className="bg-yellowCust hover:bg-yellowCust/90 text-blue-900 font-['Poppins',Helvetica] font-normal text-md px-10 py-6 transition-all duration-300 transform hover:scale-105">
+              <Button className="bg-yellowCust hover:bg-yellowCust/90 text-blue-900 font-poppins font-normal text-md px-10 py-6 transition-all duration-300 transform hover:scale-105">
                 SUBMIT
               </Button>
             </div>
