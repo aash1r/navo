@@ -219,7 +219,7 @@ export default function Component() {
 
           {/* Mobile Navigation */}
           <div className="md:hidden absolute right-4">
-            <MobileNav />
+            {/* <MobileNav /> */}
           </div>
         </div>
       </header>
