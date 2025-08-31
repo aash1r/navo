@@ -174,10 +174,7 @@ export default function Swiper() {
     <div className="py-4 sm:py-8 mt-20">
       <div className="w-full max-w-7xl mx-auto px-4 sm:px-6">
         <p className="font-['Poppins',Helvetica] font-black text-4xl sm:text-5xl md:text-6xl lg:text-7xl text-[#03336d] leading-tight mb-12 tracking-tight text-center">
-          HOW NAVO COACH'S COLLEGE
-        </p>
-        <p className="font-['Poppins',Helvetica] font-black text-4xl sm:text-5xl md:text-6xl lg:text-7xl text-[#03336d] leading-tight mb-12 tracking-tight text-center">
-          COUNSELORS HELP STUDENTS:
+          HOW WE WORK
         </p>
         <p className="font-['Poppins',Helvetica] text-3xl text-gray-800 leading-relaxed mb-6 text-center">
           Your Roadmap to a Winning Application: The NAVO 4-Step Process

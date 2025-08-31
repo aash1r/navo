@@ -199,15 +199,18 @@ export default function Component() {
         <div className="absolute inset-0 bg-black/20" />
       </div>
 
+      {/* How We Work Section */}
+      <Swiper />
+
       {/* Track Record Section */}
       <section
         ref={sectionRef}
-        className="bg-white py-16 md:py-24 px-6 lg:px-24"
+        className="bg-blue-50 py-16 md:py-24"
       >
-        <div className="max-w-7xl mx-auto text-center">
+        <div className="max-w-7xl mx-auto px-6 lg:px-24 text-center">
           {/* Main Title */}
-          <h1 className="font-['Poppins',Helvetica] font-black text-4xl sm:text-5xl md:text-6xl lg:text-7xl text-[#03336d] leading-tight mb-12 tracking-tight">
-            NAVO&apos;s TRACK RECORD : PROVEN SUCCESS
+          <h1 className="font-['Poppins',Helvetica] font-black text-3xl sm:text-3xl md:text-3xl lg:text-6xl text-[#03336d] leading-tight mb-12 tracking-tight">
+            OUR TRACK RECORD 
           </h1>
           <p className="font-['Poppins',Helvetica] text-3xl text-gray-800 leading-relaxed mb-6">
             When Strategy Meets Talent, Admissions Say Yes
@@ -215,16 +218,16 @@ export default function Component() {
           <p className="font-['Poppins',Helvetica] text-xl text-gray-800 leading-relaxed mb-6">
             With hundreds of students coached, 80% early acceptance success,
             100% students got admission and millions in scholarships awarded, we
-            don’t just guide — we deliver.These results aren't exceptions —
-            they’re the NAVO standard.
+            don't just guide — we deliver.These results aren't exceptions —
+            they're the NAVO standard.
           </p>
 
-          <div className="bg-white py-4 px-4 md:px-12">
+          <div className="py-4 px-4 md:px-12">
             <div className="grid grid-cols-2 md:grid-cols-4 gap-px bg-[#03336d]/90">
               {data.map((item, index) => (
                 <div
                   key={index}
-                  className="bg-white text-center py-6 px-4 flex flex-col justify-center items-center"
+                  className="bg-blue-50 text-center py-6 px-4 flex flex-col justify-center items-center"
                 >
                   <h2 className="text-[32px] sm:text-[58px] md:text-[60px] font-extrabold text-[#03336d] leading-none">
                     {counts[index]}
@@ -244,34 +247,74 @@ export default function Component() {
         </div>
       </section>
 
-      {/* Main Content */}
-      <Swiper />
-
-      {/* Our Services */}
-      <div className="bg-blue-900 py-12 sm:py-16 lg:py-20">
+      {/* What We Do */}
+      <div className="bg-white-50 py-12 sm:py-16 lg:py-20">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="font-bold mb-8 sm:mb-10 lg:mb-12 leading-tight font-['Poppins',Helvetica]">
-            <span className="block text-4xl sm:text-5xl md:text-6xl lg:text-7xl text-white underline decoration-2 md:decoration-4 underline-offset-4 md:underline-offset-8 mb-4 uppercase">
-              Our Services
-            </span>
+          <h2 className="font-['Poppins',Helvetica] font-bold text-4xl sm:text-5xl md:text-6xl text-[#03336d] mb-12 tracking-tight">
+            WHAT WE <span className="underline decoration-yellowCust underline-offset-4">DO</span>
           </h2>
 
-          <div className="flex flex-col sm:flex-row justify-center gap-4 sm:gap-6 lg:gap-8">
-            <div className="w-full sm:w-[325px]">
-              <Button
-                variant="outline"
-                className="w-full font-['Poppins',Helvetica] bg-white text-blue-900 hover:bg-gray-50 border-0 text-base sm:text-lg lg:text-xl font-semibold py-10 px-10 rounded-lg h-auto transition-colors"
-              >
-                Undergraduate Counseling
-              </Button>
+          <div className="flex flex-col lg:flex-row justify-center gap-6 lg:gap-8 max-w-4xl mx-auto">
+            {/* Undergraduate Counseling Card */}
+            <div className="group w-full lg:w-1/2">
+              <div className="bg-gradient-to-br from-blue-300 via-blue-400 to-blue-500 group-hover:from-blue-600 group-hover:via-purple-600 group-hover:to-pink-600 rounded-3xl p-8 h-full transition-all duration-300 transform hover:scale-[1.02] shadow-lg hover:shadow-xl">
+                <div className="flex flex-col items-start text-left h-full">
+                  {/* Icon */}
+                  <div className="mb-6">
+                    <div className="w-16 h-16 bg-white/20 rounded-2xl flex items-center justify-center">
+                      <svg className="w-8 h-8 text-white" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M12 2C13.1 2 14 2.9 14 4C14 5.1 13.1 6 12 6C10.9 6 10 5.1 10 4C10 2.9 10.9 2 12 2ZM21 9V7L15 7V9C15 11.8 12.8 14 10 14S5 11.8 5 9V7H3V9C3 12.9 6.1 16 10 16V22H14V16C17.9 16 21 12.9 21 9Z"/>
+                      </svg>
+                    </div>
+                  </div>
+                  
+                  {/* Content */}
+                  <div className="flex-1">
+                    <h3 className="text-white font-['Poppins',Helvetica] font-bold text-xl sm:text-2xl mb-4 uppercase">
+                      Undergraduate Counseling
+                    </h3>
+                    <p className="text-white/90 font-['Poppins',Helvetica] text-sm sm:text-base leading-relaxed mb-8">
+                      Expert guidance for high school students navigating the complex college admissions process to secure admissions at top-tier institutions.
+                    </p>
+                  </div>
+                  
+                  {/* Button */}
+                  <Button className="w-full bg-white group-hover:bg-gradient-to-r group-hover:from-purple-500 group-hover:to-pink-500 text-blue-900 group-hover:text-white border-0 font-['Poppins',Helvetica] font-semibold py-3 px-6 rounded-xl transition-all duration-300">
+                    View Details
+                  </Button>
+                </div>
+              </div>
             </div>
-            <div className="w-full sm:w-[325px]">
-              <Button
-                variant="outline"
-                className="w-full font-['Poppins',Helvetica] bg-white text-blue-900 hover:bg-gray-50 border-0 text-base sm:text-lg lg:text-xl font-semibold py-10 px-10 rounded-lg h-auto transition-colors"
-              >
-                Graduate Counseling
-              </Button>
+
+            {/* Graduate Counseling Card */}
+            <div className="group w-full lg:w-1/2">
+              <div className="bg-gradient-to-br from-blue-600 via-blue-700 to-blue-800 group-hover:from-blue-800 group-hover:via-purple-700 group-hover:to-pink-700 rounded-3xl p-8 h-full transition-all duration-300 transform hover:scale-[1.02] shadow-lg hover:shadow-xl">
+                <div className="flex flex-col items-start text-left h-full">
+                  {/* Icon */}
+                  <div className="mb-6">
+                    <div className="w-16 h-16 bg-white/20 rounded-2xl flex items-center justify-center">
+                      <svg className="w-8 h-8 text-white" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M5,4V7H10.5V19H13.5V7H19V4H5Z"/>
+                      </svg>
+                    </div>
+                  </div>
+                  
+                  {/* Content */}
+                  <div className="flex-1">
+                    <h3 className="text-white font-['Poppins',Helvetica] font-bold text-xl sm:text-2xl mb-4 uppercase">
+                      Graduate Counseling
+                    </h3>
+                    <p className="text-white/90 font-['Poppins',Helvetica] text-sm sm:text-base leading-relaxed mb-8">
+                      Strategic support for applicants pursuing Master's, MBA, PhD, and other graduate programs by perfecting personal statements and CVs.
+                    </p>
+                  </div>
+                  
+                  {/* Button */}
+                  <Button className="w-full bg-white group-hover:bg-gradient-to-r group-hover:from-purple-500 group-hover:to-pink-500 text-blue-900 group-hover:text-white border-0 font-['Poppins',Helvetica] font-semibold py-3 px-6 rounded-xl transition-all duration-300">
+                    View Details
+                  </Button>
+                </div>
+              </div>
             </div>
           </div>
         </div>
@@ -381,117 +424,111 @@ export default function Component() {
       <footer
         ref={footerRef}
         id="footer"
-        className="flex flex-col w-full px-6 py-12 bg-[#03336d] text-white gap-16 lg:px-32 lg:py-20"
+        className="bg-[#03336d] text-white px-6 py-12 lg:px-32 lg:py-16"
       >
-        {/* Top Section: Logo + Newsletter */}
-        <div className="flex flex-col lg:flex-row w-full justify-between gap-12">
-          {/* Left: Logo & Info */}
-          <div className="w-full lg:w-1/2 flex flex-col gap-6">
-            <img
-              className="w-[196px] h-auto"
-              alt="Navo Logo"
-              src="/navoLogo.png"
-            />
-            <p className="text-white text-base leading-relaxed">
-              Stay up to date on the latest features and releases by joining our
-              newsletter.
-            </p>
-            <p className="text-white text-sm opacity-80">
-              By subscribing, you agree to our Privacy Policy and consent to
-              receive updates from our company.
-            </p>
-          </div>
-
-          {/* Right: Newsletter Form */}
-          <div className="w-full lg:w-1/2">
-            <div className="text-center lg:text-left flex flex-col items-center lg:items-start gap-4">
-              <h2 className="text-2xl sm:text-3xl font-semibold font-roboto leading-tight">
-                Get the Latest
-              </h2>
-              <h3 className="text-3xl sm:text-4xl font-bold font-roboto leading-tight">
-                Educational Updates
-              </h3>
-              <span className="text-lg sm:text-base font-medium font-poppins">
-                Sign Up For Our Newsletter
-              </span>
-
-              <div className="flex items-center w-full sm:w-auto">
-                <input
-                  type="email"
-                  placeholder="YOUR EMAIL"
-                  className="border-b-2 border-white bg-transparent px-4 py- text-white placeholder-gray-200 focus:outline-none focus:border-white w-full sm:w-64 text-sm sm:text-base"
-                />
-                <Button className="ml-4 bg-transparent hover:bg-blue-900 p-2 transition-colors">
-                  <ArrowRight className="w-5 h-5 text-white" />
-                </Button>
+        <div className="max-w-7xl mx-auto">
+          {/* Main Footer Content */}
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 mb-12">
+            {/* Left Section: Logo, Newsletter & Certification */}
+            <div className="space-y-6">
+              {/* Logo */}
+              <img
+                className="w-[150px] h-auto"
+                alt="Navo Logo"
+                src="/navoLogo.png"
+              />
+              
+              {/* Newsletter Text */}
+              <div className="space-y-3">
+                <p className="text-white text-base leading-relaxed">
+                  Stay up to date on the latest features and releases by joining our newsletter.
+                </p>
+                <p className="text-white/80 text-sm leading-relaxed">
+                  By subscribing, you agree to our Privacy Policy and consent to receive updates from our company.
+                </p>
               </div>
 
-              {/* <form className="flex flex-col sm:flex-row items-center w-full gap-4">
-                <input
-                  type="email"
-                  placeholder="Your email"
-                  className="flex-1 bg-white text-[#03336d] rounded-full px-5 py-3 text-sm placeholder:text-gray-500 focus:outline-none w-full sm:w-auto"
-                />
-                <button
-                  type="submit"
-                  className="bg-white text-[#03336d] font-semibold rounded-full px-6 py-3 hover:bg-gray-200 transition-colors"
-                >
-                  Subscribe
-                </button>
-              </form> */}
+              {/* KHDA Certification Badge */}
+              <div className="pt-4">
+                <div className="bg-white rounded-lg p-4 w-fit">
+                  <div className="flex items-center gap-3">
+                    <div className="bg-[#8B1538] text-white px-3 py-2 rounded text-sm font-bold">
+                      DUBAI
+                    </div>
+                    <div className="text-[#8B1538] text-sm">
+                      <div className="font-bold">OFFICIALLY APPROVED BY</div>
+                      <div className="font-bold text-lg">KHDA</div>
+                      <div className="text-xs">PERMIT NUMBER 632607</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Right Section: Navigation Links */}
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-8 lg:gap-12">
+              {/* Quick Links */}
+              <div>
+                <h3 className="text-white font-semibold text-lg mb-4">Quick Links</h3>
+                <nav className="space-y-3">
+                  <a href="#" className="block text-white/80 hover:text-white transition-colors text-sm">
+                    ABOUT US
+                  </a>
+                  <a href="#" className="block text-white/80 hover:text-white transition-colors text-sm">
+                    SERVICES
+                  </a>
+                  <a href="#" className="block text-white/80 hover:text-white transition-colors text-sm">
+                    EXPLORE
+                  </a>
+                  <a href="#" className="block text-white/80 hover:text-white transition-colors text-sm">
+                    MYNAVOPORTAL
+                  </a>
+                </nav>
+              </div>
+
+              {/* Others */}
+              <div>
+                <h3 className="text-white font-semibold text-lg mb-4">Others</h3>
+                <nav className="space-y-3">
+                  <a href="#" className="block text-white/80 hover:text-white transition-colors text-sm">
+                    PARTNERS
+                  </a>
+                  <a href="#" className="block text-white/80 hover:text-white transition-colors text-sm">
+                    TESTIMONIALS
+                  </a>
+                  <a href="#" className="block text-white/80 hover:text-white transition-colors text-sm">
+                    TERMS & CONDITIONS
+                  </a>
+                  <a href="#" className="block text-white/80 hover:text-white transition-colors text-sm">
+                    PRIVACY POLICY
+                  </a>
+                </nav>
+              </div>
             </div>
           </div>
-        </div>
 
-        {/* Bottom Section: Links */}
-        <div className="w-full grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-12">
-          {/* Column One */}
-          <div className="flex flex-col items-start gap-4">
-            <h3 className="text-lg font-semibold">Column One</h3>
-            <nav className="flex flex-col gap-2 w-full">
-              {columnOneLinks.map((link, index) => (
-                <a
-                  key={index}
-                  href="#"
-                  className="text-sm hover:underline text-white"
-                >
-                  {link}
-                </a>
-              ))}
-            </nav>
-          </div>
+          {/* Bottom Section: Copyright & Social */}
+          <div className="border-t border-white/20 pt-8 flex flex-col sm:flex-row justify-between items-center gap-4">
+            {/* Copyright */}
+            <p className="text-white/80 text-sm">
+              ©2024 All rights reserved
+            </p>
 
-          {/* Column Two */}
-          <div className="flex flex-col items-start gap-4">
-            <h3 className="text-lg font-semibold">Column Two</h3>
-            <nav className="flex flex-col gap-2 w-full">
-              {columnTwoLinks.map((link, index) => (
-                <a
-                  key={index}
-                  href="#"
-                  className="text-sm hover:underline text-white"
-                >
-                  {link}
-                </a>
-              ))}
-            </nav>
-          </div>
-
-          {/* Social */}
-          <div className="flex flex-col items-start gap-4">
-            <h3 className="text-lg font-semibold">Follow Us</h3>
-            <nav className="flex flex-col gap-2 w-full">
-              {socialLinks.map((social, index) => (
-                <a
-                  key={index}
-                  href="#"
-                  className="flex items-center gap-3 text-sm hover:underline text-white"
-                >
-                  {social.icon}
-                  <span>{social.name}</span>
-                </a>
-              ))}
-            </nav>
+            {/* Social Media Icons */}
+            <div className="flex items-center gap-4">
+              <a href="#" className="text-white hover:text-white/80 transition-colors">
+                <FacebookIcon className="w-5 h-5" />
+              </a>
+              <a href="#" className="text-white hover:text-white/80 transition-colors">
+                <InstagramIcon className="w-5 h-5" />
+              </a>
+              <a href="#" className="text-white hover:text-white/80 transition-colors">
+                <LinkedinIcon className="w-5 h-5" />
+              </a>
+              <a href="#" className="text-white hover:text-white/80 transition-colors">
+                <YoutubeIcon className="w-5 h-5" />
+              </a>
+            </div>
           </div>
         </div>
       </footer>

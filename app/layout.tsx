@@ -1,6 +1,6 @@
 import type { Metadata } from 'next'
 import './globals.css'
-import { Poppins, Public_Sans, Roboto } from "next/font/google";
+import { Poppins, Public_Sans, Roboto, Dancing_Script, Caveat } from "next/font/google";
 
 // Poppins setup
 const poppins = Poppins({
@@ -24,6 +24,20 @@ const roboto = Roboto({
   variable: '--font-roboto',
 });
 
+// Add Dancing Script
+const dancingScript = Dancing_Script({
+  subsets: ['latin'],
+  weight: ['400', '700'],
+  variable: '--font-dancing-script',
+});
+
+// Add Caveat
+const caveat = Caveat({
+  subsets: ['latin'],
+  weight: ['400', '700'],
+  variable: '--font-caveat',
+});
+
 
 export const metadata: Metadata = {
   title: 'v0 App',
@@ -37,8 +51,8 @@ export default function RootLayout({
   children: React.ReactNode
 }>) {
   return (
-    <html lang="en" className={`${poppins.variable} ${publicSans.variable} ${roboto.variable}`}>
-      <body className={`${poppins.variable} ${publicSans.variable} ${roboto.variable}`}>
+    <html lang="en" className={`${poppins.variable} ${publicSans.variable} ${roboto.variable} ${dancingScript.variable} ${caveat.variable}`}>
+      <body className={`${poppins.variable} ${publicSans.variable} ${roboto.variable} ${dancingScript.variable} ${caveat.variable}`}>
         {children}
       </body>
     </html>

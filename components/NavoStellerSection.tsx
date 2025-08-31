@@ -39,69 +39,64 @@ export default function ImageSliderSection() {
     <>
       <div className="bg-white py-8 sm:py-12 lg:py-16 xl:py-20">
         <div className="max-w-6xl mx-auto px-3 sm:px-4 lg:px-6">
-          <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-4 sm:gap-6 lg:gap-8">
-            {/* Logo Title */}
-            <div className="flex-shrink-0 text-center lg:text-left">
-              <h1 className="font-poppins font-bold text-[#03336d] text-[40px] xs:text-[50px] sm:text-[60px] md:text-[70px] lg:text-[75px] xl:text-[80px] leading-tight tracking-tight">
-                NAVO <br />
+          {/* Centered Title Section */}
+          <div className="text-center mb-12">
+            <h1 className="font-['Poppins',Helvetica] font-bold text-[#03336d] text-4xl sm:text-5xl md:text-6xl lg:text-7xl leading-tight tracking-tight mb-4">
+              NAVO <span className="relative">
                 STELLAR
-              </h1>
-              <p className="text-2xl">Stand Out. Get In. Succeed.</p>
-            </div>
+                <span className="underline decoration-yellowCust underline-offset-4"></span>
+              </span>
+            </h1>
+            <p className="font-['Poppins',Helvetica] text-lg sm:text-xl text-gray-600">Stand Out, Get In, Succeed.</p>
+          </div>
 
-            {/* Text and Image Section */}
-            <div className="w-full bg-white px-1 sm:px-3 lg:px-1">
-              {/* Image Row with Arrow Button */}
-              <div className="relative flex items-center justify-center lg:justify-end min-h-[200px] sm:min-h-[220px] md:min-h-[240px] lg:min-h-[260px]">
-                {/* Image Slider */}
-                <div className="flex gap-2 sm:gap-3 md:gap-4 lg:gap-6 transition-transform duration-500 ease-in-out overflow-x-auto sm:overflow-visible pb-2 sm:pb-0">
-                  {visibleImages.map((src, idx) => (
-                    <div
-                      key={idx}
-                      className="relative w-[90px] sm:w-[110px] md:w-[140px] lg:w-[170px] xl:w-[200px] 2xl:w-[225px] aspect-[225/336] rounded-xl sm:rounded-2xl overflow-hidden flex-shrink-0 group cursor-pointer transform transition-transform duration-300 hover:scale-[1.02] active:scale-95"
-                      onClick={openModal}
-                    >
-                      <Image
-                        src={src || "/placeholder.svg"}
-                        alt={`Student ${idx + 1}`}
-                        fill
-                        className="object-cover transition-transform duration-300 group-hover:scale-105"
-                        sizes="(max-width: 640px) 90px, (max-width: 768px) 110px, (max-width: 1024px) 140px, (max-width: 1280px) 170px, (max-width: 1536px) 200px, 225px"
-                      />
+          {/* Image Slider Section */}
+          <div className="relative flex items-center justify-center">
+            {/* Left Arrow */}
+            <Button
+              onClick={() => setStartIndex((prev) => (prev - 1 + images.length) % images.length)}
+              className="absolute left-0 z-20 bg-white border border-gray-300 rounded-full w-12 h-12 flex items-center justify-center shadow-lg hover:bg-gray-50 transition-colors"
+            >
+              <svg className="w-6 h-6 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
+              </svg>
+            </Button>
 
-                      {/* Play Button Overlay - Hidden on mobile, shown on hover for larger screens */}
-                      <div className="hidden sm:flex absolute inset-0 items-center justify-center bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                        <div className="bg-white/90 backdrop-blur-sm rounded-full p-3 lg:p-4 shadow-lg transform transition-transform duration-300 group-hover:scale-110">
-                          <Play className="h-5 w-5 lg:h-6 lg:w-6 xl:h-7 xl:w-7 text-blue-900 fill-blue-900" />
-                        </div>
-                      </div>
-
-                      {/* Always visible play button for mobile */}
-                      <div className="sm:hidden absolute inset-0 flex items-center justify-center">
-                        <div className="bg-white/90 backdrop-blur-sm rounded-full p-2.5 shadow-lg">
-                          <Play className="h-5 w-5 text-blue-900 fill-blue-900" />
-                        </div>
-                      </div>
-
-                      {/* Touch feedback for mobile */}
-                      <div className="sm:hidden absolute inset-0 active:bg-black/10 transition-colors duration-150" />
-                    </div>
-                  ))}
-                </div>
-
-                {/* Arrow Button with responsive positioning */}
-                <Button
-                  onClick={handleNext}
-                  className="absolute top-1/2 right-1 sm:right-2 md:right-0 lg:right-[-1.5rem] xl:right-[-2rem] -translate-y-1/2 
-rounded-lg bg-blue-900 hover:bg-blue-800 active:bg-blue-700
-h-8 w-8 sm:h-10 sm:w-10 md:h-12 md:w-12 lg:h-14 lg:w-14 
-flex items-center justify-center p-0 transition-all duration-200 shadow-lg hover:shadow-xl z-10
-touch-manipulation"
+            {/* Image Container */}
+            <div className="flex gap-4 sm:gap-6 justify-center items-center px-16">
+              {visibleImages.map((src, idx) => (
+                <div
+                  key={idx}
+                  className="relative w-[120px] sm:w-[140px] md:w-[160px] lg:w-[180px] aspect-[3/4] rounded-2xl overflow-hidden flex-shrink-0 group cursor-pointer transform transition-transform duration-300 hover:scale-[1.02] shadow-lg"
+                  onClick={openModal}
                 >
-                  <ArrowRight className="h-3 w-3 sm:h-4 sm:w-4 md:h-5 md:w-5 lg:h-6 lg:w-6 text-white" />
-                </Button>
-              </div>
+                  <Image
+                    src={src || "/placeholder.svg"}
+                    alt={`Student ${idx + 1}`}
+                    fill
+                    className="object-cover transition-transform duration-300 group-hover:scale-105"
+                    sizes="(max-width: 640px) 120px, (max-width: 768px) 140px, (max-width: 1024px) 160px, 180px"
+                  />
+
+                  {/* Play Button Overlay */}
+                  <div className="absolute inset-0 flex items-center justify-center">
+                    <div className="bg-white/90 backdrop-blur-sm rounded-full p-3 shadow-lg">
+                      <Play className="h-6 w-6 text-blue-900 fill-blue-900" />
+                    </div>
+                  </div>
+                </div>
+              ))}
             </div>
+
+            {/* Right Arrow */}
+            <Button
+              onClick={handleNext}
+              className="absolute right-0 z-20 bg-white border border-gray-300 rounded-full w-12 h-12 flex items-center justify-center shadow-lg hover:bg-gray-50 transition-colors"
+            >
+              <svg className="w-6 h-6 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+              </svg>
+            </Button>
           </div>
         </div>
       </div>
