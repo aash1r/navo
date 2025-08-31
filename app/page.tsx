@@ -26,6 +26,7 @@ import { FaWhatsapp } from "react-icons/fa";
 import NavogateUniverse from "@/components/navogateUniverse";
 import Link from "next/link";
 import Header from "@/components/header";
+import WhatWeDo from "@/components/whatWeDo";
 
 const data = [
   { name: "Students", percentage: 750, signs: "+" },
@@ -248,77 +249,8 @@ export default function Component() {
       </section>
 
       {/* What We Do */}
-      <div className="bg-white-50 py-12 sm:py-16 lg:py-20">
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="font-['Poppins',Helvetica] font-bold text-4xl sm:text-5xl md:text-6xl text-[#03336d] mb-12 tracking-tight">
-            WHAT WE <span className="underline decoration-yellowCust underline-offset-4">DO</span>
-          </h2>
-
-          <div className="flex flex-col lg:flex-row justify-center gap-6 lg:gap-8 max-w-4xl mx-auto">
-            {/* Undergraduate Counseling Card */}
-            <div className="group w-full lg:w-1/2">
-              <div className="bg-gradient-to-br from-blue-300 via-blue-400 to-blue-500 group-hover:from-blue-600 group-hover:via-purple-600 group-hover:to-pink-600 rounded-3xl p-8 h-full transition-all duration-300 transform hover:scale-[1.02] shadow-lg hover:shadow-xl">
-                <div className="flex flex-col items-start text-left h-full">
-                  {/* Icon */}
-                  <div className="mb-6">
-                    <div className="w-16 h-16 bg-white/20 rounded-2xl flex items-center justify-center">
-                      <svg className="w-8 h-8 text-white" fill="currentColor" viewBox="0 0 24 24">
-                        <path d="M12 2C13.1 2 14 2.9 14 4C14 5.1 13.1 6 12 6C10.9 6 10 5.1 10 4C10 2.9 10.9 2 12 2ZM21 9V7L15 7V9C15 11.8 12.8 14 10 14S5 11.8 5 9V7H3V9C3 12.9 6.1 16 10 16V22H14V16C17.9 16 21 12.9 21 9Z"/>
-                      </svg>
-                    </div>
-                  </div>
-                  
-                  {/* Content */}
-                  <div className="flex-1">
-                    <h3 className="text-white font-['Poppins',Helvetica] font-bold text-xl sm:text-2xl mb-4 uppercase">
-                      Undergraduate Counseling
-                    </h3>
-                    <p className="text-white/90 font-['Poppins',Helvetica] text-sm sm:text-base leading-relaxed mb-8">
-                      Expert guidance for high school students navigating the complex college admissions process to secure admissions at top-tier institutions.
-                    </p>
-                  </div>
-                  
-                  {/* Button */}
-                  <Button className="w-full bg-white group-hover:bg-gradient-to-r group-hover:from-purple-500 group-hover:to-pink-500 text-blue-900 group-hover:text-white border-0 font-['Poppins',Helvetica] font-semibold py-3 px-6 rounded-xl transition-all duration-300">
-                    View Details
-                  </Button>
-                </div>
-              </div>
-            </div>
-
-            {/* Graduate Counseling Card */}
-            <div className="group w-full lg:w-1/2">
-              <div className="bg-gradient-to-br from-blue-600 via-blue-700 to-blue-800 group-hover:from-blue-800 group-hover:via-purple-700 group-hover:to-pink-700 rounded-3xl p-8 h-full transition-all duration-300 transform hover:scale-[1.02] shadow-lg hover:shadow-xl">
-                <div className="flex flex-col items-start text-left h-full">
-                  {/* Icon */}
-                  <div className="mb-6">
-                    <div className="w-16 h-16 bg-white/20 rounded-2xl flex items-center justify-center">
-                      <svg className="w-8 h-8 text-white" fill="currentColor" viewBox="0 0 24 24">
-                        <path d="M5,4V7H10.5V19H13.5V7H19V4H5Z"/>
-                      </svg>
-                    </div>
-                  </div>
-                  
-                  {/* Content */}
-                  <div className="flex-1">
-                    <h3 className="text-white font-['Poppins',Helvetica] font-bold text-xl sm:text-2xl mb-4 uppercase">
-                      Graduate Counseling
-                    </h3>
-                    <p className="text-white/90 font-['Poppins',Helvetica] text-sm sm:text-base leading-relaxed mb-8">
-                      Strategic support for applicants pursuing Master's, MBA, PhD, and other graduate programs by perfecting personal statements and CVs.
-                    </p>
-                  </div>
-                  
-                  {/* Button */}
-                  <Button className="w-full bg-white group-hover:bg-gradient-to-r group-hover:from-purple-500 group-hover:to-pink-500 text-blue-900 group-hover:text-white border-0 font-['Poppins',Helvetica] font-semibold py-3 px-6 rounded-xl transition-all duration-300">
-                    View Details
-                  </Button>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
+      <WhatWeDo />
+      
 
       {/* Service Section */}
       {/* <CounselorsHelpStudents /> */}
