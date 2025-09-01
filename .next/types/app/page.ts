@@ -1,4 +1,4 @@
-// File: C:\Users\USER\Desktop\navo-new\navo\app\page.tsx
+// File: /home/aashir/Downloads/Navo/app/page.tsx
 import * as entry from '../../../app/page.js'
 import type { ResolvingMetadata, ResolvingViewport } from 'next/dist/lib/metadata/types/metadata-interface.js'
 

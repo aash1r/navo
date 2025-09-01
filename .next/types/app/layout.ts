@@ -1,4 +1,4 @@
-// File: C:\Users\USER\Desktop\navo-new\navo\app\layout.tsx
+// File: /home/aashir/Downloads/Navo/app/layout.tsx
 import * as entry from '../../../app/layout.js'
 import type { ResolvingMetadata, ResolvingViewport } from 'next/dist/lib/metadata/types/metadata-interface.js'
 
