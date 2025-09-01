@@ -8,32 +8,37 @@ import { Button } from "@/components/ui/button";
 const testimonialVideos = [
   {
     id: 1,
-    thumbnail: "/testimonial-thumbnails/zarain.jpg",
-    video: "/Navo Zarain Testimonial.mp4",
+    thumbnail: "https://img.youtube.com/vi/8X_as5BV4TE/maxresdefault.jpg",
+    video: "https://www.youtube.com/embed/8X_as5BV4TE",
+    videoId: "8X_as5BV4TE",
     // name: "Zarain"
   },
   {
     id: 2,
-    thumbnail: "/testimonial-thumbnails/hasan.jpg",
-    video: "/Navo Hasan Testimonial.mp4",
+    thumbnail: "https://img.youtube.com/vi/jdKkSLBnGUg/maxresdefault.jpg",
+    video: "https://www.youtube.com/embed/jdKkSLBnGUg",
+    videoId: "jdKkSLBnGUg",
     // name: "Hasan"
   },
   {
     id: 3,
-    thumbnail: "/testimonial-thumbnails/zannirah.jpg",
-    video: "/Zannirah rehman.mp4",
+    thumbnail: "https://img.youtube.com/vi/rrKmIwTm7V8/hqdefault.jpg",
+    video: "https://www.youtube.com/embed/rrKmIwTm7V8",
+    videoId: "rrKmIwTm7V8",
     // name: "Zannirah Rehman"
   },
   {
     id: 4,
-    thumbnail: "/testimonial-thumbnails/ahmed.jpg",
-    video: "/Ahmed tariq.mp4",
+    thumbnail: "https://img.youtube.com/vi/--3Ip-WUsz8/hqdefault.jpg",
+    video: "https://www.youtube.com/embed/--3Ip-WUsz8",
+    videoId: "--3Ip-WUsz8",
     // name: "Ahmed Tariq"
   },
   {
     id: 5,
-    thumbnail: "/testimonial-thumbnails/sarmad.jpg",
-    video: "/Sarmad mirza- parent.mp4",
+    thumbnail: "https://img.youtube.com/vi/u3DYjUBbcs8/maxresdefault.jpg",
+    video: "https://www.youtube.com/embed/u3DYjUBbcs8",
+    videoId: "u3DYjUBbcs8",
     // name: "Sarmad Mirza (Parent)"
   },
 ];
@@ -59,10 +64,7 @@ export default function ImageSliderSection() {
 
   const closeModal = () => {
     setIsModalOpen(false);
-    // Pause video when modal closes
-    if (videoRef.current) {
-      videoRef.current.pause();
-    }
+    setSelectedVideo("");
   };
 
   // Get videos for display - responsive count based on screen size
@@ -140,13 +142,22 @@ export default function ImageSliderSection() {
                     onClick={() => openModal(video.video)}
                   >
                     {/* Video Thumbnail */}
-                    <video
-                      className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
-                      muted
-                      preload="metadata"
-                    >
-                      <source src={video.video} type="video/mp4" />
-                    </video>
+                    <Image
+                      src={video.thumbnail}
+                      alt={`Testimonial ${video.id}`}
+                      fill
+                      className="object-cover transition-transform duration-300 group-hover:scale-105"
+                      sizes="(max-width: 640px) 90px, (max-width: 768px) 110px, (max-width: 1024px) 130px, 160px"
+                      onError={(e) => {
+                        // Fallback to medium quality thumbnail if maxres/hqdefault fails
+                        const target = e.target as HTMLImageElement;
+                        if (target.src.includes('hqdefault')) {
+                          target.src = target.src.replace('hqdefault.jpg', 'mqdefault.jpg');
+                        } else if (target.src.includes('maxresdefault')) {
+                          target.src = target.src.replace('maxresdefault.jpg', 'hqdefault.jpg');
+                        }
+                      }}
+                    />
 
                     {/* Play Button Overlay */}
                     <div className="absolute inset-0 flex items-center justify-center bg-black/20">
@@ -187,19 +198,16 @@ export default function ImageSliderSection() {
               <X className="h-4 w-4 sm:h-5 sm:w-5" />
             </Button>
 
-            {/* Video Player */}
-            <div className="relative w-full">
-              <video
-                ref={videoRef}
-                className="w-full h-auto max-h-[50vh] xs:max-h-[55vh] sm:max-h-[60vh] md:max-h-[70vh] lg:max-h-[80vh] object-contain"
-                controls
-                autoPlay
-                preload="metadata"
-                playsInline
-              >
-                <source src={selectedVideo} type="video/mp4" />
-                Your browser does not support the video tag.
-              </video>
+            {/* YouTube Player */}
+            <div className="relative w-full aspect-video">
+              <iframe
+                className="w-full h-full"
+                src={`${selectedVideo}?autoplay=1&rel=0&modestbranding=1`}
+                title="YouTube video player"
+                frameBorder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                allowFullScreen
+              ></iframe>
             </div>
           </div>
 
