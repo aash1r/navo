@@ -12,7 +12,7 @@ import {
   MapPin,
   ArrowUpRight,
   Volume2,
-  VolumeX,
+  VolumeOff,
 } from "lucide-react";
 import {
   FacebookIcon,
@@ -31,18 +31,18 @@ import Header from "@/components/header";
 import WhatWeDo from "@/components/whatWeDo";
 
 const data = [
-  { name: "Students", percentage: 750, signs: "+" },
+  { name: "Students", percentage: 550, signs: "+" },
   {
-    name: "elite university admissions",
-    percentage: 120,
+    name: "Years of Experience",
+    percentage: 15,
     signs: "+",
   },
-  { name: "Students got admissions", percentage: 100, signs: "%" },
-  { name: "Acceptances", percentage: 900, signs: "+" },
-  { name: "Acceptances over 10 years", percentage: 3400, signs: "+" },
-  { name: "More likely to be accepted", percentage: 10, signs: "x" },
-  { name: "Results", percentage: 100, signs: "%" },
-  { name: "Acceptances", percentage: 80, signs: "%" },
+  { name: "Admissions Covered in Regions", percentage: 8, signs: "+" },
+  { name: "Students from Countries", percentage: 10, signs: "+" },
+  { name: "Top Acceptances", percentage: 3000, signs: "+" },
+  { name: "More likely Get In", percentage: 10, signs: "x" },
+  { name: "Financial Aid", percentage: 30, signs: "m" },
+  { name: "More STEM Acceptances", percentage: 5, signs: "x" },
 ];
 
 export default function Component() {
@@ -203,46 +203,54 @@ export default function Component() {
           Your browser does not support the video tag.
         </video>
         <div className="absolute inset-0 bg-black/20" />
-        
+
         {/* Sound Toggle Button */}
-        <button
-          onClick={() => {
-            setIsMuted(!isMuted);
-            if (videoRef.current) {
-              videoRef.current.muted = !isMuted;
-            }
-          }}
-          className="absolute bottom-4 right-4 bg-blue-600 hover:bg-blue-700 transition-all duration-200 rounded-full p-2 z-10 flex items-center justify-center"
-        >
-          <div className="bg-white rounded-full p-1">
-            {isMuted ? (
-              <VolumeX className="w-4 h-4 text-blue-600" />
-            ) : (
-              <Volume2 className="w-4 h-4 text-blue-600" />
-            )}
-          </div>
-        </button>
+        {/* Toggle Button for Mute/Unmute */}
+        <div className="absolute bottom-4 right-4 z-10">
+          <button
+            onClick={() => {
+              setIsMuted(!isMuted);
+              if (videoRef.current) {
+                videoRef.current.muted = !isMuted;
+              }
+            }}
+            className={`relative inline-flex h-[40px] w-[85px] items-center rounded-full transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 ${
+              isMuted ? "bg-[#03336d]" : "bg-transparent"
+            }`}
+          >
+            {/* Unmute icon on the left */}
+            <Volume2 className="absolute left-1 w-[20px] text-white ml-1" />
+
+            {/* Mute icon on the right */}
+            <VolumeOff className="absolute right-1 w-[20px] text-white mr-1" />
+            {/* Moving circle */}
+            <span
+              className={`inline-block h-8 w-8 transform rounded-full bg-white transition-transform duration-200 ${
+                isMuted ? "translate-x-12" : "translate-x-1"
+              }`}
+            ></span>
+          </button>
+        </div>
       </div>
 
       {/* How We Work Section */}
       <Swiper />
 
       {/* Track Record Section */}
-      <section
-        ref={sectionRef}
-        className="bg-blue-50 py-16 md:py-24"
-      >
+      <section ref={sectionRef} className="bg-blue-50 py-16 md:py-24">
         <div className="max-w-7xl mx-auto px-6 lg:px-24 text-center">
           {/* Main Title */}
           <h1 className="font-['Poppins',Helvetica] font-black text-3xl sm:text-3xl md:text-3xl lg:text-6xl text-[#03336d] leading-tight mb-12 tracking-tight">
-            OUR <span className="relative inline-block">
+            OUR{" "}
+            <span className="relative inline-block">
               TRACK
-              <img 
-                src="/underline.png" 
-                alt="underline" 
+              <img
+                src="/underline.png"
+                alt="underline"
                 className="absolute -bottom-2 left-0 w-full h-auto"
               />
-            </span> RECORD 
+            </span>{" "}
+            RECORD
           </h1>
           <p className="font-['Poppins',Helvetica] text-3xl text-gray-800 leading-relaxed mb-6">
             When Strategy Meets Talent, Admissions Say Yes
@@ -262,7 +270,9 @@ export default function Component() {
                   className="bg-blue-50 text-center py-6 px-4 flex flex-col justify-center items-center"
                 >
                   <h2 className="text-[32px] sm:text-[58px] md:text-[60px] font-extrabold text-[#03336d] leading-none">
-                    {counts[index]}
+                    {item.name === "Financial Aid"
+                      ? `$${counts[index]}`
+                      : counts[index]}
                     <span className="text-[16px] sm:text-[28px] md:text-[30px] align-bottom">
                       {item.signs}
                     </span>
@@ -281,13 +291,12 @@ export default function Component() {
 
       {/* What We Do */}
       <WhatWeDo />
-      
 
       {/* Service Section */}
       {/* <CounselorsHelpStudents /> */}
 
       {/* NAVO STELLAR Section */}
-      <div>
+      <div className="sm:pt-0 md:pt-60 lg:pt-0">
         <NavoStellerSection />
       </div>
 
@@ -355,7 +364,7 @@ export default function Component() {
               documents.
             </p>
             <span className="font-['Roboto',Helvetica] font-normal text-black text-[18.5px] text-center leading-[27.8px] underline w-full">
-            41-C, Khayaban-e-Bukhari, Phase 6, DHA, Karachi, Pakistan.
+              41-C, Khayaban-e-Bukhari, Phase 6, DHA, Karachi, Pakistan.
             </span>
           </div>
           {/* </div> */}
@@ -400,14 +409,16 @@ export default function Component() {
                 alt="Navo Logo"
                 src="/navoLogo.png"
               />
-              
+
               {/* Newsletter Text */}
               <div className="space-y-3">
                 <p className="text-white text-base leading-relaxed">
-                  Stay up to date on the latest features and releases by joining our newsletter.
+                  Stay up to date on the latest features and releases by joining
+                  our newsletter.
                 </p>
                 <p className="text-white/80 text-sm leading-relaxed">
-                  By subscribing, you agree to our Privacy Policy and consent to receive updates from our company.
+                  By subscribing, you agree to our Privacy Policy and consent to
+                  receive updates from our company.
                 </p>
               </div>
 
@@ -425,18 +436,32 @@ export default function Component() {
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-8 lg:gap-12">
               {/* Quick Links */}
               <div>
-                <h3 className="text-white font-semibold text-lg mb-4">Quick Links</h3>
+                <h3 className="text-white font-semibold text-lg mb-4">
+                  Quick Links
+                </h3>
                 <nav className="space-y-3">
-                  <a href="#" className="block text-white/80 hover:text-white transition-colors text-sm">
+                  <a
+                    href="#"
+                    className="block text-white/80 hover:text-white transition-colors text-sm"
+                  >
                     ABOUT US
                   </a>
-                  <a href="#" className="block text-white/80 hover:text-white transition-colors text-sm">
+                  <a
+                    href="#"
+                    className="block text-white/80 hover:text-white transition-colors text-sm"
+                  >
                     SERVICES
                   </a>
-                  <a href="#" className="block text-white/80 hover:text-white transition-colors text-sm">
+                  <a
+                    href="#"
+                    className="block text-white/80 hover:text-white transition-colors text-sm"
+                  >
                     EXPLORE
                   </a>
-                  <a href="#" className="block text-white/80 hover:text-white transition-colors text-sm">
+                  <a
+                    href="#"
+                    className="block text-white/80 hover:text-white transition-colors text-sm"
+                  >
                     MYNAVOPORTAL
                   </a>
                 </nav>
@@ -444,18 +469,32 @@ export default function Component() {
 
               {/* Others */}
               <div>
-                <h3 className="text-white font-semibold text-lg mb-4">Others</h3>
+                <h3 className="text-white font-semibold text-lg mb-4">
+                  Others
+                </h3>
                 <nav className="space-y-3">
-                  <a href="#" className="block text-white/80 hover:text-white transition-colors text-sm">
+                  <a
+                    href="#"
+                    className="block text-white/80 hover:text-white transition-colors text-sm"
+                  >
                     PARTNERS
                   </a>
-                  <a href="#" className="block text-white/80 hover:text-white transition-colors text-sm">
+                  <a
+                    href="#"
+                    className="block text-white/80 hover:text-white transition-colors text-sm"
+                  >
                     TESTIMONIALS
                   </a>
-                  <a href="#" className="block text-white/80 hover:text-white transition-colors text-sm">
+                  <a
+                    href="#"
+                    className="block text-white/80 hover:text-white transition-colors text-sm"
+                  >
                     TERMS & CONDITIONS
                   </a>
-                  <a href="#" className="block text-white/80 hover:text-white transition-colors text-sm">
+                  <a
+                    href="#"
+                    className="block text-white/80 hover:text-white transition-colors text-sm"
+                  >
                     PRIVACY POLICY
                   </a>
                 </nav>
@@ -466,22 +505,34 @@ export default function Component() {
           {/* Bottom Section: Copyright & Social */}
           <div className="border-t border-white/20 pt-8 flex flex-col sm:flex-row justify-between items-center gap-4">
             {/* Copyright */}
-            <p className="text-white/80 text-sm">
-              ©2024 All rights reserved
-            </p>
+            <p className="text-white/80 text-sm">©2024 All rights reserved</p>
 
             {/* Social Media Icons */}
             <div className="flex items-center gap-4">
-              <a href="#" className="text-white hover:text-white/80 transition-colors">
+              <a
+                href="#"
+                className="text-white hover:text-white/80 transition-colors"
+              >
                 <FacebookIcon className="w-5 h-5" />
               </a>
-              <a href="https://instagram.com/navo.ed" target="_blank" rel="noopener noreferrer" className="text-white hover:text-white/80 transition-colors">
+              <a
+                href="https://instagram.com/navo.ed"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-white hover:text-white/80 transition-colors"
+              >
                 <InstagramIcon className="w-5 h-5" />
               </a>
-              <a href="#" className="text-white hover:text-white/80 transition-colors">
+              <a
+                href="#"
+                className="text-white hover:text-white/80 transition-colors"
+              >
                 <LinkedinIcon className="w-5 h-5" />
               </a>
-              <a href="#" className="text-white hover:text-white/80 transition-colors">
+              <a
+                href="#"
+                className="text-white hover:text-white/80 transition-colors"
+              >
                 <YoutubeIcon className="w-5 h-5" />
               </a>
             </div>

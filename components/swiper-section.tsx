@@ -22,35 +22,64 @@ const swipeData: SwipeItem[] = [
     title: "Discover Your Edge Early",
     category: "You",
     details: `College admissions reward early, strategic preparation. We can help you:
-\nAssess your strengths, values & interests
-Craft an authentic personal brand
-Choose schools that match your goals
-Plan tests & academic milestones
-`,
+    Assess your strengths, values & interests
+    Craft an authentic personal brand
+    Choose schools that match your goals
+    Plan tests & academic milestones`,
   },
   {
     id: 2,
     image: "/sw2.png",
     title: "Build A Strong Resume",
     category: "You",
-    details:
-      "Admissions committees value depth and genuine engagement over extensive activity lists. We help students focus on pursuits that showcase genuine passion and leadership: \nDevelop a focused extracurricular profile with clear progression Utilize summers strategically for high‑impact programs, internships, or projects",
+    details: `
+    Admissions committees value depth and genuine engagement over extensive activity lists. We help students focus on pursuits that showcase genuine passion and leadership:
+    Develop a focused extracurricular profile with clear progression
+    Utilize summers strategically for high‑impact programs, internships, or projects
+
+`,
   },
   {
     id: 3,
     image: "/sw3.png",
     title: "Build a Compelling Narrative ",
     category: "You",
-    details:
-      "Your personal story is your greatest strength. We help you build cohesive, memorable applications by: Identifying unique essay themes Crafting authentic personal statements & supplements Aligning every component into one clear, compelling narrative",
+    details: `Your personal story is your greatest strength. We help you build cohesive, memorable applications by:
+Identifying unique essay themes
+Crafting authentic personal statements & supplements
+Aligning every component into one clear, compelling narrative
+`,
   },
   {
     id: 4,
     image: "/sw4.png",
     title: "Apply with Strategy",
     category: "You",
-    details:
-      "Strategic planning and informed decisions outperform last‑minute efforts. We guide students through every critical choice: Finalize a balanced safety, match, and reach school list Develop Early Decision/Early Action strategies aligned with your goals Demonstrate genuine interest via targeted essays, interviews, and follow‑up",
+    details: `Strategic planning and informed decisions outperform last‑minute efforts. We guide students through every critical choice:
+Finalize a balanced safety, match, and reach school list
+Develop Early Decision/Early Action strategies aligned with your goals
+Demonstrate genuine interest via targeted essays, interviews, and follow‑up`,
+  },
+
+  {
+    id: 5,
+    image: "/sw5.png",
+    title: "Secure Strong Recommendations",
+    category: "You",
+    details: `effective recommendation letters showcase your character, not just your achievements:
+Guide mentors to write vivid, specific testimonials
+Equip recommenders with tailored insights into your impact and growth`,
+  },
+
+  {
+    id: 6,
+    image: "/sw6.png",
+    title: "Finish Strong",
+    category: "You",
+    details: `Final details and professional follow‑through can set you apart:
+Prepare for interviews with structured practice and confidence building
+Manage post‑submission updates and deferrals professionally
+Optimize waitlist chances with strategic positioning`,
   },
 ];
 
@@ -171,15 +200,24 @@ export default function Swiper() {
     };
   }, [isDragging, startX, dragOffset, currentIndex]);
 
+
+  const detailLines = swipeData[currentIndex].details
+    .split("\n")
+    .filter((line) => line.trim() !== "");
+  const introLine = detailLines[0];
+  const bulletPoints = detailLines.slice(1);
+
+
   return (
     <div className="py-4 sm:py-8 mt-20">
       <div className="w-full max-w-7xl mx-auto px-4 sm:px-6">
         <p className="font-['Poppins',Helvetica] font-black text-4xl sm:text-5xl md:text-6xl lg:text-7xl text-[#03336d] leading-tight mb-12 tracking-tight text-center">
-          HOW WE <span className="relative inline-block">
+          HOW WE{" "}
+          <span className="relative inline-block">
             WORK
-            <img 
-              src="/underline.png" 
-              alt="underline" 
+            <img
+              src="/underline.png"
+              alt="underline"
               className="absolute -bottom-2 left-0 w-full h-auto"
             />
           </span>
@@ -207,9 +245,17 @@ export default function Swiper() {
                   {swipeData[currentIndex].title}
                 </h2>
 
-                <p className="text-gray-700 leading-relaxed transition-all duration-500 text-base sm:text-lg">
+                {/* <p className="text-gray-700 leading-relaxed transition-all duration-500 text-base sm:text-lg">
                   {swipeData[currentIndex].details}
-                </p>
+                </p> */}
+                <div className="text-gray-700 leading-relaxed transition-all duration-500 text-base sm:text-lg space-y-3">
+                  <p>{introLine}</p>
+                  <ul className="list-disc pl-5 space-y-2">
+                    {bulletPoints.map((point, idx) => (
+                      <li key={idx}>{point}</li>
+                    ))}
+                  </ul>
+                </div>
               </div>
 
               {/* Desktop Navigation Controls */}

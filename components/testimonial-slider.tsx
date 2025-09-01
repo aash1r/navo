@@ -19,35 +19,26 @@ interface Testimonial {
 const testimonials: Testimonial[] = [
   {
     quote:
-      "Their expert guidance and unwavering support have been instrumental in navigating the complexities of university applications. I am immensely grateful for their expertise and support, and I wholeheartedly recommend their services to anyone embarking on their journey to higher education",
-    name: "Muhammad Raahim Sodha",
+      "We had the privilege of working with Navo and i couldn't have had a better option for my son. The team has deep knowledge of colleges all over the world and guided us rightly to apply to the best universities, seeing our child's interests and strengths. The feedback on the essay writing was excellent.My son got accepted in almost most of the prestigious universities where he applied in UK, USA and Canada",
+    name: "Dr.Fatima Akhund",
     role: "PHD Student",
     institutionLogo: "/university-logo.png",
     image: "/avatar-image1.png?height=48&width=48",
   },
   {
     quote:
-      "Working with Navo was the best decision I made during my college application process. Their personalized approach and deep understanding of what universities look for helped me secure admission to my dream school.",
-    name: "Sarah Johnson",
-    role: "Undergraduate",
-    institutionLogo: "/university-logo.png",
-    image: "/avatar-image2.png?height=48&width=48",
+      "Their expert guidance and unwavering support have been instrumental in navigating the complexities of university applications. I am immensely grateful for their expertise and support, and I wholeheartedly recommend their services to anyone embarking on their journey to higher education",
+    name: "Muhammad Raahim Sodha",
+    role: "PHD Student",
+    institutionLogo: "/ImperialUnilogo.png",
+    image: "/testimonialuser2.png?height=48&width=48",
   },
   {
-    quote:
-      "The counselors at Navo truly understand the nuances of college admissions. They helped me craft a compelling narrative that highlighted my unique strengths and experiences, which I believe made all the difference.",
-    name: "Michael Chen",
-    role: "Graduate Student",
+    quote: "Best counsellors. Transformative journey. Dream College.",
+    name: "Zaaria Butt",
+    role: "PHD Student",
     institutionLogo: "/university-logo.png",
     image: "/avatar-image3.png?height=48&width=48",
-  },
-  {
-    quote:
-      "I was feeling overwhelmed by the college application process until I found Navo. Their step-by-step guidance and expert advice transformed my applications and helped me stand out from the crowd.",
-    name: "Emily Rodriguez",
-    role: "Freshman",
-    institutionLogo: "/university-logo.png",
-    image: "/avatar-image4.png?height=48&width=48",
   },
 ];
 
