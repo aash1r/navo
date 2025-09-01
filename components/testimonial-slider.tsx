@@ -19,8 +19,8 @@ interface Testimonial {
 const testimonials: Testimonial[] = [
   {
     quote:
-      "Navo has been a game-changer for my college application process. The expert consultants provided invaluable guidance and support, helping me navigate through the complexities of the admissions journey.",
-    name: "John Doe",
+      "Their expert guidance and unwavering support have been instrumental in navigating the complexities of university applications. I am immensely grateful for their expertise and support, and I wholeheartedly recommend their services to anyone embarking on their journey to higher education",
+    name: "Muhammad Raahim Sodha",
     role: "PHD Student",
     institutionLogo: "/university-logo.png",
     image: "/avatar-image1.png?height=48&width=48",

@@ -11,6 +11,8 @@ import {
   Phone,
   MapPin,
   ArrowUpRight,
+  Volume2,
+  VolumeX,
 } from "lucide-react";
 import {
   FacebookIcon,
@@ -45,8 +47,10 @@ const data = [
 
 export default function Component() {
   const [isAboveFooter, setIsAboveFooter] = useState(false);
+  const [isMuted, setIsMuted] = useState(true);
   const ctaRef = useRef<HTMLDivElement>(null);
   const footerRef = useRef<HTMLDivElement>(null);
+  const videoRef = useRef<HTMLVideoElement>(null);
 
   // const [counts, setCounts] = useState(data.map(() => 0));
   // useEffect(() => {
@@ -188,9 +192,10 @@ export default function Component() {
       {/* Hero Section */}
       <div className="relative h-[30rem] sm:h-[30rem] md:h-[30rem] lg:h-[40rem]">
         <video
+          ref={videoRef}
           autoPlay
           loop
-          muted
+          muted={isMuted}
           playsInline
           className="absolute inset-0 w-full h-full object-cover"
         >
@@ -198,6 +203,25 @@ export default function Component() {
           Your browser does not support the video tag.
         </video>
         <div className="absolute inset-0 bg-black/20" />
+        
+        {/* Sound Toggle Button */}
+        <button
+          onClick={() => {
+            setIsMuted(!isMuted);
+            if (videoRef.current) {
+              videoRef.current.muted = !isMuted;
+            }
+          }}
+          className="absolute bottom-4 right-4 bg-blue-600 hover:bg-blue-700 transition-all duration-200 rounded-full p-2 z-10 flex items-center justify-center"
+        >
+          <div className="bg-white rounded-full p-1">
+            {isMuted ? (
+              <VolumeX className="w-4 h-4 text-blue-600" />
+            ) : (
+              <Volume2 className="w-4 h-4 text-blue-600" />
+            )}
+          </div>
+        </button>
       </div>
 
       {/* How We Work Section */}
@@ -211,7 +235,14 @@ export default function Component() {
         <div className="max-w-7xl mx-auto px-6 lg:px-24 text-center">
           {/* Main Title */}
           <h1 className="font-['Poppins',Helvetica] font-black text-3xl sm:text-3xl md:text-3xl lg:text-6xl text-[#03336d] leading-tight mb-12 tracking-tight">
-            OUR TRACK RECORD 
+            OUR <span className="relative inline-block">
+              TRACK
+              <img 
+                src="/underline.png" 
+                alt="underline" 
+                className="absolute -bottom-2 left-0 w-full h-auto"
+              />
+            </span> RECORD 
           </h1>
           <p className="font-['Poppins',Helvetica] text-3xl text-gray-800 leading-relaxed mb-6">
             When Strategy Meets Talent, Admissions Say Yes
@@ -287,7 +318,7 @@ export default function Component() {
               href="mailto:hello@navoconsulting.com"
               className="font-['Roboto',Helvetica] font-normal text-black text-[18.5px] text-center leading-[27.8px] underline w-full"
             >
-              hello@navoconsulting.com
+              connect@navo.work
             </a>
           </div>
 
@@ -307,7 +338,7 @@ export default function Component() {
               href="tel:+15551234567"
               className="font-['Roboto',Helvetica] font-normal text-black text-[18.5px] text-center leading-[27.8px] underline w-full"
             >
-              +1 (555) 123-4567
+              +92 325 0341777
             </a>
           </div>
 
@@ -324,7 +355,7 @@ export default function Component() {
               documents.
             </p>
             <span className="font-['Roboto',Helvetica] font-normal text-black text-[18.5px] text-center leading-[27.8px] underline w-full">
-              Somewhere in DHA
+            41-C, Khayaban-e-Bukhari, Phase 6, DHA, Karachi, Pakistan.
             </span>
           </div>
           {/* </div> */}
@@ -380,20 +411,13 @@ export default function Component() {
                 </p>
               </div>
 
-              {/* KHDA Certification Badge */}
+              {/* KHDA Certification Logo */}
               <div className="pt-4">
-                <div className="bg-white rounded-lg p-4 w-fit">
-                  <div className="flex items-center gap-3">
-                    <div className="bg-[#8B1538] text-white px-3 py-2 rounded text-sm font-bold">
-                      DUBAI
-                    </div>
-                    <div className="text-[#8B1538] text-sm">
-                      <div className="font-bold">OFFICIALLY APPROVED BY</div>
-                      <div className="font-bold text-lg">KHDA</div>
-                      <div className="text-xs">PERMIT NUMBER 632607</div>
-                    </div>
-                  </div>
-                </div>
+                <img
+                  className="w-[150px] h-auto"
+                  alt="KHDA Certification"
+                  src="/khda-logo.png"
+                />
               </div>
             </div>
 
@@ -451,7 +475,7 @@ export default function Component() {
               <a href="#" className="text-white hover:text-white/80 transition-colors">
                 <FacebookIcon className="w-5 h-5" />
               </a>
-              <a href="#" className="text-white hover:text-white/80 transition-colors">
+              <a href="https://instagram.com/navo.ed" target="_blank" rel="noopener noreferrer" className="text-white hover:text-white/80 transition-colors">
                 <InstagramIcon className="w-5 h-5" />
               </a>
               <a href="#" className="text-white hover:text-white/80 transition-colors">

@@ -21,7 +21,14 @@ export default function WhatWeDo() {
       <div className="flex h-[522px] items-center justify-center gap-2.5 pt-[3px] pb-0 px-[118px] relative self-stretch w-full">
         <div className="flex flex-col w-[1139px] h-[493px] items-center gap-[38px] relative ml-[-4.50px] mr-[-4.50px]">
           <h2 className="relative w-fit mt-[-1.00px] [font-family:'Inter',Helvetica] font-bold text-[#03336d] text-[55.8px] text-center tracking-[0] leading-[normal]">
-            WHAT WE DO
+            WHAT WE <span className="relative inline-block">
+              DO
+              <img 
+                src="/underline.png" 
+                alt="underline" 
+                className="absolute -bottom-2 left-0 w-full h-auto"
+              />
+            </span>
           </h2>
 
           <div className="flex w-[1120px] items-start justify-center gap-8 pt-[22px] pb-0 px-0 relative flex-[0_0_auto]">

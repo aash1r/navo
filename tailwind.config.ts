@@ -14,6 +14,7 @@ const config: Config = {
         poppins: ["var(--font-poppins)", "sans-serif"],
         publicSans: ["var(--font-publicSans)", "sans-serif"],
         roboto: ["var(--font-roboto)", "sans-serif"],
+        guthenBloots: ["var(--font-guthen-bloots)", "sans-serif"],
       },
       colors: {
         yellowCust: "#EEF525",

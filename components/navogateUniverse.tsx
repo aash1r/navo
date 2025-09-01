@@ -7,11 +7,16 @@ export default function NavogateUniverse() {
        {/* Conquest Section */}
             <section className="bg-[#03336d] py-20 px-6 lg:px-24 relative overflow-hidden">
               <div className="max-w-7xl mx-auto text-center">
-                <h1 className="font-['Poppins',Helvetica] font-black text-5xl sm:text-8xl text-white leading-none tracking-tight mb-8">
-                  <span className="block">NAVOGATE YOUR</span>
-                  <span className="block relative">
-                    <span className="underline decoration-yellowCust underline-offset-4">
+                <h1 className="font-guthenBloots font-black text-5xl sm:text-8xl text-white leading-none tracking-tight mb-8">
+                  <span className="block mb-2">NAVOGATE YOUR</span>
+                  <span className="block relative mb-8">
+                    <span className="relative inline-block">
                       UNIVERSE
+                      <img 
+                        src="/underline.png" 
+                        alt="underline" 
+                        className="absolute -bottom-2 left-0 w-full h-auto"
+                      />
                     </span>
                   </span>
                   <span className="block">WITH US</span>

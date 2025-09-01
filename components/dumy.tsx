@@ -249,7 +249,14 @@ export default function Component() {
           <h1 className="font-['Poppins',Helvetica] font-black text-4xl sm:text-5xl md:text-6xl lg:text-7xl text-[#03336d] leading-tight mb-12 tracking-tight">
             NAVO'S COLLEGE
             <br />
-            ADMISSIONS TRACK RECORD
+            ADMISSIONS <span className="relative inline-block">
+              TRACK
+              <img 
+                src="/underline.png" 
+                alt="underline" 
+                className="absolute -bottom-2 left-0 w-full h-auto"
+              />
+            </span> RECORD
           </h1>
 
           {/* Subtitle */}

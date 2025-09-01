@@ -1,3 +1,6 @@
 node_modules
 .next
 .next/
+# Large video files
+public/*.mp4
+!public/NavoVideo.mp4

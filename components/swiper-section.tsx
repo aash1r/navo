@@ -19,37 +19,38 @@ const swipeData: SwipeItem[] = [
   {
     id: 1,
     image: "/sw1.png",
-    title: "Step 1: Build a Winning Strategy",
+    title: "Discover Your Edge Early",
     category: "You",
-    details: `We start by understanding you — your passions, goals, and potential. Then we create a personalized roadmap to maximize your chances.
-    Identify your academic and personal strengths
-Select the right schools to apply to
-   Strategize Early Decision/Early Action plans
+    details: `College admissions reward early, strategic preparation. We can help you:
+\nAssess your strengths, values & interests
+Craft an authentic personal brand
+Choose schools that match your goals
+Plan tests & academic milestones
 `,
   },
   {
     id: 2,
     image: "/sw2.png",
-    title: "Step 2: Craft Your Story",
+    title: "Build A Strong Resume",
     category: "You",
     details:
-      "College essays are your voice. We help you find it — and make it unforgettable. Brainstorm powerful essay ideas Write compelling personal statements and supplements Align every part of your application with your “hook”",
+      "Admissions committees value depth and genuine engagement over extensive activity lists. We help students focus on pursuits that showcase genuine passion and leadership: \nDevelop a focused extracurricular profile with clear progression Utilize summers strategically for high‑impact programs, internships, or projects",
   },
   {
     id: 3,
     image: "/sw3.png",
-    title: "Step 3: Strengthen Every Detail",
+    title: "Build a Compelling Narrative ",
     category: "You",
     details:
-      "What others say about you matters. We guide your recommenders and profile to highlight the right things. Secure letters of recommendation filled with specifics Demonstrate authentic interest in schools Plan impactful extracurriculars and summer experiences",
+      "Your personal story is your greatest strength. We help you build cohesive, memorable applications by: Identifying unique essay themes Crafting authentic personal statements & supplements Aligning every component into one clear, compelling narrative",
   },
   {
     id: 4,
     image: "/sw4.png",
-    title: "Step 4: Apply with Confidence",
+    title: "Apply with Strategy",
     category: "You",
     details:
-      "With every document polished and every decision strategic, you’re ready to hit submit — and stand out. Final review and polish Submission strategy Interview coaching and post-submission support",
+      "Strategic planning and informed decisions outperform last‑minute efforts. We guide students through every critical choice: Finalize a balanced safety, match, and reach school list Develop Early Decision/Early Action strategies aligned with your goals Demonstrate genuine interest via targeted essays, interviews, and follow‑up",
   },
 ];
 
@@ -174,7 +175,14 @@ export default function Swiper() {
     <div className="py-4 sm:py-8 mt-20">
       <div className="w-full max-w-7xl mx-auto px-4 sm:px-6">
         <p className="font-['Poppins',Helvetica] font-black text-4xl sm:text-5xl md:text-6xl lg:text-7xl text-[#03336d] leading-tight mb-12 tracking-tight text-center">
-          HOW WE WORK
+          HOW WE <span className="relative inline-block">
+            WORK
+            <img 
+              src="/underline.png" 
+              alt="underline" 
+              className="absolute -bottom-2 left-0 w-full h-auto"
+            />
+          </span>
         </p>
         <p className="font-['Poppins',Helvetica] text-3xl text-gray-800 leading-relaxed mb-6 text-center">
           Your Roadmap to a Winning Application: The NAVO 4-Step Process
