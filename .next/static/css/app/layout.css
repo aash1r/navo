@@ -914,11 +914,14 @@ video {
 .h-px {
   height: 1px;
 }
+.h-\[\] {
+  height: ;
+}
+.h-20 {
+  height: 5rem;
+}
 .max-h-96 {
   max-height: 24rem;
-}
-.max-h-\[50vh\] {
-  max-height: 50vh;
 }
 .max-h-screen {
   max-height: 100vh;
@@ -1288,6 +1291,9 @@ video {
 .border-t {
   border-top-width: 1px;
 }
+.border-none {
+  border-style: none;
+}
 .border-\[\#03336d\] {
   --tw-border-opacity: 1;
   border-color: rgb(3 51 109 / var(--tw-border-opacity, 1));
@@ -1515,9 +1521,6 @@ video {
 .fill-current {
   fill: currentColor;
 }
-.object-contain {
-  object-fit: contain;
-}
 .object-cover {
   object-fit: cover;
 }
@@ -1541,6 +1544,9 @@ video {
 }
 .p-6 {
   padding: 1.5rem;
+}
+.p-10 {
+  padding: 2.5rem;
 }
 .px-0 {
   padding-left: 0px;
@@ -1754,6 +1760,42 @@ video {
   font-size: 1.25rem;
   line-height: 1.75rem;
 }
+.text-\[50px\] {
+  font-size: 50px;
+}
+.text-\[40px\] {
+  font-size: 40px;
+}
+.text-\[38px\] {
+  font-size: 38px;
+}
+.text-\[48px\] {
+  font-size: 48px;
+}
+.text-\[54px\] {
+  font-size: 54px;
+}
+.text-\[30px\] {
+  font-size: 30px;
+}
+.text-\[28px\] {
+  font-size: 28px;
+}
+.text-\[1px\] {
+  font-size: 1px;
+}
+.text-\[18px\] {
+  font-size: 18px;
+}
+.text-\[20px\] {
+  font-size: 20px;
+}
+.text-\[4px\] {
+  font-size: 4px;
+}
+.text-\[42px\] {
+  font-size: 42px;
+}
 .font-\[400\] {
   font-weight: 400;
 }
@@ -1951,6 +1993,9 @@ video {
 .text-yellow-400 {
   --tw-text-opacity: 1;
   color: rgb(250 204 21 / var(--tw-text-opacity, 1));
+}
+.text-\[px\] {
+  color: px;
 }
 .underline {
   text-decoration-line: underline;
@@ -2889,10 +2934,6 @@ body {
     height: 600px;
   }
 
-  .sm\:max-h-\[60vh\] {
-    max-height: 60vh;
-  }
-
   .sm\:w-12 {
     width: 3rem;
   }
@@ -3100,6 +3141,10 @@ body {
     line-height: 1.75rem;
   }
 
+  .sm\:text-\[68px\] {
+    font-size: 68px;
+  }
+
   .sm\:leading-\[28px\] {
     line-height: 28px;
   }
@@ -3189,10 +3234,6 @@ body {
 
   .md\:h-\[50px\] {
     height: 50px;
-  }
-
-  .md\:max-h-\[70vh\] {
-    max-height: 70vh;
   }
 
   .md\:w-24 {
@@ -3356,6 +3397,11 @@ body {
     padding-bottom: 6rem;
   }
 
+  .md\:px-4 {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+
   .md\:pb-0 {
     padding-bottom: 0px;
   }
@@ -3443,6 +3489,14 @@ body {
     line-height: 1.75rem;
   }
 
+  .md\:text-\[72px\] {
+    font-size: 72px;
+  }
+
+  .md\:text-\[82px\] {
+    font-size: 82px;
+  }
+
   .md\:leading-\[17px\] {
     line-height: 17px;
   }
@@ -3461,6 +3515,10 @@ body {
 
   .md\:leading-\[70px\] {
     line-height: 70px;
+  }
+
+  .md\:text-\[px\] {
+    color: px;
   }
 
   .md\:decoration-4 {
@@ -3552,10 +3610,6 @@ body {
 
   .lg\:h-\[700px\] {
     height: 700px;
-  }
-
-  .lg\:max-h-\[80vh\] {
-    max-height: 80vh;
   }
 
   .lg\:w-1\/2 {
@@ -3838,9 +3892,9 @@ body {
   flex-shrink: 0;
 }
 
-/*!***********************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
-  !*** css ./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[13].oneOf[2].use[1]!./node_modules/next/dist/build/webpack/loaders/next-font-loader/index.js??ruleSet[1].rules[13].oneOf[2].use[2]!./node_modules/next/font/google/target.css?{"path":"app/layout.tsx","import":"Poppins","arguments":[{"subsets":["latin"],"weight":["400","500","600","700"],"variable":"--font-poppins"}],"variableName":"poppins"} ***!
-  \***********************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+/*!************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[13].oneOf[2].use[1]!./node_modules/next/dist/build/webpack/loaders/next-font-loader/index.js??ruleSet[1].rules[13].oneOf[2].use[2]!./node_modules/next/font/google/target.css?{"path":"app\\layout.tsx","import":"Poppins","arguments":[{"subsets":["latin"],"weight":["400","500","600","700"],"variable":"--font-poppins"}],"variableName":"poppins"} ***!
+  \************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
 /* devanagari */
 @font-face {
   font-family: 'Poppins';
@@ -3953,9 +4007,9 @@ body {
 }.__variable_6bee3b {--font-poppins: 'Poppins', 'Poppins Fallback'
 }
 
-/*!*********************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
-  !*** css ./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[13].oneOf[2].use[1]!./node_modules/next/dist/build/webpack/loaders/next-font-loader/index.js??ruleSet[1].rules[13].oneOf[2].use[2]!./node_modules/next/font/google/target.css?{"path":"app/layout.tsx","import":"Public_Sans","arguments":[{"subsets":["latin"],"weight":["400","500","600","700"],"variable":"--font-publicSans"}],"variableName":"publicSans"} ***!
-  \*********************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+/*!**********************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[13].oneOf[2].use[1]!./node_modules/next/dist/build/webpack/loaders/next-font-loader/index.js??ruleSet[1].rules[13].oneOf[2].use[2]!./node_modules/next/font/google/target.css?{"path":"app\\layout.tsx","import":"Public_Sans","arguments":[{"subsets":["latin"],"weight":["400","500","600","700"],"variable":"--font-publicSans"}],"variableName":"publicSans"} ***!
+  \**********************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
 /* vietnamese */
 @font-face {
   font-family: 'Public Sans';
@@ -4068,9 +4122,9 @@ body {
 }.__variable_6a10ae {--font-publicSans: 'Public Sans', 'Public Sans Fallback'
 }
 
-/*!**************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
-  !*** css ./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[13].oneOf[2].use[1]!./node_modules/next/dist/build/webpack/loaders/next-font-loader/index.js??ruleSet[1].rules[13].oneOf[2].use[2]!./node_modules/next/font/google/target.css?{"path":"app/layout.tsx","import":"Roboto","arguments":[{"subsets":["latin"],"weight":["400","500","700"],"variable":"--font-roboto"}],"variableName":"roboto"} ***!
-  \**************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+/*!***************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[13].oneOf[2].use[1]!./node_modules/next/dist/build/webpack/loaders/next-font-loader/index.js??ruleSet[1].rules[13].oneOf[2].use[2]!./node_modules/next/font/google/target.css?{"path":"app\\layout.tsx","import":"Roboto","arguments":[{"subsets":["latin"],"weight":["400","500","700"],"variable":"--font-roboto"}],"variableName":"roboto"} ***!
+  \***************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
 /* cyrillic-ext */
 @font-face {
   font-family: 'Roboto';
@@ -4345,9 +4399,9 @@ body {
 }.__variable_372368 {--font-roboto: 'Roboto', 'Roboto Fallback'
 }
 
-/*!*******************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
-  !*** css ./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[13].oneOf[2].use[1]!./node_modules/next/dist/build/webpack/loaders/next-font-loader/index.js??ruleSet[1].rules[13].oneOf[2].use[2]!./node_modules/next/font/google/target.css?{"path":"app/layout.tsx","import":"Dancing_Script","arguments":[{"subsets":["latin"],"weight":["400","700"],"variable":"--font-dancing-script"}],"variableName":"dancingScript"} ***!
-  \*******************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+/*!********************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[13].oneOf[2].use[1]!./node_modules/next/dist/build/webpack/loaders/next-font-loader/index.js??ruleSet[1].rules[13].oneOf[2].use[2]!./node_modules/next/font/google/target.css?{"path":"app\\layout.tsx","import":"Dancing_Script","arguments":[{"subsets":["latin"],"weight":["400","700"],"variable":"--font-dancing-script"}],"variableName":"dancingScript"} ***!
+  \********************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
 /* vietnamese */
 @font-face {
   font-family: 'Dancing Script';
@@ -4406,9 +4460,9 @@ body {
 }.__variable_dfe091 {--font-dancing-script: 'Dancing Script', 'Dancing Script Fallback'
 }
 
-/*!********************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
-  !*** css ./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[13].oneOf[2].use[1]!./node_modules/next/dist/build/webpack/loaders/next-font-loader/index.js??ruleSet[1].rules[13].oneOf[2].use[2]!./node_modules/next/font/google/target.css?{"path":"app/layout.tsx","import":"Caveat","arguments":[{"subsets":["latin"],"weight":["400","700"],"variable":"--font-caveat"}],"variableName":"caveat"} ***!
-  \********************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+/*!*********************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[13].oneOf[2].use[1]!./node_modules/next/dist/build/webpack/loaders/next-font-loader/index.js??ruleSet[1].rules[13].oneOf[2].use[2]!./node_modules/next/font/google/target.css?{"path":"app\\layout.tsx","import":"Caveat","arguments":[{"subsets":["latin"],"weight":["400","700"],"variable":"--font-caveat"}],"variableName":"caveat"} ***!
+  \*********************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
 /* cyrillic-ext */
 @font-face {
   font-family: 'Caveat';
@@ -4424,7 +4478,7 @@ body {
   font-style: normal;
   font-weight: 400;
   font-display: swap;
-  src: url(/_next/static/media/2d1fa11201ca1574-s.woff2) format('woff2');
+  src: url(/_next/static/media/07fccecd6728972a-s.woff2) format('woff2');
   unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
 }
 /* latin-ext */
@@ -4433,7 +4487,7 @@ body {
   font-style: normal;
   font-weight: 400;
   font-display: swap;
-  src: url(/_next/static/media/8019b73d7b382c42-s.woff2) format('woff2');
+  src: url(/_next/static/media/486fce9f36bc8f45-s.woff2) format('woff2');
   unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
 }
 /* latin */
@@ -4442,7 +4496,7 @@ body {
   font-style: normal;
   font-weight: 400;
   font-display: swap;
-  src: url(/_next/static/media/283061c6fb4666b2-s.p.woff2) format('woff2');
+  src: url(/_next/static/media/46bdd75a3ff56824-s.p.woff2) format('woff2');
   unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
 }
 /* cyrillic-ext */
@@ -4460,7 +4514,7 @@ body {
   font-style: normal;
   font-weight: 700;
   font-display: swap;
-  src: url(/_next/static/media/2d1fa11201ca1574-s.woff2) format('woff2');
+  src: url(/_next/static/media/07fccecd6728972a-s.woff2) format('woff2');
   unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
 }
 /* latin-ext */
@@ -4469,7 +4523,7 @@ body {
   font-style: normal;
   font-weight: 700;
   font-display: swap;
-  src: url(/_next/static/media/8019b73d7b382c42-s.woff2) format('woff2');
+  src: url(/_next/static/media/486fce9f36bc8f45-s.woff2) format('woff2');
   unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
 }
 /* latin */
@@ -4478,10 +4532,10 @@ body {
   font-style: normal;
   font-weight: 700;
   font-display: swap;
-  src: url(/_next/static/media/283061c6fb4666b2-s.p.woff2) format('woff2');
+  src: url(/_next/static/media/46bdd75a3ff56824-s.p.woff2) format('woff2');
   unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
 }@font-face {font-family: 'Caveat Fallback';src: local("Arial");ascent-override: 124.77%;descent-override: 38.99%;line-gap-override: 0.00%;size-adjust: 76.94%
-}.__className_ea72df {font-family: 'Caveat', 'Caveat Fallback';font-style: normal
-}.__variable_ea72df {--font-caveat: 'Caveat', 'Caveat Fallback'
+}.__className_34a9ff {font-family: 'Caveat', 'Caveat Fallback';font-style: normal
+}.__variable_34a9ff {--font-caveat: 'Caveat', 'Caveat Fallback'
 }
 

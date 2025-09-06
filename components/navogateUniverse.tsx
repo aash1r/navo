@@ -15,7 +15,7 @@ export default function NavogateUniverse() {
                 <img
                   src="/underline.png"
                   alt="underline"
-                  className="absolute -bottom-2 left-0 w-full h-auto"
+                  className="absolute -bottom-2 left-0 w-full h-2"
                 />
               </span>
             </span>

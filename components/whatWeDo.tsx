@@ -21,15 +21,16 @@ export default function WhatWeDo() {
       <div className="flex items-center justify-center gap-2.5 pt-16 pb-8 md:pb-0 px-4 md:px-8 lg:px-[118px] relative self-stretch w-full mb-[90px] sm:mb-0 lg:mb-0">
         <div className="flex flex-col w-full max-w-[1139px] min-h-[493px] md:h-[493px] items-center gap-6 md:gap-[38px] relative">
           <h2 className="relative w-fit mt-[-1.00px] [font-family:'Inter',Helvetica] font-bold text-[#03336d] text-[32px] md:text-[45px] lg:text-[55.8px] text-center tracking-[0] leading-[normal] px-4">
-            WHAT WE{" "}
+            WHAT{" "}
             <span className="relative inline-block">
-              DO
+              WE
               <img
                 src="/underline.png"
                 alt="underline"
-                className="absolute -bottom-2 left-0 w-full h-auto"
+                className="absolute -bottom-2 left-0 w-full h-2"
               />
-            </span>
+            </span>{" "}
+            DO
           </h2>
 
           <div className="flex flex-col lg:flex-row w-full max-w-[1120px] items-center lg:items-start justify-center gap-24 md:gap-32 pt-[22px] pb-0 px-4 md:px-0 relative flex-[0_0_auto]">

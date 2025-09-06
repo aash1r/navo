@@ -247,7 +247,7 @@ export default function Component() {
               <img
                 src="/underline.png"
                 alt="underline"
-                className="absolute -bottom-2 left-0 w-full h-auto"
+                className="absolute -bottom-2 left-0 w-full h-2"
               />
             </span>{" "}
             RECORD
@@ -262,21 +262,33 @@ export default function Component() {
             they're the NAVO standard.
           </p>
 
-          <div className="py-4 px-4 md:px-12">
+          <div className="py-4 px-0">
             <div className="grid grid-cols-2 md:grid-cols-4 gap-px bg-[#03336d]/90">
               {data.map((item, index) => (
                 <div
                   key={index}
-                  className="bg-blue-50 text-center py-6 px-4 flex flex-col justify-center items-center"
+                  className="bg-blue-50 text-center py-6 px-8 flex flex-col justify-center items-center"
                 >
-                  <h2 className="text-[32px] sm:text-[58px] md:text-[60px] font-extrabold text-[#03336d] leading-none">
-                    {item.name === "Financial Aid"
-                      ? `$${counts[index]}`
-                      : counts[index]}
+                  {/* <h2 className="text-[32px] sm:text-[58px] md:text-[60px] font-extrabold text-[#03336d] leading-none">
+                    <span className="text-[40px] sm:text-[68px] md:text-[82px]">
+                      {item.name === "Financial Aid"
+                        ? `$${counts[index]}`
+                        : counts[index]}
+                    </span>
                     <span className="text-[16px] sm:text-[28px] md:text-[30px] align-bottom">
                       {item.signs}
                     </span>
+                  </h2> */}
+
+                  <h2 className="text-[54px] sm:text-[58px] md:text-[72px] font-extrabold text-[#03336d] leading-tight">
+                    {item.name === "Financial Aid"
+                      ? `$${counts[index]}`
+                      : counts[index]}
+                    <span className="text-[42px]">
+                      {item.signs}
+                    </span>
                   </h2>
+
                   <br />
 
                   <p className="text-lg text-[#03336d] mb-2 leading-tight">
