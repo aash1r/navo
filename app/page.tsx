@@ -37,10 +37,10 @@ const data = [
     percentage: 15,
     signs: "+",
   },
-  { name: "Admissions Covered in Regions", percentage: 8, signs: "+" },
-  { name: "Students from Countries", percentage: 10, signs: "+" },
+  { name: "Regions Covered", percentage: 8, signs: "+" },
+  { name: "Student Nationalities", percentage: 10, signs: "+" },
   { name: "Top Acceptances", percentage: 3000, signs: "+" },
-  { name: "More likely Get In", percentage: 10, signs: "x" },
+  { name: "Better Ods", percentage: 10, signs: "x" },
   { name: "Financial Aid", percentage: 30, signs: "m" },
   { name: "More STEM Acceptances", percentage: 5, signs: "x" },
 ];
@@ -258,7 +258,7 @@ export default function Component() {
           <p className="font-['Poppins',Helvetica] text-xl text-gray-800 leading-relaxed mb-6">
             With hundreds of students coached, 80% early acceptance success,
             100% students got admission and millions in scholarships awarded, we
-            don't just guide — we deliver.These results aren't exceptions —
+            don't just guide — we deliver. These results aren't exceptions —
             they're the NAVO standard.
           </p>
 

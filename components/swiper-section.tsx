@@ -66,7 +66,7 @@ Demonstrate genuine interest via targeted essays, interviews, and follow‑up`,
     image: "/sw5.png",
     title: "Secure Strong Recommendations",
     category: "You",
-    details: `effective recommendation letters showcase your character, not just your achievements:
+    details: `Effective recommendation letters showcase your character, not just your achievements:
 Guide mentors to write vivid, specific testimonials
 Equip recommenders with tailored insights into your impact and growth`,
   },
@@ -223,7 +223,7 @@ export default function Swiper() {
           </span>
         </p>
         <p className="font-['Poppins',Helvetica] text-3xl text-gray-800 leading-relaxed mb-6 text-center">
-          Your Roadmap to a Winning Application: The NAVO 4-Step Process
+          Your Roadmap to a Winning Application: The NAVO 6-Step Process
         </p>
         {/* <div className="flex flex-col lg:flex-row gap-6 lg:gap-12 items-center lg:items-start"> */}
         <div className="flex flex-col lg:flex-row gap-6 lg:gap-12 items-center lg:items-center">
