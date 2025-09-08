@@ -914,12 +914,6 @@ video {
 .h-px {
   height: 1px;
 }
-.h-\[\] {
-  height: ;
-}
-.h-20 {
-  height: 5rem;
-}
 .max-h-96 {
   max-height: 24rem;
 }
@@ -1291,9 +1285,6 @@ video {
 .border-t {
   border-top-width: 1px;
 }
-.border-none {
-  border-style: none;
-}
 .border-\[\#03336d\] {
   --tw-border-opacity: 1;
   border-color: rgb(3 51 109 / var(--tw-border-opacity, 1));
@@ -1545,9 +1536,6 @@ video {
 .p-6 {
   padding: 1.5rem;
 }
-.p-10 {
-  padding: 2.5rem;
-}
 .px-0 {
   padding-left: 0px;
   padding-right: 0px;
@@ -1732,6 +1720,15 @@ video {
 .text-\[37px\] {
   font-size: 37px;
 }
+.text-\[40px\] {
+  font-size: 40px;
+}
+.text-\[42px\] {
+  font-size: 42px;
+}
+.text-\[54px\] {
+  font-size: 54px;
+}
 .text-\[length\:var\(--text-regular-normal-font-size\)\] {
   font-size: var(--text-regular-normal-font-size);
 }
@@ -1759,42 +1756,6 @@ video {
 .text-xl {
   font-size: 1.25rem;
   line-height: 1.75rem;
-}
-.text-\[50px\] {
-  font-size: 50px;
-}
-.text-\[40px\] {
-  font-size: 40px;
-}
-.text-\[38px\] {
-  font-size: 38px;
-}
-.text-\[48px\] {
-  font-size: 48px;
-}
-.text-\[54px\] {
-  font-size: 54px;
-}
-.text-\[30px\] {
-  font-size: 30px;
-}
-.text-\[28px\] {
-  font-size: 28px;
-}
-.text-\[1px\] {
-  font-size: 1px;
-}
-.text-\[18px\] {
-  font-size: 18px;
-}
-.text-\[20px\] {
-  font-size: 20px;
-}
-.text-\[4px\] {
-  font-size: 4px;
-}
-.text-\[42px\] {
-  font-size: 42px;
 }
 .font-\[400\] {
   font-weight: 400;
@@ -1993,9 +1954,6 @@ video {
 .text-yellow-400 {
   --tw-text-opacity: 1;
   color: rgb(250 204 21 / var(--tw-text-opacity, 1));
-}
-.text-\[px\] {
-  color: px;
 }
 .underline {
   text-decoration-line: underline;
@@ -3126,6 +3084,10 @@ body {
     font-size: 58px;
   }
 
+  .sm\:text-\[68px\] {
+    font-size: 68px;
+  }
+
   .sm\:text-base {
     font-size: 1rem;
     line-height: 1.5rem;
@@ -3139,10 +3101,6 @@ body {
   .sm\:text-xl {
     font-size: 1.25rem;
     line-height: 1.75rem;
-  }
-
-  .sm\:text-\[68px\] {
-    font-size: 68px;
   }
 
   .sm\:leading-\[28px\] {
@@ -3397,11 +3355,6 @@ body {
     padding-bottom: 6rem;
   }
 
-  .md\:px-4 {
-    padding-left: 1rem;
-    padding-right: 1rem;
-  }
-
   .md\:pb-0 {
     padding-bottom: 0px;
   }
@@ -3469,6 +3422,14 @@ body {
     font-size: 60px;
   }
 
+  .md\:text-\[72px\] {
+    font-size: 72px;
+  }
+
+  .md\:text-\[82px\] {
+    font-size: 82px;
+  }
+
   .md\:text-base {
     font-size: 1rem;
     line-height: 1.5rem;
@@ -3489,14 +3450,6 @@ body {
     line-height: 1.75rem;
   }
 
-  .md\:text-\[72px\] {
-    font-size: 72px;
-  }
-
-  .md\:text-\[82px\] {
-    font-size: 82px;
-  }
-
   .md\:leading-\[17px\] {
     line-height: 17px;
   }
@@ -3515,10 +3468,6 @@ body {
 
   .md\:leading-\[70px\] {
     line-height: 70px;
-  }
-
-  .md\:text-\[px\] {
-    color: px;
   }
 
   .md\:decoration-4 {

@@ -12,7 +12,7 @@ export default function Header() {
 
   const [mobileOpen, setMobileOpen] = useState(false);
 
-  const phoneNumber = "923360348013"; // Format: countrycode + number
+  const phoneNumber = "923250341777"; // Format: countrycode + number
   const message = encodeURIComponent(
     "Hi Aman, I saw your project and wanted to connect!"
   );
