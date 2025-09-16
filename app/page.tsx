@@ -29,6 +29,7 @@ import NavogateUniverse from "@/components/navogateUniverse";
 import Link from "next/link";
 import Header from "@/components/header";
 import WhatWeDo from "@/components/whatWeDo";
+import emailjs from "emailjs-com";
 
 const data = [
   { name: "Students", percentage: 550, signs: "+" },
@@ -51,6 +52,29 @@ export default function Component() {
   const ctaRef = useRef<HTMLDivElement>(null);
   const footerRef = useRef<HTMLDivElement>(null);
   const videoRef = useRef<HTMLVideoElement>(null);
+
+  const [email, setEmail] = useState("");
+  const [status, setStatus] = useState("");
+
+  const handleSubscribe = () => {
+    if (!email) {
+      setStatus("Please enter a valid email");
+      return;
+    }
+
+    emailjs
+      .send(
+        "service_0i6cqah", // replace with EmailJS service ID
+        "template_xv0y10k", // replace with EmailJS template ID
+        { email }, // template params
+        "x2Rj-TukOxeJQEB38" // replace with EmailJS public key
+      )
+      .then(() => {
+        setStatus("✅ Subscribed successfully!");
+        setEmail("");
+      })
+      .catch(() => setStatus("❌ Failed to subscribe. Try again."));
+  };
 
   // const [counts, setCounts] = useState(data.map(() => 0));
   // useEffect(() => {
@@ -284,9 +308,7 @@ export default function Component() {
                     {item.name === "Financial Aid"
                       ? `$${counts[index]}`
                       : counts[index]}
-                    <span className="text-[42px]">
-                      {item.signs}
-                    </span>
+                    <span className="text-[42px]">{item.signs}</span>
                   </h2>
 
                   <br />
@@ -356,10 +378,10 @@ export default function Component() {
               consultation.
             </p>
             <a
-              href="tel:+15551234567"
+              href="tel:+971553277414"
               className="font-['Roboto',Helvetica] font-normal text-black text-[18.5px] text-center leading-[27.8px] underline w-full"
             >
-              +92 325 0341777
+              +971 55 3277414
             </a>
           </div>
 
@@ -376,7 +398,7 @@ export default function Component() {
               documents.
             </p>
             <span className="font-['Roboto',Helvetica] font-normal text-black text-[18.5px] text-center leading-[27.8px] underline w-full">
-              41-C, Khayaban-e-Bukhari, Phase 6, DHA, Karachi, Pakistan.
+              Office 88, 6th Floor, Rasis Business Center, Al Barsha 1, Dubai.
             </span>
           </div>
           {/* </div> */}
@@ -396,10 +418,12 @@ export default function Component() {
               Fill out our short form for a consultation to learn about Navo
               services.
             </p>
-            <Button className="bg-blue-900 hover:bg-blue-800 text-white px-6 py-2 rounded transition-colors w-full sm:w-auto">
-              Connect with us
-              <ArrowRight className="w-4 h-4 ml-2" />
-            </Button>
+            <a href="/connect">
+              <Button className="bg-blue-900 hover:bg-blue-800 text-white px-6 py-2 rounded transition-colors w-full sm:w-auto">
+                Connect with us
+                <ArrowRight className="w-4 h-4 ml-2" />
+              </Button>
+            </a>
           </div>
         </div>
       </div>
@@ -445,71 +469,91 @@ export default function Component() {
             </div>
 
             {/* Right Section: Navigation Links */}
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-8 lg:gap-12">
-              {/* Quick Links */}
-              <div>
-                <h3 className="text-white font-semibold text-lg mb-4">
-                  Quick Links
-                </h3>
-                <nav className="space-y-3">
-                  <a
-                    href="#"
-                    className="block text-white/80 hover:text-white transition-colors text-sm"
-                  >
-                    ABOUT US
-                  </a>
-                  <a
-                    href="#"
-                    className="block text-white/80 hover:text-white transition-colors text-sm"
-                  >
-                    SERVICES
-                  </a>
-                  <a
-                    href="#"
-                    className="block text-white/80 hover:text-white transition-colors text-sm"
-                  >
-                    EXPLORE
-                  </a>
-                  <a
-                    href="#"
-                    className="block text-white/80 hover:text-white transition-colors text-sm"
-                  >
-                    MYNAVOPORTAL
-                  </a>
-                </nav>
+            <div className="grid grid-cols-1 gap-8 lg:gap-12">
+              {/* Input Box with Arrow Button */}
+              <div className="flex items-center bg-transparent max-w-md mx-auto sm:mx-0 border-b border-white">
+                <input
+                  type="email"
+                  placeholder="Enter your email"
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
+                  className="flex-grow py-2 text-gray-200 placeholder-gray-400 bg-transparent focus:outline-none"
+                />
+                <button
+                  onClick={handleSubscribe}
+                  className="text-white py-2 transition-colors"
+                >
+                  →
+                </button>
               </div>
 
-              {/* Others */}
-              <div>
-                <h3 className="text-white font-semibold text-lg mb-4">
-                  Others
-                </h3>
-                <nav className="space-y-3">
-                  <a
-                    href="#"
-                    className="block text-white/80 hover:text-white transition-colors text-sm"
-                  >
-                    PARTNERS
-                  </a>
-                  <a
-                    href="#"
-                    className="block text-white/80 hover:text-white transition-colors text-sm"
-                  >
-                    TESTIMONIALS
-                  </a>
-                  <a
-                    href="#"
-                    className="block text-white/80 hover:text-white transition-colors text-sm"
-                  >
-                    TERMS & CONDITIONS
-                  </a>
-                  <a
-                    href="#"
-                    className="block text-white/80 hover:text-white transition-colors text-sm"
-                  >
-                    PRIVACY POLICY
-                  </a>
-                </nav>
+              {/* Links Section in Two Columns */}
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-8 lg:gap-12">
+                {/* Quick Links */}
+                <div>
+                  <h3 className="text-white font-semibold text-lg mb-4">
+                    Quick Links
+                  </h3>
+                  <nav className="space-y-3">
+                    <a
+                      href="#"
+                      className="block text-white/80 hover:text-white transition-colors text-sm"
+                    >
+                      ABOUT US
+                    </a>
+                    <a
+                      href="#"
+                      className="block text-white/80 hover:text-white transition-colors text-sm"
+                    >
+                      SERVICES
+                    </a>
+                    <a
+                      href="#"
+                      className="block text-white/80 hover:text-white transition-colors text-sm"
+                    >
+                      EXPLORE
+                    </a>
+                    <a
+                      href="#"
+                      className="block text-white/80 hover:text-white transition-colors text-sm"
+                    >
+                      MYNAVOPORTAL
+                    </a>
+                  </nav>
+                </div>
+
+                {/* Others */}
+                <div>
+                  <h3 className="text-white font-semibold text-lg mb-4">
+                    Others
+                  </h3>
+                  <nav className="space-y-3">
+                    <a
+                      href="#"
+                      className="block text-white/80 hover:text-white transition-colors text-sm"
+                    >
+                      PARTNERS
+                    </a>
+                    <a
+                      href="#"
+                      className="block text-white/80 hover:text-white transition-colors text-sm"
+                    >
+                      TESTIMONIALS
+                    </a>
+                    <a
+                      href="#"
+                      className="block text-white/80 hover:text-white transition-colors text-sm"
+                    >
+                      TERMS & CONDITIONS
+                    </a>
+                    <a
+                      href="#"
+                      className="block text-white/80 hover:text-white transition-colors text-sm"
+                    >
+                      PRIVACY POLICY
+                    </a>
+                  </nav>
+                </div>
               </div>
             </div>
           </div>

@@ -236,12 +236,22 @@ export default function page() {
       <div className="bg-gray-50 py-16">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mt-16">
-            <h1 className="font-poppins font-black text-4xl lg:text-6xl text-[#03336d] mb-8 tracking-tight leading-tight">
+            <h1 className="font-poppins font-black text-4xl lg:text-6xl text-[#03336d] mb-8 tracking-tight leading-tight uppercase">
               Speak to Us
             </h1>
             <div className="max-w-4xl mx-auto text-left">
               <p className="font-poppins text-lg lg:text-xl text-gray-700 leading-relaxed mb-6">
-                Our job is to make high quality impact in getting undergraduate and graduate applicants to their dream universities. Starting <span className="text-green-400 underline">Earlier</span> always makes a difference.
+                Our job is to make high quality impact in getting undergraduate
+                and graduate applicants to their dream universities. Starting{" "}
+                <span className="relative inline-block">
+                  earlier
+                  <img
+                    src="/underline.png"
+                    alt="underline"
+                    className="absolute -bottom-1 left-0 w-full h-1"
+                  />
+                </span>{" "}
+                always makes a difference.
               </p>
             </div>
           </div>
@@ -431,7 +441,8 @@ export default function page() {
             {/* Curent clg/uni */}
             <div className="mb-8">
               <Label className="font-poppins text-lg font-semibold text-[#03336d] mb-4 block">
-                Current School/University: <span className="text-red-500">*</span>
+                Current School/University:{" "}
+                <span className="text-red-500">*</span>
               </Label>
               <Input className="w-full max-w-md h-12 border-2 border-gray-300 rounded-md px-4 text-base focus:border-[#03336d] focus:outline-none focus:ring-0 font-poppins" />
             </div>
@@ -439,9 +450,13 @@ export default function page() {
             {/* Current Year in School */}
             <div className="mb-8">
               <Label className="font-poppins text-lg font-semibold text-[#03336d] mb-4 block">
-                Current Year in School /University: <span className="text-red-500">*</span>
+                Current Year in School /University:{" "}
+                <span className="text-red-500">*</span>
               </Label>
-              <Input className="w-full max-w-md h-12 border-2 border-gray-300 rounded-md px-4 text-base focus:border-[#03336d] focus:outline-none focus:ring-0 font-poppins" placeholder="Enter your current year" />
+              <Input
+                className="w-full max-w-md h-12 border-2 border-gray-300 rounded-md px-4 text-base focus:border-[#03336d] focus:outline-none focus:ring-0 font-poppins"
+                placeholder="Enter your current year"
+              />
             </div>
 
             {/* Year of High School Graduation */}
@@ -449,7 +464,10 @@ export default function page() {
               <Label className="font-poppins text-lg font-semibold text-[#03336d] mb-4 block">
                 Year of Graduation: <span className="text-red-500">*</span>
               </Label>
-              <Input className="w-full max-w-md h-12 border-2 border-gray-300 rounded-md px-4 text-base focus:border-[#03336d] focus:outline-none focus:ring-0 font-poppins" placeholder="Enter your graduation year" />
+              <Input
+                className="w-full max-w-md h-12 border-2 border-gray-300 rounded-md px-4 text-base focus:border-[#03336d] focus:outline-none focus:ring-0 font-poppins"
+                placeholder="Enter your graduation year"
+              />
             </div>
 
             {/* Comments */}

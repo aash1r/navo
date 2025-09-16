@@ -8,144 +8,205 @@ import {
   LinkedinIcon,
   TwitterIcon,
   YoutubeIcon,
-} from "lucide-react";import React from 'react'
+} from "lucide-react";
+import { useRef, useState } from "react";
 import { Button } from "./ui/button";
+import emailjs from "emailjs-com";
 
 export default function Footer() {
   // Column one links data
   const columnOneLinks = ["About Us", "Services", "Contact Us", "FAQs", "Blog"];
+  const footerRef = useRef<HTMLDivElement>(null);
 
-  // Column two links data
-  const columnTwoLinks = [
-    "Testimonials",
-    "Partners",
-    "Events",
-    "Resources",
-    "Support",
-  ];
-  // Social media links data
-  const socialLinks = [
-    { name: "Facebook", icon: <FacebookIcon className="w-6 h-6" /> },
-    { name: "Instagram", icon: <InstagramIcon className="w-6 h-6" /> },
-    { name: "Twitter", icon: <TwitterIcon className="w-6 h-6" /> },
-    { name: "LinkedIn", icon: <LinkedinIcon className="w-6 h-6" /> },
-    { name: "YouTube", icon: <YoutubeIcon className="w-6 h-6" /> },
-  ];
+  
+const [email, setEmail] = useState("");
+const [status, setStatus] = useState("");
+
+const handleSubscribe = () => {
+  if (!email) {
+    setStatus("Please enter a valid email");
+    return;
+  }
+
+  emailjs
+    .send(
+      "service_0i6cqah", // replace with EmailJS service ID
+      "template_xv0y10k", // replace with EmailJS template ID
+      { email }, // template params
+      "x2Rj-TukOxeJQEB38" // replace with EmailJS public key
+    )
+    .then(() => {
+      setStatus("✅ Subscribed successfully!");
+      setEmail("");
+    })
+    .catch(() => setStatus("❌ Failed to subscribe. Try again."));
+};
   return (
     <div>
+      {/* Footer */}
       <footer
+        ref={footerRef}
         id="footer"
-        className="flex flex-col w-full px-6 py-12 bg-[#03336d] text-white gap-16 lg:px-32 lg:py-20"
+        className="bg-[#03336d] text-white px-6 py-12 lg:px-32 lg:py-16"
       >
-        {/* Top Section: Logo + Newsletter */}
-        <div className="flex flex-col lg:flex-row w-full justify-between gap-12">
-          {/* Left: Logo & Info */}
-          <div className="w-full lg:w-1/2 flex flex-col gap-6">
-            <img
-              className="w-[196px] h-auto"
-              alt="Navo Logo"
-              src="/navoLogo.png"
-            />
-            <p className="text-white text-base leading-relaxed">
-              Stay up to date on the latest features and releases by joining our
-              newsletter.
-            </p>
-            <p className="text-white text-sm opacity-80">
-              By subscribing, you agree to our Privacy Policy and consent to
-              receive updates from our company.
-            </p>
-          </div>
+        <div className="max-w-7xl mx-auto">
+          {/* Main Footer Content */}
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 mb-12">
+            {/* Left Section: Logo, Newsletter & Certification */}
+            <div className="space-y-6">
+              {/* Logo */}
+              <img
+                className="w-[150px] h-auto"
+                alt="Navo Logo"
+                src="/navoLogo.png"
+              />
 
-          {/* Right: Newsletter Form */}
-          <div className="w-full lg:w-1/2">
-            <div className="text-center lg:text-left flex flex-col items-center lg:items-start gap-4">
-              <h2 className="text-2xl sm:text-3xl font-semibold font-roboto leading-tight">
-                Get the Latest
-              </h2>
-              <h3 className="text-3xl sm:text-4xl font-bold font-roboto leading-tight">
-                Educational Updates
-              </h3>
-              <span className="text-lg sm:text-base font-medium font-poppins">
-                Sign Up For Our Newsletter
-              </span>
-
-              <div className="flex items-center w-full sm:w-auto">
-                <input
-                  type="email"
-                  placeholder="YOUR EMAIL"
-                  className="border-b-2 border-white bg-transparent px-4 py- text-white placeholder-gray-200 focus:outline-none focus:border-white w-full sm:w-64 text-sm sm:text-base"
-                />
-                <Button className="ml-4 bg-transparent hover:bg-blue-900 p-2 transition-colors">
-                  <ArrowRight className="w-5 h-5 text-white" />
-                </Button>
+              {/* Newsletter Text */}
+              <div className="space-y-3">
+                <p className="text-white text-base leading-relaxed">
+                  Stay up to date on the latest features and releases by joining
+                  our newsletter.
+                </p>
+                <p className="text-white/80 text-sm leading-relaxed">
+                  By subscribing, you agree to our Privacy Policy and consent to
+                  receive updates from our company.
+                </p>
               </div>
 
-              {/* <form className="flex flex-col sm:flex-row items-center w-full gap-4">
+              {/* KHDA Certification Logo */}
+              <div className="pt-4">
+                <img
+                  className="w-[150px] h-auto"
+                  alt="KHDA Certification"
+                  src="/khda-logo.png"
+                />
+              </div>
+            </div>
+
+            {/* Right Section: Navigation Links */}
+            <div className="grid grid-cols-1 gap-8 lg:gap-12">
+              {/* Input Box with Arrow Button */}
+              <div className="flex items-center bg-transparent max-w-md mx-auto sm:mx-0 border-b border-white">
                 <input
                   type="email"
-                  placeholder="Your email"
-                  className="flex-1 bg-white text-[#03336d] rounded-full px-5 py-3 text-sm placeholder:text-gray-500 focus:outline-none w-full sm:w-auto"
+                  placeholder="Enter your email"
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
+                  className="flex-grow py-2 text-gray-200 placeholder-gray-400 bg-transparent focus:outline-none"
                 />
                 <button
-                  type="submit"
-                  className="bg-white text-[#03336d] font-semibold rounded-full px-6 py-3 hover:bg-gray-200 transition-colors"
+                  onClick={handleSubscribe}
+                  className="text-white py-2 transition-colors"
                 >
-                  Subscribe
+                  →
                 </button>
-              </form> */}
+              </div>
+
+              {/* Links Section in Two Columns */}
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-8 lg:gap-12">
+                {/* Quick Links */}
+                <div>
+                  <h3 className="text-white font-semibold text-lg mb-4">
+                    Quick Links
+                  </h3>
+                  <nav className="space-y-3">
+                    <a
+                      href="#"
+                      className="block text-white/80 hover:text-white transition-colors text-sm"
+                    >
+                      ABOUT US
+                    </a>
+                    <a
+                      href="#"
+                      className="block text-white/80 hover:text-white transition-colors text-sm"
+                    >
+                      SERVICES
+                    </a>
+                    <a
+                      href="#"
+                      className="block text-white/80 hover:text-white transition-colors text-sm"
+                    >
+                      EXPLORE
+                    </a>
+                    <a
+                      href="#"
+                      className="block text-white/80 hover:text-white transition-colors text-sm"
+                    >
+                      MYNAVOPORTAL
+                    </a>
+                  </nav>
+                </div>
+
+                {/* Others */}
+                <div>
+                  <h3 className="text-white font-semibold text-lg mb-4">
+                    Others
+                  </h3>
+                  <nav className="space-y-3">
+                    <a
+                      href="#"
+                      className="block text-white/80 hover:text-white transition-colors text-sm"
+                    >
+                      PARTNERS
+                    </a>
+                    <a
+                      href="#"
+                      className="block text-white/80 hover:text-white transition-colors text-sm"
+                    >
+                      TESTIMONIALS
+                    </a>
+                    <a
+                      href="#"
+                      className="block text-white/80 hover:text-white transition-colors text-sm"
+                    >
+                      TERMS & CONDITIONS
+                    </a>
+                    <a
+                      href="#"
+                      className="block text-white/80 hover:text-white transition-colors text-sm"
+                    >
+                      PRIVACY POLICY
+                    </a>
+                  </nav>
+                </div>
+              </div>
             </div>
           </div>
-        </div>
 
-        {/* Bottom Section: Links */}
-        <div className="w-full grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-12">
-          {/* Column One */}
-          <div className="flex flex-col items-start gap-4">
-            <h3 className="text-lg font-semibold">Column One</h3>
-            <nav className="flex flex-col gap-2 w-full">
-              {columnOneLinks.map((link, index) => (
-                <a
-                  key={index}
-                  href="#"
-                  className="text-sm hover:underline text-white"
-                >
-                  {link}
-                </a>
-              ))}
-            </nav>
-          </div>
+          {/* Bottom Section: Copyright & Social */}
+          <div className="border-t border-white/20 pt-8 flex flex-col sm:flex-row justify-between items-center gap-4">
+            {/* Copyright */}
+            <p className="text-white/80 text-sm">©2024 All rights reserved</p>
 
-          {/* Column Two */}
-          <div className="flex flex-col items-start gap-4">
-            <h3 className="text-lg font-semibold">Column Two</h3>
-            <nav className="flex flex-col gap-2 w-full">
-              {columnTwoLinks.map((link, index) => (
-                <a
-                  key={index}
-                  href="#"
-                  className="text-sm hover:underline text-white"
-                >
-                  {link}
-                </a>
-              ))}
-            </nav>
-          </div>
-
-          {/* Social */}
-          <div className="flex flex-col items-start gap-4">
-            <h3 className="text-lg font-semibold">Follow Us</h3>
-            <nav className="flex flex-col gap-2 w-full">
-              {socialLinks.map((social, index) => (
-                <a
-                  key={index}
-                  href="#"
-                  className="flex items-center gap-3 text-sm hover:underline text-white"
-                >
-                  {social.icon}
-                  <span>{social.name}</span>
-                </a>
-              ))}
-            </nav>
+            {/* Social Media Icons */}
+            <div className="flex items-center gap-4">
+              <a
+                href="#"
+                className="text-white hover:text-white/80 transition-colors"
+              >
+                <FacebookIcon className="w-5 h-5" />
+              </a>
+              <a
+                href="https://instagram.com/navo.ed"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-white hover:text-white/80 transition-colors"
+              >
+                <InstagramIcon className="w-5 h-5" />
+              </a>
+              <a
+                href="#"
+                className="text-white hover:text-white/80 transition-colors"
+              >
+                <LinkedinIcon className="w-5 h-5" />
+              </a>
+              <a
+                href="#"
+                className="text-white hover:text-white/80 transition-colors"
+              >
+                <YoutubeIcon className="w-5 h-5" />
+              </a>
+            </div>
           </div>
         </div>
       </footer>
