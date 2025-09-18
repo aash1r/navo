@@ -10,7 +10,7 @@ import {
   Mail,
   Phone,
   MapPin,
-  ArrowUpRight,
+  Hash,
   Volume2,
   VolumeOff,
 } from "lucide-react";
@@ -48,7 +48,7 @@ const data = [
 
 export default function Component() {
   const [isAboveFooter, setIsAboveFooter] = useState(false);
-  const [isMuted, setIsMuted] = useState(true);
+  const [isMuted, setIsMuted] = useState(false);
   const ctaRef = useRef<HTMLDivElement>(null);
   const footerRef = useRef<HTMLDivElement>(null);
   const videoRef = useRef<HTMLVideoElement>(null);
@@ -344,8 +344,7 @@ export default function Component() {
 
       {/* Contact Information Section */}
       <div className="py-28 px-6 md:px-16 lg:px-24 bg-gray-50 w-full">
-        <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8">
-          {/* <div className="grid grid-cols-1 md:grid-cols-3 gap-8 sm:gap-12"> */}
+        <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-8">
           {/* Email */}
           <div className="text-center">
             <div className="flex justify-center mb-7">
@@ -401,7 +400,33 @@ export default function Component() {
               Office 88, 6th Floor, Rasis Business Center, Al Barsha 1, Dubai.
             </span>
           </div>
-          {/* </div> */}
+
+          {/* Social Media */}
+          <div className="text-center">
+            <div className="flex justify-center mb-7">
+              <Hash className="w-16 h-16" />
+            </div>
+            <h3 className="font-['Roboto',Helvetica] font-bold text-[#03336d] text-[37px] text-center leading-[48.2px] mt-[-1.16px] mb-7">
+              Social Media
+            </h3>
+            <p className="font-['Roboto',Helvetica] font-normal text-black text-[18.5px] text-center leading-[27.8px] mb-7">
+              Connect with us on our social channels.
+            </p>
+            <div className="flex justify-center gap-6">
+              <a href="#" className="text-black hover:text-[#03336d] text-2xl">
+                <FacebookIcon />
+              </a>
+              <a href="#" className="text-black hover:text-[#03336d] text-2xl">
+                <InstagramIcon />
+              </a>
+              <a href="#" className="text-black hover:text-[#03336d] text-2xl">
+                <LinkedinIcon />
+              </a>
+              <a href="#" className="text-black hover:text-[#03336d] text-2xl">
+                <TwitterIcon />
+              </a>
+            </div>
+          </div>
         </div>
       </div>
 
