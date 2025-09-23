@@ -178,35 +178,7 @@ const handleSubscribe = () => {
             {/* Copyright */}
             <p className="text-white/80 text-sm">©2024 All rights reserved</p>
 
-            {/* Social Media Icons */}
-            <div className="flex items-center gap-4">
-              <a
-                href="#"
-                className="text-white hover:text-white/80 transition-colors"
-              >
-                <FacebookIcon className="w-5 h-5" />
-              </a>
-              <a
-                href="https://instagram.com/navo.ed"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-white hover:text-white/80 transition-colors"
-              >
-                <InstagramIcon className="w-5 h-5" />
-              </a>
-              <a
-                href="#"
-                className="text-white hover:text-white/80 transition-colors"
-              >
-                <LinkedinIcon className="w-5 h-5" />
-              </a>
-              <a
-                href="#"
-                className="text-white hover:text-white/80 transition-colors"
-              >
-                <YoutubeIcon className="w-5 h-5" />
-              </a>
-            </div>
+            
           </div>
         </div>
       </footer>

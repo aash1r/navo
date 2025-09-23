@@ -29,6 +29,7 @@ import NavogateUniverse from "@/components/navogateUniverse";
 import Link from "next/link";
 import Header from "@/components/header";
 import WhatWeDo from "@/components/whatWeDo";
+import FloatingWhatsApp from "@/components/floating-whatsapp";
 import emailjs from "emailjs-com";
 
 const data = [
@@ -140,9 +141,9 @@ export default function Component() {
     };
   }, [hasAnimated]);
 
-  const phoneNumber = "923360348013"; // Format: countrycode + number
+  const phoneNumber = "923250341777"; // Format: countrycode + number
   const message = encodeURIComponent(
-    "Hi Aman, I saw your project and wanted to connect!"
+    "How can we help you today?"
   );
 
   const handleClick = () => {
@@ -349,16 +350,11 @@ export default function Component() {
           <div className="text-center">
             <div className="flex justify-center mb-7">
               <Mail className="w-16 h-16" />
-            </div>
-            <h3 className="font-['Roboto',Helvetica] font-bold text-[#03336d] text-[37px] text-center leading-[48.2px] mt-[-1.16px] mb-7">
-              Email
-            </h3>
-            <p className="font-['Roboto',Helvetica] font-normal text-black text-[18.5px] text-center leading-[27.8px] mb-7">
-              Feel free to reach out to us with any questions or inquiries.
-            </p>
+            </div>  
+            
             <a
               href="mailto:hello@navoconsulting.com"
-              className="font-['Roboto',Helvetica] font-normal text-black text-[18.5px] text-center leading-[27.8px] underline w-full"
+              className="font-['Roboto',Helvetica] font-normal text-black text-[24px] text-center leading-[32px] underline w-full"
             >
               connect@navo.work
             </a>
@@ -369,18 +365,19 @@ export default function Component() {
             <div className="flex justify-center mb-7">
               <Phone className="w-16 h-16" />
             </div>
-            <h3 className="font-['Roboto',Helvetica] font-bold text-[#03336d] text-[37px] text-center leading-[48.2px] mt-[-1.16px] mb-7">
-              Phone
-            </h3>
-            <p className="font-['Roboto',Helvetica] font-normal text-black text-[18.5px] text-center leading-[27.8px] mb-7">
-              Give us a call for immediate assistance or to schedule a
-              consultation.
-            </p>
             <a
               href="tel:+971553277414"
-              className="font-['Roboto',Helvetica] font-normal text-black text-[18.5px] text-center leading-[27.8px] underline w-full"
+              className="font-['Roboto',Helvetica] font-normal text-black text-[24px] text-center leading-[32px] underline w-full"
             >
               +971 55 3277414
+            </a>
+            <br />
+            <br />
+            <a
+              href="tel:+923250341777"
+              className="font-['Roboto',Helvetica] font-normal text-black text-[24px] text-center leading-[32px] underline w-full"
+            >
+              +92 32 50341777
             </a>
           </div>
 
@@ -389,15 +386,13 @@ export default function Component() {
             <div className="flex justify-center mb-7">
               <MapPin className="w-16 h-16" />
             </div>
-            <h3 className="font-['Roboto',Helvetica] font-bold text-[#03336d] text-[37px] text-center leading-[48.2px] mt-[-1.16px] mb-7">
-              Office
-            </h3>
-            <p className="font-['Roboto',Helvetica] font-normal text-black text-[18.5px] text-center leading-[27.8px] mb-7">
-              Visit our office for a face-to-face meeting or to drop off
-              documents.
-            </p>
-            <span className="font-['Roboto',Helvetica] font-normal text-black text-[18.5px] text-center leading-[27.8px] underline w-full">
+            <span className="font-['Roboto',Helvetica] font-normal text-black text-[24px] text-center leading-[32px] underline w-full">
               Office 88, 6th Floor, Rasis Business Center, Al Barsha 1, Dubai.
+            </span>
+            <br />
+            <br />
+            <span className="font-['Roboto',Helvetica] font-normal text-black text-[24px] text-center leading-[32px] underline w-full">
+            41-C, Khayaban-e-Bukhari, Phase 6, DHA, Karachi, Pakistan.
             </span>
           </div>
 
@@ -406,23 +401,37 @@ export default function Component() {
             <div className="flex justify-center mb-7">
               <Hash className="w-16 h-16" />
             </div>
-            <h3 className="font-['Roboto',Helvetica] font-bold text-[#03336d] text-[37px] text-center leading-[48.2px] mt-[-1.16px] mb-7">
-              Social Media
-            </h3>
-            <p className="font-['Roboto',Helvetica] font-normal text-black text-[18.5px] text-center leading-[27.8px] mb-7">
-              Connect with us on our social channels.
-            </p>
             <div className="flex justify-center gap-6">
-              <a href="#" className="text-black hover:text-[#03336d] text-2xl">
+              <a 
+                href="https://www.facebook.com/profile.php?id=61574014345229" 
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-black hover:text-[#03336d] text-4xl"
+              >
                 <FacebookIcon />
               </a>
-              <a href="#" className="text-black hover:text-[#03336d] text-2xl">
+              <a 
+                href="https://www.instagram.com/navo.ed?igsh=eGd5ZDVuZjBrdGs=" 
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-black hover:text-[#03336d] text-4xl"
+              >
                 <InstagramIcon />
               </a>
-              <a href="#" className="text-black hover:text-[#03336d] text-2xl">
+              <a 
+                href="https://www.linkedin.com/company/navo-ed/" 
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-black hover:text-[#03336d] text-4xl"
+              >
                 <LinkedinIcon />
               </a>
-              <a href="#" className="text-black hover:text-[#03336d] text-2xl">
+              <a 
+                href="https://www.tiktok.com/@navo1482?_t=ZS-8zxyInM47Hj&_r=1" 
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-black hover:text-[#03336d] text-4xl"
+              >
                 <TwitterIcon />
               </a>
             </div>
@@ -588,38 +597,12 @@ export default function Component() {
             {/* Copyright */}
             <p className="text-white/80 text-sm">©2024 All rights reserved</p>
 
-            {/* Social Media Icons */}
-            <div className="flex items-center gap-4">
-              <a
-                href="#"
-                className="text-white hover:text-white/80 transition-colors"
-              >
-                <FacebookIcon className="w-5 h-5" />
-              </a>
-              <a
-                href="https://instagram.com/navo.ed"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-white hover:text-white/80 transition-colors"
-              >
-                <InstagramIcon className="w-5 h-5" />
-              </a>
-              <a
-                href="#"
-                className="text-white hover:text-white/80 transition-colors"
-              >
-                <LinkedinIcon className="w-5 h-5" />
-              </a>
-              <a
-                href="#"
-                className="text-white hover:text-white/80 transition-colors"
-              >
-                <YoutubeIcon className="w-5 h-5" />
-              </a>
-            </div>
           </div>
         </div>
       </footer>
+
+      {/* Floating WhatsApp Button */}
+      <FloatingWhatsApp />
     </div>
   );
 }

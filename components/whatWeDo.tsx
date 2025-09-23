@@ -3,13 +3,13 @@ import { Card, CardContent } from "@/components/ui/card";
 // import { GraduationCapIcon, UserIcon } from "lucide-react";
 const serviceCards = [
   {
-    icon: "/undergrad.png",
+    icon: "/book.png",
     title: "UNDERGRADUATE COUNSELING",
     description:
       "Expert guidance for high school students navigating college admissions from building a school list to crafting standout applications.",
   },
   {
-    icon: "/grad.png",
+    icon: "/bird.png",
     title: "GRADUATE COUNSELLING",
     description:
       "Strategic support for applicants pursuing Master's, MBA, or PhD programs — from selecting programs to perfecting personal statements and CVs.",

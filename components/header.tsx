@@ -14,7 +14,7 @@ export default function Header() {
 
   const phoneNumber = "923250341777"; // Format: countrycode + number
   const message = encodeURIComponent(
-    "Hi Aman, I saw your project and wanted to connect!"
+    ""
   );
 
   const handleClick = () => {
