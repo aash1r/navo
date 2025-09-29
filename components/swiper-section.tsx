@@ -200,13 +200,11 @@ export default function Swiper() {
     };
   }, [isDragging, startX, dragOffset, currentIndex]);
 
-
   const detailLines = swipeData[currentIndex].details
     .split("\n")
     .filter((line) => line.trim() !== "");
   const introLine = detailLines[0];
   const bulletPoints = detailLines.slice(1);
-
 
   return (
     <div className="py-4 sm:py-8 mt-20">
@@ -299,10 +297,10 @@ export default function Swiper() {
 
           {/* Image Swiper Section - Second on large screens, First on mobile */}
           <div className="w-full lg:flex-1 order-1 lg:order-2">
-            <div className="relative w-full max-w-sm sm:max-w-md lg:max-w-lg mx-auto">
+            <div className="relative w-full max-w-lg sm:max-w-md lg:max-w-lg mx-auto">
               <div
                 ref={containerRef}
-                className="relative h-[500px] sm:h-[600px] lg:h-[700px] perspective-1000"
+                className="relative h-[600px] sm:h-[600px] lg:h-[700px] perspective-1000"
                 onTouchStart={handleTouchStart}
                 onTouchMove={handleTouchMove}
                 onTouchEnd={handleTouchEnd}
@@ -313,7 +311,7 @@ export default function Swiper() {
                 <button
                   onClick={prevSlide}
                   disabled={currentIndex === 0}
-                  className="flex absolute left-2 top-1/2 -translate-y-1/2 z-20 bg-white border border-gray-300 rounded-full w-10 h-10 items-center justify-center shadow hover:bg-gray-100 disabled:opacity-40"
+                  className="flex absolute -left-4 top-1/2 -translate-y-1/2 z-20 bg-white border border-gray-300 rounded-full w-10 h-10 items-center justify-center shadow hover:bg-gray-100 disabled:opacity-40"
                 >
                   <ChevronLeft className="text-gray-800" />
                 </button>
@@ -321,7 +319,7 @@ export default function Swiper() {
                 <button
                   onClick={nextSlide}
                   disabled={currentIndex === swipeData.length - 1}
-                  className="flex absolute right-2 top-1/2 -translate-y-1/2 z-20 bg-white border border-gray-300 rounded-full w-10 h-10 items-center justify-center shadow hover:bg-gray-100 disabled:opacity-40"
+                  className="flex absolute -right-4 top-1/2 -translate-y-1/2 z-20 bg-white border border-gray-300 rounded-full w-10 h-10 items-center justify-center shadow hover:bg-gray-100 disabled:opacity-40"
                 >
                   <ChevronRight className="text-gray-800" />
                 </button>
@@ -367,7 +365,7 @@ export default function Swiper() {
                         transformStyle: "preserve-3d",
                       }}
                     >
-                      <div className="w-[220px] h-[300px] sm:w-[400px] sm:h-[500px] bg-white rounded-3xl shadow-2xl overflow-hidden border-2 border-white">
+                      <div className="w-[300px] h-[400px] sm:w-[420px] sm:h-[500px] bg-white rounded-3xl shadow-2xl overflow-hidden border-2 border-white">
                         <div className="relative w-full h-full">
                           <Image
                             src={item.image || "/placeholder.svg"}

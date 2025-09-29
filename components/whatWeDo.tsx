@@ -1,15 +1,14 @@
-// import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
-// import { GraduationCapIcon, UserIcon } from "lucide-react";
+import Image from "next/image";
 const serviceCards = [
   {
-    icon: "/book.png",
+    icon: "/Navo-Book-Icon.png",
     title: "UNDERGRADUATE COUNSELING",
     description:
       "Expert guidance for high school students navigating college admissions from building a school list to crafting standout applications.",
   },
   {
-    icon: "/bird.png",
+    icon: "/Navo-Bird-Icon.png",
     title: "GRADUATE COUNSELLING",
     description:
       "Strategic support for applicants pursuing Master's, MBA, or PhD programs — from selecting programs to perfecting personal statements and CVs.",
@@ -78,11 +77,14 @@ export default function WhatWeDo() {
                   <CardContent className="p-4 md:p-5 lg:p-6 flex flex-col h-full relative">
                     {/* Icon */}
                     <div className="mb-4 md:mb-5 lg:mb-6">
-                      <img
+                      <Image
+                      height={80}
+                      alt="icons"
+                      width={80}
                         src={service.icon}
-                        className="w-[45px] h-[45px] md:w-[50px] md:h-[50px] lg:w-[60px] lg:h-[60px] text-white/80 group-hover:text-white"
+                        className="w-[50px] h-[50px] md:w-[60px] md:h-[60px] lg:w-[70px] lg:h-[70px] text-white/80 group-hover:text-white"
                       />
-                      {/* <service.icon className="w-[45px] h-[45px] md:w-[50px] md:h-[50px] lg:w-[60px] lg:h-[60px] text-white/80 group-hover:text-white" /> */}
+                  
                     </div>
 
                     {/* Title */}

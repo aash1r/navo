@@ -1,80 +1,3 @@
-// {
-//   /* Main Content */
-// }
-// <section className="w-full bg-gray-50 overflow-hidden">
-//   {/* Container with reversed order on mobile */}
-//   <div className="flex flex-col md:flex-row w-full max-w-[1920px]">
-//     {/* Image section - comes first on mobile */}
-//     <div className="md:hidden w-full bg-[#03336d] pt-6  pl-12 lg:pl-20">
-//       <div
-//         className="w-[90vw] h-[90vh] mx-auto bg-[url('/picture---yearbook-page-with-notes-marked-on-student-s-faces---w.png')] bg-cover bg-center"
-//         aria-label="Yearbook page with notes marked on student's faces"
-//       />
-//     </div>
-
-//     {/* Text content section */}
-//     <div className="flex-1 py-12 px-6 md:py-16 md:px-12 lg:px-20 flex justify-center">
-//       <div className="flex flex-col w-[90vw] md:w-full max-w-[530px] items-center gap-6">
-//         <div className="flex flex-col items-center w-full pt-4 md:pt-8">
-//           <h1 className="font-publicSans font-extrabold text-[#03336d] text-5xl leading-[60px] sm:text-5xl sm:leading-[60px] md:text-5xl md:leading-[70px] lg:text-6xl lg:leading-[70px] text-center tracking-[-0.6px] lg:tracking-[-1.56px]">
-//             IT'S NOT
-//             <br />
-//             JUST ABOUT
-//           </h1>
-
-//           <h2 className="line-through decoration-orange-500 decoration-[3px] md:decoration-[4px] font-publicSans font-extrabold text-[#03336d] text-5xl leading-[60px] sm:text-5xl sm:leading-[60px] md:text-5xl md:leading-[70px] lg:text-6xl lg:leading-[70px] text-center tracking-[-0.6px] lg:tracking-[-1.56px] whitespace-nowrap">
-//             A* & A&apos;s
-//           </h2>
-//         </div>
-
-//         {/* Description text */}
-//         <div className="w-[90vw] md:w-full max-w-[400px]">
-//           <p className="font-poppins font-normal text-[#03336d] text-lg leading-[24px] sm:text-xl sm:leading-[28px] md:text-2xl md:leading-[31.2px] text-center">
-//             It's about presenting compelling, truthful narratives in essays and
-//             activities that showcase a singular hook, rather than
-//             well-roundedness.
-//           </p>
-//         </div>
-//       </div>
-//     </div>
-
-//     {/* Image section - comes after text on desktop */}
-//     <div className="hidden md:block flex-1 bg-[#03336d] pl-12 lg:pl-20">
-//       <div
-//         className="w-full h-[122vh] bg-[url('/picture---yearbook-page-with-notes-marked-on-student-s-faces---w.png')] bg-cover bg-center"
-//         aria-label="Yearbook page with notes marked on student's faces"
-//       />
-//     </div>
-//   </div>
-// </section>;
-
-
-
-//    {
-//      /* <div
-//         ref={ctaRef}
-//         className={`w-full bg-white border-t z-50 transition-all duration-300 ${
-//           // isAboveFooter ? "absolute bottom-0" : "fixed bottom-0 left-0"
-//           isAboveFooter ? "absolute bottom-[100%]" : "fixed bottom-0 left-0"
-//         }`}
-//       >
-//         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
-//           <div className="flex flex-col sm:flex-row sm:justify-between sm:items-center gap-4">
-//             <p className="font-poppins text-gray-900 font-bold text-sm sm:text-base">
-//               Fill out our short form for a consultation to learn about Navo
-//               services.
-//             </p>
-//             <Button className="font-poppins font-medium bg-blue-900 hover:bg-blue-800 text-white px-6 py-2 rounded transition-colors w-full sm:w-auto">
-//               Connect with us
-//               <ArrowRight className="w-4 h-4 ml-2" />
-//             </Button>
-//           </div>
-//         </div>
-//       </div> */
-//    }
-
-
-
 "use client";
 
 import { useEffect, useRef, useState } from "react";
@@ -607,7 +530,7 @@ export default function Component() {
               services.
             </p>
             <Button className="bg-blue-900 hover:bg-blue-800 text-white px-6 py-2 rounded transition-colors w-full sm:w-auto">
-              Connect with us
+              CONNECT WITH US
               <ArrowRight className="w-4 h-4 ml-2" />
             </Button>
           </div>

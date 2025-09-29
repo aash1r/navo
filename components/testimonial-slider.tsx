@@ -19,26 +19,26 @@ interface Testimonial {
 const testimonials: Testimonial[] = [
   {
     quote:
-      "We had the privilege of working with Navo and i couldn't have had a better option for my son. The team has deep knowledge of colleges all over the world and guided us rightly to apply to the best universities, seeing our child's interests and strengths. The feedback on the essay writing was excellent.My son got accepted in almost most of the prestigious universities where he applied in UK, USA and Canada",
-    name: "Dr.Fatima Akhund",
-    role: "PHD Student",
-    institutionLogo: "/university-logo.png",
-    image: "/avatar-image1.png?height=48&width=48",
+      "Working with Navo was the best possible investment to secure my future. Their honesty and genuineness make them the best option to plan your future",
+    name: "Faiz Iqbal",
+    role: "",
+    institutionLogo: "/unies.png",
+    image: "/faiz.jpeg?height=48&width=48",
   },
   {
     quote:
-      "Their expert guidance and unwavering support have been instrumental in navigating the complexities of university applications. I am immensely grateful for their expertise and support, and I wholeheartedly recommend their services to anyone embarking on their journey to higher education",
+      "Their expert guidance and unwavering support have been instrumental in navigating the complexities of university applications. I wholeheartedly recommend their services.",
     name: "Muhammad Raahim Sodha",
-    role: "PHD Student",
+    role: "",
     institutionLogo: "/ImperialUnilogo.png",
     image: "/testimonialuser2.png?height=48&width=48",
   },
   {
     quote: "Best counsellors. Transformative journey. Dream College.",
     name: "Zaaria Butt",
-    role: "PHD Student",
+    role: "",
     institutionLogo: "/university-logo.png",
-    image: "/avatar-image3.png?height=48&width=48",
+    image: "/zaria.jpeg?height=48&width=48",
   },
 ];
 
@@ -130,9 +130,9 @@ export function TestimonialSlider() {
                 <div className="font-roboto font-semibold text-gray-900">
                   {currentTestimonial.name}
                 </div>
-                <div className="font-roboto text-gray-600 text-sm">
+                {/* <div className="font-roboto text-gray-600 text-sm">
                   {currentTestimonial.role}
-                </div>
+                </div> */}
               </div>
             </div>
             <div className="flex items-center space-x-2">

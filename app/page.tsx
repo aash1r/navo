@@ -2,10 +2,9 @@
 
 import { useEffect, useRef, useState } from "react";
 import { Button } from "@/components/ui/button";
-import { MobileNav } from "@/components/mobile-nav";
 import { TestimonialSlider } from "@/components/testimonial-slider";
 import {
-  Headphones,
+
   ArrowRight,
   Mail,
   Phone,
@@ -14,17 +13,14 @@ import {
   Volume2,
   VolumeOff,
 } from "lucide-react";
-import {
-  FacebookIcon,
-  InstagramIcon,
-  LinkedinIcon,
-  TwitterIcon,
-  YoutubeIcon,
-} from "lucide-react";
+
+import { FaTwitter, FaInstagram, FaFacebook, FaLinkedin } from "react-icons/fa"
+import { SiTiktok } from "react-icons/si";
+
 import NavoStellerSection from "@/components/NavoStellerSection";
 import Swiper from "@/components/swiper-section";
 import CounselorsHelpStudents from "@/components/counselors-help-students";
-import { FaWhatsapp } from "react-icons/fa";
+
 import NavogateUniverse from "@/components/navogateUniverse";
 import Link from "next/link";
 import Header from "@/components/header";
@@ -49,7 +45,7 @@ const data = [
 
 export default function Component() {
   const [isAboveFooter, setIsAboveFooter] = useState(false);
-  const [isMuted, setIsMuted] = useState(false);
+  const [isMuted, setIsMuted] = useState(true);
   const ctaRef = useRef<HTMLDivElement>(null);
   const footerRef = useRef<HTMLDivElement>(null);
   const videoRef = useRef<HTMLVideoElement>(null);
@@ -76,27 +72,6 @@ export default function Component() {
       })
       .catch(() => setStatus("❌ Failed to subscribe. Try again."));
   };
-
-  // const [counts, setCounts] = useState(data.map(() => 0));
-  // useEffect(() => {
-  //   const intervals = data.map((item, index) => {
-  //     const increment = Math.ceil(item.percentage / 50); // adjust speed
-  //     return setInterval(() => {
-  //       setCounts((prev) => {
-  //         const newCounts = [...prev];
-  //         if (newCounts[index] < item.percentage) {
-  //           newCounts[index] = Math.min(
-  //             newCounts[index] + increment,
-  //             item.percentage
-  //           );
-  //         }
-  //         return newCounts;
-  //       });
-  //     }, 30); // delay between updates
-  //   });
-
-  //   return () => intervals.forEach((interval) => clearInterval(interval));
-  // }, []);
 
   const [counts, setCounts] = useState(data.map(() => 0));
   const sectionRef = useRef(null);
@@ -200,14 +175,6 @@ export default function Component() {
     "Support",
   ];
 
-  // Social media links data
-  const socialLinks = [
-    { name: "Facebook", icon: <FacebookIcon className="w-6 h-6" /> },
-    { name: "Instagram", icon: <InstagramIcon className="w-6 h-6" /> },
-    { name: "Twitter", icon: <TwitterIcon className="w-6 h-6" /> },
-    { name: "LinkedIn", icon: <LinkedinIcon className="w-6 h-6" /> },
-    { name: "YouTube", icon: <YoutubeIcon className="w-6 h-6" /> },
-  ];
 
   return (
     <div className="min-h-screen bg-white">
@@ -294,16 +261,6 @@ export default function Component() {
                   key={index}
                   className="bg-blue-50 text-center py-6 px-8 flex flex-col justify-center items-center"
                 >
-                  {/* <h2 className="text-[32px] sm:text-[58px] md:text-[60px] font-extrabold text-[#03336d] leading-none">
-                    <span className="text-[40px] sm:text-[68px] md:text-[82px]">
-                      {item.name === "Financial Aid"
-                        ? `$${counts[index]}`
-                        : counts[index]}
-                    </span>
-                    <span className="text-[16px] sm:text-[28px] md:text-[30px] align-bottom">
-                      {item.signs}
-                    </span>
-                  </h2> */}
 
                   <h2 className="text-[54px] sm:text-[58px] md:text-[72px] font-extrabold text-[#03336d] leading-tight">
                     {item.name === "Financial Aid"
@@ -344,100 +301,91 @@ export default function Component() {
       </div>
 
       {/* Contact Information Section */}
-      <div className="py-28 px-6 md:px-16 lg:px-24 bg-gray-50 w-full">
-        <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-8">
-          {/* Email */}
-          <div className="text-center">
-            <div className="flex justify-center mb-7">
-              <Mail className="w-16 h-16" />
-            </div>  
-            
-            <a
-              href="mailto:hello@navoconsulting.com"
-              className="font-['Roboto',Helvetica] font-normal text-black text-[24px] text-center leading-[32px] underline w-full"
-            >
-              connect@navo.work
-            </a>
-          </div>
-
-          {/* Phone */}
-          <div className="text-center">
-            <div className="flex justify-center mb-7">
-              <Phone className="w-16 h-16" />
-            </div>
-            <a
-              href="tel:+971553277414"
-              className="font-['Roboto',Helvetica] font-normal text-black text-[24px] text-center leading-[32px] underline w-full"
-            >
-              +971 55 3277414
-            </a>
-            <br />
-            <br />
-            <a
-              href="tel:+923250341777"
-              className="font-['Roboto',Helvetica] font-normal text-black text-[24px] text-center leading-[32px] underline w-full"
-            >
-              +92 32 50341777
-            </a>
-          </div>
-
-          {/* Office */}
-          <div className="text-center">
-            <div className="flex justify-center mb-7">
-              <MapPin className="w-16 h-16" />
-            </div>
-            <span className="font-['Roboto',Helvetica] font-normal text-black text-[24px] text-center leading-[32px] underline w-full">
-              Office 88, 6th Floor, Rasis Business Center, Al Barsha 1, Dubai.
-            </span>
-            <br />
-            <br />
-            <span className="font-['Roboto',Helvetica] font-normal text-black text-[24px] text-center leading-[32px] underline w-full">
-            41-C, Khayaban-e-Bukhari, Phase 6, DHA, Karachi, Pakistan.
-            </span>
-          </div>
-
-          {/* Social Media */}
-          <div className="text-center">
-            <div className="flex justify-center mb-7">
-              <Hash className="w-16 h-16" />
-            </div>
-            <div className="flex justify-center gap-6">
-              <a 
-                href="https://www.facebook.com/profile.php?id=61574014345229" 
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-black hover:text-[#03336d] text-4xl"
-              >
-                <FacebookIcon />
-              </a>
-              <a 
-                href="https://www.instagram.com/navo.ed?igsh=eGd5ZDVuZjBrdGs=" 
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-black hover:text-[#03336d] text-4xl"
-              >
-                <InstagramIcon />
-              </a>
-              <a 
-                href="https://www.linkedin.com/company/navo-ed/" 
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-black hover:text-[#03336d] text-4xl"
-              >
-                <LinkedinIcon />
-              </a>
-              <a 
-                href="https://www.tiktok.com/@navo1482?_t=ZS-8zxyInM47Hj&_r=1" 
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-black hover:text-[#03336d] text-4xl"
-              >
-                <TwitterIcon />
-              </a>
-            </div>
-          </div>
-        </div>
+    <div className="py-16 px-4 md:px-12 lg:px-20 bg-gradient-to-br from-gray-50 to-gray-100 w-full">
+  <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 md:gap-12">
+    
+    {/* Address */}
+    <div className="text-center bg-white rounded-2xl shadow-md p-6 hover:shadow-xl transition duration-300 transform hover:-translate-y-2">
+      <div className="flex justify-center mb-5">
+        <MapPin className="w-12 h-12 md:w-14 md:h-14 lg:w-16 lg:h-16 text-[#03336d] transition-transform duration-300 hover:scale-110" />
       </div>
+      <p className="font-['Roboto',Helvetica] text-gray-800 text-base md:text-lg lg:text-xl leading-relaxed">
+        Office 88, 6th Floor, Rasis Business Center, Al Barsha 1, Dubai.
+      </p>
+      <br />
+      <p className="font-['Roboto',Helvetica] text-gray-800 text-base md:text-lg lg:text-xl leading-relaxed">
+        41-C, Khayaban-e-Bukhari, Phase 6, DHA, Karachi, Pakistan.
+      </p>
+    </div>
+
+    {/* Phone */}
+    <div className="text-center bg-white rounded-2xl shadow-md p-6 hover:shadow-xl transition duration-300 transform hover:-translate-y-2">
+      <div className="flex justify-center mb-5">
+        <Phone className="w-12 h-12 md:w-14 md:h-14 lg:w-16 lg:h-16 text-[#03336d] transition-transform duration-300 hover:scale-110" />
+      </div>
+      <a
+        href="tel:+971553277414"
+        className="block text-gray-800 font-medium text-base md:text-lg lg:text-xl hover:text-[#03336d] transition duration-300"
+      >
+        +971 55 3277414
+      </a>
+      <br />
+      <a
+        href="tel:+923250341777"
+        className="block text-gray-800 font-medium text-base md:text-lg lg:text-xl hover:text-[#03336d] transition duration-300"
+      >
+        +92 32 50341777
+      </a>
+    </div>
+
+    {/* Email */}
+    <div className="text-center bg-white rounded-2xl shadow-md p-6 hover:shadow-xl transition duration-300 transform hover:-translate-y-2">
+      <div className="flex justify-center mb-5">
+        <Mail className="w-12 h-12 md:w-14 md:h-14 lg:w-16 lg:h-16 text-[#03336d] transition-transform duration-300 hover:scale-110" />
+      </div>
+      <a
+        href="mailto:hello@navoconsulting.com"
+        className="block text-gray-800 font-medium text-base md:text-lg lg:text-xl hover:text-[#03336d] transition duration-300"
+      >
+        connect@navo.work
+      </a>
+    </div>
+
+    {/* Social Media */}
+    <div className="text-center bg-white rounded-2xl shadow-md p-6 hover:shadow-xl transition duration-300 transform hover:-translate-y-2">
+      <div className="flex justify-center mb-5">
+        <Hash className="w-12 h-12 md:w-14 md:h-14 lg:w-16 lg:h-16 text-[#03336d] transition-transform duration-300 hover:scale-110" />
+      </div>
+      <div className="flex justify-center flex-wrap gap-5 md:gap-6">
+        <a href="https://www.facebook.com/profile.php?id=61574014345229" target="_blank" rel="noopener noreferrer"
+          className="text-blue-400 hover:text-blue-500 text-3xl md:text-4xl transition-transform transform hover:scale-125 duration-300">
+          <FaFacebook />
+        </a>
+        <a href="https://www.instagram.com/navo.ed?igsh=eGd5ZDVuZjBrdGs=" target="_blank" rel="noopener noreferrer"
+          className="text-pink-400 hover:text-pink-500 text-3xl md:text-4xl transition-transform transform hover:scale-125 duration-300">
+          <FaInstagram />
+        </a>
+        <a href="https://www.linkedin.com/company/navo-ed/" target="_blank" rel="noopener noreferrer"
+          className="text-blue-400 hover:text-blue-500 text-3xl md:text-4xl transition-transform transform hover:scale-125 duration-300">
+          <FaLinkedin />
+        </a>
+        <a href="https://twitter.com/" target="_blank" rel="noopener noreferrer"
+          className="text-blue-600 hover:text-[#03336d] text-3xl md:text-4xl transition-transform transform hover:scale-125 duration-300">
+          <FaTwitter />
+        </a>
+        <a href="https://www.tiktok.com/@navo1482?_t=ZS-8zxyInM47Hj&_r=1" target="_blank" rel="noopener noreferrer"
+          className="text-red-500 hover:text-[#03336d] text-3xl md:text-4xl transition-transform transform hover:scale-125 duration-300">
+          <SiTiktok />
+        </a>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+
+
+
 
       {/* Sticky CTA Section */}
       <div
@@ -454,7 +402,7 @@ export default function Component() {
             </p>
             <a href="/connect">
               <Button className="bg-blue-900 hover:bg-blue-800 text-white px-6 py-2 rounded transition-colors w-full sm:w-auto">
-                Connect with us
+                CONNECT WITH US
                 <ArrowRight className="w-4 h-4 ml-2" />
               </Button>
             </a>
