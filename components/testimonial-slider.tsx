@@ -31,13 +31,13 @@ const testimonials: Testimonial[] = [
     name: "Muhammad Raahim Sodha",
     role: "",
     institutionLogo: "/ImperialUnilogo.png",
-    image: "/testimonialuser2.png?height=48&width=48",
+    image: "/Rahim.jpeg?height=48&width=48",
   },
   {
     quote: "Best counsellors. Transformative journey. Dream College.",
     name: "Zaaria Butt",
     role: "",
-    institutionLogo: "/university-logo.png",
+    institutionLogo: "/Zaariya_Uni.png",
     image: "/zaria.jpeg?height=48&width=48",
   },
 ];
