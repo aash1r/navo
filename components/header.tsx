@@ -74,17 +74,8 @@ export default function Header() {
                 </div>
               )}
             </div>
-            {/* <Link
-              href="/"
-              className={
-                isHomePage
-                  ? "text-white hover:text-gray-400 transition-colors"
-                  : "text-gray-900 hover:text-gray-600 transition-colors"
-              }
-            >
-              Services
-            </Link> */}
-
+            
+            
             <Link
               href="#"
               className={

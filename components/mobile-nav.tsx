@@ -1,7 +1,7 @@
-"use client"
+"use client";
 
-import { useState } from "react"
-import { Button } from "@/components/ui/button"
+import { useState } from "react";
+import { Button } from "@/components/ui/button";
 import {
   Sheet,
   SheetContent,
@@ -11,7 +11,8 @@ import {
 } from "@/components/ui/sheet";
 import { Menu, Headphones, ArrowUpRight } from "lucide-react";
 import { FaWhatsapp } from "react-icons/fa";
-
+import Link from "next/link";
+import { usePathname } from "next/navigation";
 export function MobileNav({
   open,
   setOpen,
@@ -20,15 +21,16 @@ export function MobileNav({
   setOpen: (value: boolean) => void;
 }) {
   const phoneNumber = "923250341777"; // Format: countrycode + number
-  const message = encodeURIComponent(
-    ""
-  );
+  const message = encodeURIComponent("");
 
   const handleClick = () => {
     const url = `https://wa.me/${phoneNumber}?text=${message}`;
     window.open(url, "_blank");
   };
+  const [servicesOpen, setServicesOpen]= useState(false)
 
+ const pathname = usePathname();
+  const isHomePage = pathname === "/";
   return (
     <Sheet open={open} onOpenChange={setOpen}>
       <SheetTrigger asChild>
@@ -54,13 +56,47 @@ export function MobileNav({
             >
               About Us
             </a>
-            <a
+            {/* <a
               href="#"
               className="text-lg font-medium text-gray-700 hover:text-gray-900 py-2"
               onClick={() => setOpen(false)}
             >
               Services
-            </a>
+            </a> */}
+
+ <div
+              className="relative"
+              onMouseEnter={() => setServicesOpen(true)}
+              onMouseLeave={() => setServicesOpen(false)}
+            >
+              <button
+                className={`uppercase font-bold text-gray-700 hover:text-gray-900`}
+              >
+                Services ▾
+              </button>
+
+              {/* Dropdown menu */}
+              {servicesOpen && (
+                <div className="absolute left-0 mt-0 w-80 bg-white shadow-lg rounded-lg py-2 z-50">
+                  <Link
+                    href="/services/Undergrad"
+                    className="block px-4 py-2 text-sm text-gray-800 hover:bg-gray-100"
+                  >
+                    Grad counselling
+                  </Link>
+                  <Link
+                    href="/undergrad"
+                    className="block px-4 py-2 text-sm text-gray-800 hover:bg-gray-100"
+                  >
+                      Undergrad counselling
+                  </Link>
+                </div>
+              )}
+            </div>
+           
+
+
+
             <a
               href="#"
               className="text-lg font-medium text-gray-700 hover:text-gray-900 py-2"
