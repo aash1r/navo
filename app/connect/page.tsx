@@ -2,7 +2,7 @@
 import Footer from "@/components/footer";
 import Header from "@/components/header";
 import NavogateUniverse from "@/components/navogateUniverse";
-import { Button } from "@/components/ui/button";
+
 import { Checkbox } from "@/components/ui/checkbox";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
@@ -14,7 +14,9 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select";
-import React, { useState } from "react";
+import emailjs from '@emailjs/browser'
+
+import React, { useRef, useState } from "react";
 
 const countries = [
   { code: "af", name: "Afghanistan" },
@@ -217,16 +219,46 @@ const countries = [
 
 
 export default function page() {
-  const [comment, setComment] = useState<string>("");
-  const maxChars = 150;
+     
+ const [success, setSuccess] = useState(false);
+  const [error, setError] = useState(false);
+const form = useRef<HTMLFormElement | null>()
 
-  const handleChange = (e: React.ChangeEvent<HTMLTextAreaElement>) => {
-    const input = e.target.value;
-    if (input.length <= maxChars) {
-      setComment(input);
-    }
+
+  const sendEmail = (e:React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    setError(false);
+    setSuccess(false);
+    if (!form.current) return; // safety check
+
+    emailjs
+      .sendForm(
+       "service_0i6cqah", 
+      "template_xv0y10k", 
+        form.current,
+        "x2Rj-TukOxeJQEB38"
+        
+        
+      )
+      .then(
+        () => {
+          setSuccess(true);
+          console.log(
+             "service_0i6cqah", 
+      "template_xv0y10k",
+            form.current,
+           "x2Rj-TukOxeJQEB38"
+          );
+          form.current?.reset();
+        },
+        () => {
+          setError(true);
+        }
+      );
   };
 
+
+ 
   return (
     <div className="min-h-screen bg-gray-50">
       {/* Header */}
@@ -261,7 +293,7 @@ export default function page() {
       {/* Form Section */}
       <div className="bg-gray-50 pb-12">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <form className="text-gray-700">
+          <form onSubmit={sendEmail} ref={form} className="text-gray-700">
             {/* Name of Student */}
             <div className="mb-8 text-gray-700">
               <Label className="font-poppins text-lg font-semibold text-[#03336d] mb-4 block">
@@ -270,6 +302,7 @@ export default function page() {
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <div>
                   <Input
+                    name="firstname"
                     placeholder=""
                     className="w-full h-12 border-2 border-gray-300 rounded-md px-4 text-base focus:border-[#03336d] focus:outline-none focus:ring-0 font-poppins"
                   />
@@ -280,6 +313,7 @@ export default function page() {
                 </div>
                 <div>
                   <Input
+                    name="lastname"
                     placeholder=""
                     className="w-full h-12 border-2 border-gray-300 rounded-md px-4 text-base focus:border-[#03336d] focus:outline-none focus:ring-0 font-poppins"
                   />
@@ -299,6 +333,7 @@ export default function page() {
                 <div className="flex items-center space-x-3">
                   <RadioGroupItem
                     value="male"
+                  
                     id="male"
                     className="w-5 h-5 border-[#03336d] text-[#03336d]"
                   />
@@ -352,6 +387,7 @@ export default function page() {
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <div>
                   <Input
+                  name=""
                     placeholder=""
                     className="w-full h-12 border-2 border-gray-300 rounded-md px-4 text-base focus:border-[#03336d] focus:outline-none focus:ring-0 font-poppins"
                   />
@@ -477,12 +513,12 @@ export default function page() {
               </label>
               <textarea
                 className="w-full h-32 border-2 border-gray-300 rounded-md px-4 py-3 text-base focus:border-[#03336d] focus:outline-none focus:ring-0 resize-none font-poppins"
-                value={comment}
-                onChange={handleChange}
+                // value={comment}
+                // onChange={handleChange}
                 placeholder="Write your comment here..."
               />
               <p className="text-sm text-gray-500 mt-2">
-                {comment.length} of {maxChars} max of characters
+                {/* {comment.length} of {maxChars} max of characters */}
               </p>
             </div>
 
@@ -524,10 +560,23 @@ export default function page() {
 
             {/* Submit Button */}
             <div className="text-center">
-              <Button className="bg-yellowCust hover:bg-yellowCust/90 text-blue-900 font-poppins font-normal text-md px-10 py-6 transition-all duration-300 transform hover:scale-105">
+              <button
+                type="submit"
+                className="bg-yellowCust rounded-full hover:bg-yellowCust/90 text-blue-900 font-poppins font-normal text-md px-10 py-6 transition-all duration-300 transform hover:scale-105"
+              >
                 SUBMIT
-              </Button>
+              </button>
             </div>
+             {success && (
+              <span className="text-green-500 font-semibold ">
+                Your message has been sent successfully!
+              </span>
+            )}
+            {error && (
+              <span className="text-red-500 font-semibold">
+                Something wents wrong!
+              </span>
+            )}
           </form>
         </div>
       </div>
@@ -536,7 +585,8 @@ export default function page() {
       <NavogateUniverse />
 
       {/* Footer */}
-      <Footer />
+
+    <Footer />
     </div>
   );
 }
