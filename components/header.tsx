@@ -11,7 +11,7 @@ export default function Header() {
   const isHomePage = pathname === "/";
 
   const [mobileOpen, setMobileOpen] = useState(false);
-
+  const [servicesOpen, setServicesOpen]= useState(false)
   const phoneNumber = "923250341777"; // Format: countrycode + number
   const message = encodeURIComponent("");
 
@@ -23,7 +23,7 @@ export default function Header() {
     <div>
       {/* Header */}
       <header
-        className={`top-0 left-0 w-full z-50 transition-all duration-300
+        className={`top-0   left-0 w-full z-50 transition-all duration-300
     ${mobileOpen ? "fixed bg-white shadow-md" : "absolute bg-transparent"}
     max-[1023px]:fixed max-[1023px]:bg-white max-[1023px]:shadow-md
   `}
@@ -41,7 +41,40 @@ export default function Header() {
             >
               About Us
             </Link>
-            <Link
+            <div
+              className="relative"
+              onMouseEnter={() => setServicesOpen(true)}
+              onMouseLeave={() => setServicesOpen(false)}
+            >
+              <button
+                className={`uppercase font-bold ${
+                  isHomePage
+                    ? "text-white hover:text-gray-400"
+                    : "text-gray-900 hover:text-gray-600"
+                }`}
+              >
+                Services ▾
+              </button>
+
+              {/* Dropdown menu */}
+              {servicesOpen && (
+                <div className="absolute left-0 mt-0 w-80 bg-white shadow-lg rounded-lg py-2 z-50">
+                  <Link
+                    href="/services/Undergrad"
+                    className="block px-4 py-2 text-sm text-gray-800 hover:bg-gray-100"
+                  >
+                    Grad counselling
+                  </Link>
+                  <Link
+                    href="/undergrad"
+                    className="block px-4 py-2 text-sm text-gray-800 hover:bg-gray-100"
+                  >
+                      Undergrad counselling
+                  </Link>
+                </div>
+              )}
+            </div>
+            {/* <Link
               href="/"
               className={
                 isHomePage
@@ -50,7 +83,7 @@ export default function Header() {
               }
             >
               Services
-            </Link>
+            </Link> */}
 
             <Link
               href="#"

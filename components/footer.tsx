@@ -1,21 +1,11 @@
 "use client"
 
 
-import {
-    ArrowRight,
-  FacebookIcon,
-  InstagramIcon,
-  LinkedinIcon,
-  TwitterIcon,
-  YoutubeIcon,
-} from "lucide-react";
 import { useRef, useState } from "react";
-import { Button } from "./ui/button";
 import emailjs from "emailjs-com";
 
 export default function Footer() {
-  // Column one links data
-  const columnOneLinks = ["About Us", "Services", "Contact Us", "FAQs", "Blog"];
+
   const footerRef = useRef<HTMLDivElement>(null);
 
   
@@ -41,14 +31,13 @@ const handleSubscribe = () => {
     })
     .catch(() => setStatus("❌ Failed to subscribe. Try again."));
 };
-  return (
-    <div>
-      {/* Footer */}
+  return (   
       <footer
         ref={footerRef}
         id="footer"
         className="bg-[#03336d] text-white px-6 py-12 lg:px-32 lg:py-16"
       >
+          {/* Footer */}
         <div className="max-w-7xl mx-auto">
           {/* Main Footer Content */}
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 mb-12">
@@ -182,6 +171,6 @@ const handleSubscribe = () => {
           </div>
         </div>
       </footer>
-    </div>
+   
   );
 }
