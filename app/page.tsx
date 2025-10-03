@@ -1,32 +1,22 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
-import { Button } from "@/components/ui/button";
+
 import { TestimonialSlider } from "@/components/testimonial-slider";
-import {
+import { Mail, Phone, MapPin, Hash, Volume2, VolumeOff } from "lucide-react";
 
-  ArrowRight,
-  Mail,
-  Phone,
-  MapPin,
-  Hash,
-  Volume2,
-  VolumeOff,
-} from "lucide-react";
-
-import { FaTwitter, FaInstagram, FaFacebook, FaLinkedin } from "react-icons/fa"
+import { FaTwitter, FaInstagram, FaFacebook, FaLinkedin } from "react-icons/fa";
 import { SiTiktok } from "react-icons/si";
 
 import NavoStellerSection from "@/components/NavoStellerSection";
 import Swiper from "@/components/swiper-section";
-import CounselorsHelpStudents from "@/components/counselors-help-students";
 
 import NavogateUniverse from "@/components/navogateUniverse";
-import Link from "next/link";
 import Header from "@/components/header";
 import WhatWeDo from "@/components/whatWeDo";
 import FloatingWhatsApp from "@/components/floating-whatsapp";
-import emailjs from "emailjs-com";
+import emailjs from "@emailjs/browser";
+import AboveFooter from "@/components/AboveFooter";
 
 const data = [
   { name: "Students", percentage: 550, signs: "+" },
@@ -68,6 +58,7 @@ export default function Component() {
       )
       .then(() => {
         setStatus("✅ Subscribed successfully!");
+
         setEmail("");
       })
       .catch(() => setStatus("❌ Failed to subscribe. Try again."));
@@ -117,9 +108,7 @@ export default function Component() {
   }, [hasAnimated]);
 
   const phoneNumber = "923250341777"; // Format: countrycode + number
-  const message = encodeURIComponent(
-    "How can we help you today?"
-  );
+  const message = encodeURIComponent("How can we help you today?");
 
   const handleClick = () => {
     const url = `https://wa.me/${phoneNumber}?text=${message}`;
@@ -163,24 +152,8 @@ export default function Component() {
     };
   }, []);
 
-  // Column one links data
-  const columnOneLinks = ["About Us", "Services", "Contact Us", "FAQs", "Blog"];
-
-  // Column two links data
-  const columnTwoLinks = [
-    "Testimonials",
-    "Partners",
-    "Events",
-    "Resources",
-    "Support",
-  ];
-
-
   return (
     <div className="min-h-screen bg-white">
-      {/* Header */}
-      <Header />
-
       {/* Hero Section */}
       <div className="relative h-[30rem] sm:h-[30rem] md:h-[30rem] lg:h-[40rem]">
         <video
@@ -261,7 +234,6 @@ export default function Component() {
                   key={index}
                   className="bg-blue-50 text-center py-6 px-8 flex flex-col justify-center items-center"
                 >
-
                   <h2 className="text-[54px] sm:text-[58px] md:text-[72px] font-extrabold text-[#03336d] leading-tight">
                     {item.name === "Financial Aid"
                       ? `$${counts[index]}`
@@ -301,134 +273,125 @@ export default function Component() {
       </div>
 
       {/* Contact Information Section */}
-    <div className="py-16 px-4 md:px-12 lg:px-20 bg-gradient-to-br from-gray-50 to-gray-100 w-full">
-  <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 md:gap-12">
-    
-    {/* Address */}
-    <div className="text-center bg-white rounded-2xl shadow-md p-6 hover:shadow-xl transition duration-300 transform hover:-translate-y-2">
-      <div className="flex justify-center mb-5">
-        <MapPin className="w-12 h-12 md:w-14 md:h-14 lg:w-16 lg:h-16 text-[#03336d] transition-transform duration-300 hover:scale-110" />
-      </div>
-      <p className="font-['Roboto',Helvetica] text-gray-800 text-base md:text-lg lg:text-xl leading-relaxed">
-        Office 88, 6th Floor, Rasis Business Center, Al Barsha 1, Dubai.
-      </p>
-      <br />
-      <p className="font-['Roboto',Helvetica] text-gray-800 text-base md:text-lg lg:text-xl leading-relaxed">
-        41-C, Khayaban-e-Bukhari, Phase 6, DHA, Karachi, Pakistan.
-      </p>
-    </div>
-
-    {/* Phone */}
-    <div className="text-center bg-white rounded-2xl shadow-md p-6 hover:shadow-xl transition duration-300 transform hover:-translate-y-2">
-      <div className="flex justify-center mb-5">
-        <Phone className="w-12 h-12 md:w-14 md:h-14 lg:w-16 lg:h-16 text-[#03336d] transition-transform duration-300 hover:scale-110" />
-      </div>
-      <a
-        href="tel:+971553277414"
-        className="block text-gray-800 font-medium text-base md:text-lg lg:text-xl hover:text-[#03336d] transition duration-300"
-      >
-        +971 55 3277414
-      </a>
-      <br />
-      <a
-        href="tel:+923250341777"
-        className="block text-gray-800 font-medium text-base md:text-lg lg:text-xl hover:text-[#03336d] transition duration-300"
-      >
-        +92 32 50341777
-      </a>
-    </div>
-
-    {/* Email */}
-    <div className="text-center bg-white rounded-2xl shadow-md p-6 hover:shadow-xl transition duration-300 transform hover:-translate-y-2">
-      <div className="flex justify-center mb-5">
-        <Mail className="w-12 h-12 md:w-14 md:h-14 lg:w-16 lg:h-16 text-[#03336d] transition-transform duration-300 hover:scale-110" />
-      </div>
-      <a
-        href="mailto:hello@navoconsulting.com"
-        className="block text-gray-800 font-medium text-base md:text-lg lg:text-xl hover:text-[#03336d] transition duration-300"
-      >
-        connect@navo.work
-      </a>
-    </div>
-
-    {/* Social Media */}
-    <div className="text-center bg-white rounded-2xl shadow-md p-6 hover:shadow-xl transition duration-300 transform hover:-translate-y-2">
-      <div className="flex justify-center mb-5">
-        <Hash className="w-12 h-12 md:w-14 md:h-14 lg:w-16 lg:h-16 text-[#03336d] transition-transform duration-300 hover:scale-110" />
-      </div>
-      <div className="flex justify-center flex-wrap gap-5 md:gap-6">
-        <a href="https://www.facebook.com/profile.php?id=61574014345229" target="_blank" rel="noopener noreferrer"
-          className="text-blue-400 hover:text-blue-500 text-3xl md:text-4xl transition-transform transform hover:scale-125 duration-300">
-          <FaFacebook />
-        </a>
-        <a href="https://www.instagram.com/navo.ed?igsh=eGd5ZDVuZjBrdGs=" target="_blank" rel="noopener noreferrer"
-          className="text-pink-400 hover:text-pink-500 text-3xl md:text-4xl transition-transform transform hover:scale-125 duration-300">
-          <FaInstagram />
-        </a>
-        <a href="https://www.linkedin.com/company/navo-ed/" target="_blank" rel="noopener noreferrer"
-          className="text-blue-400 hover:text-blue-500 text-3xl md:text-4xl transition-transform transform hover:scale-125 duration-300">
-          <FaLinkedin />
-        </a>
-        <a href="https://twitter.com/" target="_blank" rel="noopener noreferrer"
-          className="text-blue-600 hover:text-[#03336d] text-3xl md:text-4xl transition-transform transform hover:scale-125 duration-300">
-          <FaTwitter />
-        </a>
-        <a href="https://www.tiktok.com/@navo1482?_t=ZS-8zxyInM47Hj&_r=1" target="_blank" rel="noopener noreferrer"
-          className="text-red-500 hover:text-[#03336d] text-3xl md:text-4xl transition-transform transform hover:scale-125 duration-300">
-          <SiTiktok />
-        </a>
-      </div>
-    </div>
-
-  </div>
-</div>
-
-
-
-
-
-      {/* Sticky CTA Section */}
-      <div
-        ref={ctaRef}
-        className={`w-full bg-white border-t z-50 transition-all duration-200 ease-in-out ${
-          isAboveFooter ? "relative" : "fixed bottom-0"
-        }`}
-      >
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
-          <div className="flex flex-col sm:flex-row sm:justify-between sm:items-center gap-4">
-            <p className="font-medium text-gray-900 text-sm sm:text-base">
-              Fill out our short form for a consultation to learn about Navo
-              services.
+      <div className="py-16 px-4 md:px-12 lg:px-20 bg-gradient-to-br from-gray-50 to-gray-100 w-full">
+        <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 md:gap-12">
+          {/* Address */}
+          <div className="text-center bg-white rounded-2xl shadow-md p-6 hover:shadow-xl transition duration-300 transform hover:-translate-y-2">
+            <div className="flex justify-center mb-5">
+              <MapPin className="w-12 h-12 md:w-14 md:h-14 lg:w-16 lg:h-16 text-[#03336d] transition-transform duration-300 hover:scale-110" />
+            </div>
+            <p className="font-['Roboto',Helvetica] text-gray-800 text-base md:text-lg lg:text-xl leading-relaxed">
+              Office 88, 6th Floor, Rasis Business Center, Al Barsha 1, Dubai.
             </p>
-            <a href="/connect">
-              <Button className="bg-blue-900 hover:bg-blue-800 text-white px-6 py-2 rounded transition-colors w-full sm:w-auto">
-                CONNECT WITH US
-                <ArrowRight className="w-4 h-4 ml-2" />
-              </Button>
+            <br />
+            <p className="font-['Roboto',Helvetica] text-gray-800 text-base md:text-lg lg:text-xl leading-relaxed">
+              41-C, Khayaban-e-Bukhari, Phase 6, DHA, Karachi, Pakistan.
+            </p>
+          </div>
+
+          {/* Phone */}
+          <div className="text-center bg-white rounded-2xl shadow-md p-6 hover:shadow-xl transition duration-300 transform hover:-translate-y-2">
+            <div className="flex justify-center mb-5">
+              <Phone className="w-12 h-12 md:w-14 md:h-14 lg:w-16 lg:h-16 text-[#03336d] transition-transform duration-300 hover:scale-110" />
+            </div>
+            <a
+              href="tel:+971553277414"
+              className="block text-gray-800 font-medium text-base md:text-lg lg:text-xl hover:text-[#03336d] transition duration-300"
+            >
+              +971 55 3277414
             </a>
+            <br />
+            <a
+              href="tel:+923250341777"
+              className="block text-gray-800 font-medium text-base md:text-lg lg:text-xl hover:text-[#03336d] transition duration-300"
+            >
+              +92 32 50341777
+            </a>
+          </div>
+
+          {/* Email */}
+          <div className="text-center bg-white rounded-2xl shadow-md p-6 hover:shadow-xl transition duration-300 transform hover:-translate-y-2">
+            <div className="flex justify-center mb-5">
+              <Mail className="w-12 h-12 md:w-14 md:h-14 lg:w-16 lg:h-16 text-[#03336d] transition-transform duration-300 hover:scale-110" />
+            </div>
+            <a
+              href="mailto:hello@navoconsulting.com"
+              className="block text-gray-800 font-medium text-base md:text-lg lg:text-xl hover:text-[#03336d] transition duration-300"
+            >
+              connect@navo.work
+            </a>
+          </div>
+
+          {/* Social Media */}
+          <div className="text-center bg-white rounded-2xl shadow-md p-6 hover:shadow-xl transition duration-300 transform hover:-translate-y-2">
+            <div className="flex justify-center mb-5">
+              <Hash className="w-12 h-12 md:w-14 md:h-14 lg:w-16 lg:h-16 text-[#03336d] transition-transform duration-300 hover:scale-110" />
+            </div>
+            <div className="grid gird-cols-2 lg:grid-cols-3 items-center justify-center mx-auto gap-5 md:gap-6">
+              <a
+                href="https://www.facebook.com/profile.php?id=61574014345229"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-blue-400 hover:text-blue-500 text-3xl md:text-4xl transition-transform transform hover:scale-125 duration-300"
+              >
+                <FaFacebook />
+              </a>
+              <a
+                href="https://www.instagram.com/navo.ed?igsh=eGd5ZDVuZjBrdGs="
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-pink-400 hover:text-pink-500 text-3xl md:text-4xl transition-transform transform hover:scale-125 duration-300"
+              >
+                <FaInstagram />
+              </a>
+              <a
+                href="https://www.linkedin.com/company/navo-ed/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-blue-400 hover:text-blue-500 text-3xl md:text-4xl transition-transform transform hover:scale-125 duration-300"
+              >
+                <FaLinkedin />
+              </a>
+              <a
+                href="https://twitter.com/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-blue-600 hover:text-[#03336d] text-3xl md:text-4xl transition-transform transform hover:scale-125 duration-300"
+              >
+                <FaTwitter />
+              </a>
+              <a
+                href="https://www.tiktok.com/@navo1482?_t=ZS-8zxyInM47Hj&_r=1"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-black  text-3xl md:text-4xl transition-transform transform hover:scale-125 duration-300"
+              >
+                <SiTiktok />
+              </a>
+            </div>
           </div>
         </div>
       </div>
 
-      {/* Footer */}
+      {/* Sticky CTA Section */}
+
+      <AboveFooter isAboveFooter={isAboveFooter} ctaRef={ctaRef} />
+
+      {/* Footer  Main*/}
       <footer
         ref={footerRef}
         id="footer"
         className="bg-[#03336d] text-white px-6 py-12 lg:px-32 lg:py-16"
       >
         <div className="max-w-7xl mx-auto">
-          {/* Main Footer Content */}
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 mb-12">
-            {/* Left Section: Logo, Newsletter & Certification */}
             <div className="space-y-6">
-              {/* Logo */}
               <img
                 className="w-[150px] h-auto"
                 alt="Navo Logo"
                 src="/navoLogo.png"
               />
 
-              {/* Newsletter Text */}
               <div className="space-y-3">
                 <p className="text-white text-base leading-relaxed">
                   Stay up to date on the latest features and releases by joining
@@ -440,7 +403,6 @@ export default function Component() {
                 </p>
               </div>
 
-              {/* KHDA Certification Logo */}
               <div className="pt-4">
                 <img
                   className="w-[150px] h-auto"
@@ -450,9 +412,7 @@ export default function Component() {
               </div>
             </div>
 
-            {/* Right Section: Navigation Links */}
             <div className="grid grid-cols-1 gap-8 lg:gap-12">
-              {/* Input Box with Arrow Button */}
               <div className="flex items-center bg-transparent max-w-md mx-auto sm:mx-0 border-b border-white">
                 <input
                   type="email"
@@ -469,9 +429,7 @@ export default function Component() {
                 </button>
               </div>
 
-              {/* Links Section in Two Columns */}
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-8 lg:gap-12">
-                {/* Quick Links */}
                 <div>
                   <h3 className="text-white font-semibold text-lg mb-4">
                     Quick Links
@@ -504,7 +462,6 @@ export default function Component() {
                   </nav>
                 </div>
 
-                {/* Others */}
                 <div>
                   <h3 className="text-white font-semibold text-lg mb-4">
                     Others
@@ -540,16 +497,16 @@ export default function Component() {
             </div>
           </div>
 
-          {/* Bottom Section: Copyright & Social */}
           <div className="border-t border-white/20 pt-8 flex flex-col sm:flex-row justify-between items-center gap-4">
-            {/* Copyright */}
             <p className="text-white/80 text-sm">©2024 All rights reserved</p>
-
           </div>
         </div>
       </footer>
 
+      {/* End Here */}
+
       {/* Floating WhatsApp Button */}
+      
       <FloatingWhatsApp />
     </div>
   );
