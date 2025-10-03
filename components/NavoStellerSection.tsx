@@ -1,6 +1,6 @@
 "use client";
 
-import { useState,  useEffect } from "react";
+import { useState, useEffect } from "react";
 import Image from "next/image";
 import { ChevronsLeft, ChevronsRight, Play, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
@@ -36,8 +36,8 @@ const testimonialVideos = [
 export default function ImageSliderSection() {
   const [startIndex, setStartIndex] = useState(0);
   const [isModalOpen, setIsModalOpen] = useState(false);
-  const [selectedVideo, setSelectedVideo] = useState<string>("");
-  const [visibleCount, setVisibleCount] = useState(2); // default mobile 2
+  const [selectedVideo, setSelectedVideo] = useState<string | null>(null);
+  const [visibleCount, setVisibleCount] = useState(2);
 
   const handleNext = () => {
     setStartIndex((prev) => (prev + 1) % testimonialVideos.length);
@@ -56,15 +56,15 @@ export default function ImageSliderSection() {
 
   const closeModal = () => {
     setIsModalOpen(false);
-    setSelectedVideo("");
+    setSelectedVideo(null); // ⛔ iframe unmount hoga → video stop ho jayegi
   };
 
-  // responsive count of videos
+  // responsive count
   useEffect(() => {
     const updateCount = () => {
-      if (window.innerWidth < 640) setVisibleCount(2); // mobile
-      else if (window.innerWidth < 1024) setVisibleCount(3); // tablet
-      else setVisibleCount(4); // desktop
+      if (window.innerWidth < 640) setVisibleCount(2);
+      else if (window.innerWidth < 1024) setVisibleCount(3);
+      else setVisibleCount(4);
     };
     updateCount();
     window.addEventListener("resize", updateCount);
@@ -82,27 +82,9 @@ export default function ImageSliderSection() {
 
   return (
     <>
+      {/* Slider */}
       <div className="bg-white py-6 sm:py-8 md:py-12 lg:py-16 xl:py-20">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-          {/* Title */}
-          <div className="text-center mb-8 sm:mb-10 md:mb-12">
-            <h1 className="font-['Poppins',Helvetica] font-bold text-[#03336d] text-3xl sm:text-5xl md:text-6xl lg:text-7xl leading-tight tracking-tight mb-3 sm:mb-4 px-2">
-              NAVO{" "}
-              <span className="relative inline-block">
-                STELLAR
-                <img
-                  src="/underline.png"
-                  alt="underline"
-                  className="absolute -bottom-1 sm:-bottom-2 left-0 w-full h-2"
-                />
-              </span>
-            </h1>
-            <p className="font-['Poppins',Helvetica] text-base sm:text-lg md:text-xl text-gray-600 px-4">
-              Stand Out, Get In, Succeed.
-            </p>
-          </div>
-
-          {/* Slider */}
           <div className="relative flex items-center justify-center">
             <ChevronsLeft
               onClick={handlePrev}
@@ -142,28 +124,34 @@ export default function ImageSliderSection() {
         </div>
       </div>
 
-      {/* Modal */}
-      {isModalOpen && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center backdrop-blur-sm p-4">
-          <div className="relative w-full max-w-[90vw] sm:max-w-2xl lg:max-w-4xl bg-black rounded-lg overflow-hidden shadow-2xl">
-            <Button
-              onClick={closeModal}
-              className="absolute top-2 right-2 bg-black/60 hover:bg-black/80 text-white rounded-full p-2 h-auto w-auto"
-            >
-              <X className="h-5 w-5" />
-            </Button>
-            <div className="relative w-full aspect-video">
-              <iframe
-                className="w-full h-full"
-                src={`${selectedVideo}?autoplay=1&rel=0&modestbranding=1`}
-                title="YouTube video player"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                allowFullScreen
-              ></iframe>
-            </div>
-          </div>
-        </div>
-      )}
+      {/* Modal with manual close */}
+     {isModalOpen && selectedVideo && (
+  <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/70 p-4">
+    <div className="relative w-full max-w-[90vw] sm:max-w-2xl lg:max-w-4xl rounded-lg overflow-hidden shadow-2xl">
+      
+      {/* ❌ Close Button Overlay */}
+      <button
+        onClick={closeModal}
+        className="absolute top-3 right-20 z-50 bg-black/70 hover:bg-black/90 text-white rounded-full p-2"
+      >
+        <X className="h-6 w-6" />
+      </button>
+
+      {/* Video Frame */}
+      <div className="relative w-full aspect-video">
+        <iframe
+          key={selectedVideo} 
+          className="w-full h-full"
+          src={`${selectedVideo}?autoplay=1&rel=0&modestbranding=1&showinfo=0&controls=1`}
+          title="YouTube video player"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowFullScreen
+        ></iframe>
+      </div>
+    </div>
+  </div>
+)}
+
     </>
   );
 }
