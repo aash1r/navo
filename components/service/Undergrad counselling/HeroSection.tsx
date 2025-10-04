@@ -10,7 +10,7 @@ const HeroSection = () => {
     <>
       <div className="relative bg-gradient-to-r md:mt-24 mt-20  bg-[#03336d]  min-h-[600px] flex items-center overflow-hidden">
         {/* Background Icon - Left Side */}
-        <div className="absolute -left-28 md:-left-36 top-1/2 -translate-y-1/2 opacity-10">
+        <div className="absolute -left-28 md:-left-32 top-1/2 -translate-y-1/2 opacity-10">
           <Image
             src={Icon}
             width={700}
@@ -32,30 +32,15 @@ const HeroSection = () => {
                 </h1>
                 <div className="flex items-center  text-3xl lg:text-4xl">
                   <span className="font-bold">With</span>
-                  {/* <span className="font-bold text-green-400">navo</span> */}
                   <Image src={Logo} width={140} height={80} alt="logoLoading" />
                 </div>
               </div>
               <Link href="/connect">
-                <button className="group flex items-center gap-3 bg-gradient-to-r from-purple-600  to-pink-600 hover:from-pink-600 hover:to-purple-600 text-white px-3 py-2 rounded-full font-semibold text-lg transition-all duration-300 shadow-lg hover:shadow-xl">
+                <button className="group flex items-center mt-16 gap-3 bg-gradient-to-r from-[#635AD9]  to-[#FF4848] hover:from-[#FF4848] hover:to-[#635AD9] text-white px-3 py-2 rounded-full font-semibold text-lg transition-all duration-300 shadow-lg hover:shadow-xl">
                   CONNECT WITH US
-                  <div className="bg-white rounded-full p-2 group-hover:translate-x-1 transition-transform">
-                    {/* <svg
-                    width="20"
-                    height="20"
-                    viewBox="0 0 20 20"
-                    fill="none"
-                    className="text-purple-600"
-                  >
-                    <path
-                      d="M4 10H16M16 10L11 5M16 10L11 15"
-                      stroke="currentColor"
-                      strokeWidth="2"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                    />
-                  </svg> */}
-                    <FaArrowRight size={25} className="text-black" />
+                  <div className="bg-white/80  rounded-full p-3 group-hover:translate-x-1 transition-transform">
+            
+                    <FaArrowRight size={20} className="text-black" />
                   </div>
                 </button>
               </Link>

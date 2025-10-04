@@ -9,7 +9,7 @@ import {
   SheetHeader,
   SheetTitle,
 } from "@/components/ui/sheet";
-import { Menu, Headphones, ArrowUpRight } from "lucide-react";
+import { Menu} from "lucide-react";
 import { FaWhatsapp } from "react-icons/fa";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
@@ -27,9 +27,9 @@ export function MobileNav({
     const url = `https://wa.me/${phoneNumber}?text=${message}`;
     window.open(url, "_blank");
   };
-  const [servicesOpen, setServicesOpen]= useState(false)
+  const [servicesOpen, setServicesOpen] = useState(false);
 
- const pathname = usePathname();
+  const pathname = usePathname();
   const isHomePage = pathname === "/";
   return (
     <Sheet open={open} onOpenChange={setOpen}>
@@ -56,15 +56,8 @@ export function MobileNav({
             >
               About Us
             </a>
-            {/* <a
-              href="#"
-              className="text-lg font-medium text-gray-700 hover:text-gray-900 py-2"
-              onClick={() => setOpen(false)}
-            >
-              Services
-            </a> */}
 
- <div
+            <div
               className="relative"
               onMouseEnter={() => setServicesOpen(true)}
               onMouseLeave={() => setServicesOpen(false)}
@@ -88,14 +81,11 @@ export function MobileNav({
                     href="/undergrad"
                     className="block px-4 py-2 text-sm text-gray-800 hover:bg-gray-100"
                   >
-                      Undergrad counselling
+                    Undergrad counselling
                   </Link>
                 </div>
               )}
             </div>
-           
-
-
 
             <a
               href="#"

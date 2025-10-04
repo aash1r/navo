@@ -4,11 +4,11 @@ import { useState } from "react";
 import { FaPlay, FaTimes } from "react-icons/fa";
 
 export default function WeWorkSection() {
-const [isVideoPlaying, setIsVideoPlaying] = useState(false);
-const videoUrl = "https://www.youtube.com/embed/dQw4w9WgXcQ";
+  const [isVideoPlaying, setIsVideoPlaying] = useState(false);
+  const videoUrl = "https://www.youtube.com/embed/dQw4w9WgXcQ";
 
   return (
-    <div className="min-h-screen my-20 bg-gray-100 py-12 px-4 sm:px-6 lg:px-8">
+    <div className="min-h-screen my-20 bg-[#E5ECF3BD] py-12 px-4 sm:px-6 lg:px-8">
       <div className="max-w-6xl mx-auto">
         {/* Header */}
         <div className="text-center mb-12">

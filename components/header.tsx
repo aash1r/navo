@@ -138,7 +138,7 @@ export default function Header() {
               onClick={handleClick}
               className="text-gray-900 hover:text-gray-600 transition-colors"
             >
-              <FaWhatsapp className="text-green-500 w-6 h-6" />
+              <FaWhatsapp className="text-green-500 w-10 h-10" />
             </button>
           </div>
 
