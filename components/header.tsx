@@ -63,13 +63,13 @@ export default function Header() {
                     href="/services/Undergraduate"
                     className="block px-4 py-2 text-sm text-gray-800 hover:bg-gray-100"
                   >
-                    Graduate counselling
+                    Graduate Counselling
                   </Link>
                   <Link
                     href="/undergraduate"
                     className="block px-4 py-2 text-sm text-gray-800 hover:bg-gray-100"
                   >
-                      Undergraduate counselling
+                      Undergraduate Counselling
                   </Link>
                 </div>
               )}

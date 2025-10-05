@@ -1,15 +1,19 @@
 import { Card, CardContent } from "@/components/ui/card";
 import Image from "next/image";
+import Link from "next/link";
+import path from "path";
 const serviceCards = [
   {
     icon: "/Navo-Book-Icon.png",
     title: "UNDERGRADUATE COUNSELING",
+    path:"undergraduate",
     description:
       "Expert guidance for high school students navigating college admissions from building a school list to crafting standout applications.",
   },
   {
     icon: "/Navo-Bird-Icon.png",
     title: "GRADUATE COUNSELLING",
+      path:"graduate",
     description:
       "Strategic support for applicants pursuing Master's, MBA, or PhD programs — from selecting programs to perfecting personal statements and CVs.",
   },
@@ -93,17 +97,18 @@ export default function WhatWeDo() {
                     </h3>
 
                     {/* Description */}
-                    <p className="mt-2 [font-family:'Arial-Regular',Helvetica] font-normal text-white/80 text-[12px] md:text-[13px] lg:text-[14.2px] leading-[16px] md:leading-[17px] lg:leading-[18.1px] group-hover:text-white/90">
+                    <p className="mt- [font-family:'Arial-Regular',Helvetica] font-normal text-white/80 text-[12px] md:text-[13px] lg:text-[14.2px] leading-[16px] md:leading-[17px] lg:leading-[18.1px] group-hover:text-white/90">
                       {service.description}
                     </p>
-                    <button
-                      className="relative z-10 mt-auto w-full py-2 md:py-2.5 lg:py-3 rounded-full text-sm md:text-base
-  bg-white text-black 
-  font-semibold transition
-  group-hover:bg-gradient-to-br group-hover:from-[#635AD9] group-hover:to-[#FF4848] group-hover:text-white group-hover:opacity-90"
-                    >
-                      View Details
-                    </button>
+                   <Link
+  href={service.path}
+  className="relative z-10 mt-auto w-full py-2 md:py-2.5 lg:py-3 rounded-full text-sm md:text-base
+  bg-white text-black font-semibold transition
+  group-hover:bg-gradient-to-br group-hover:from-[#635AD9] group-hover:to-[#FF4848]
+  group-hover:text-white group-hover:opacity-90 text-center block"
+>
+  View Details
+</Link>
                   </CardContent>
                 </Card>
               </div>

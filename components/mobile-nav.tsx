@@ -1,5 +1,4 @@
 "use client";
-
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import {
@@ -9,7 +8,7 @@ import {
   SheetHeader,
   SheetTitle,
 } from "@/components/ui/sheet";
-import { Menu} from "lucide-react";
+import { Menu } from "lucide-react";
 import { FaWhatsapp } from "react-icons/fa";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
@@ -75,13 +74,13 @@ export function MobileNav({
                     href="/services/graduate"
                     className="block px-4 py-2 text-sm text-gray-800 hover:bg-gray-100"
                   >
-                    Graduate counselling
+                    Graduate Counselling
                   </Link>
                   <Link
                     href="/undergraduate"
                     className="block px-4 py-2 text-sm text-gray-800 hover:bg-gray-100"
                   >
-                    Undergraduate counselling
+                    Undergraduate Counselling
                   </Link>
                 </div>
               )}

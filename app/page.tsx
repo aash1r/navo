@@ -7,12 +7,9 @@ import { Mail, Phone, MapPin, Hash, Volume2, VolumeOff } from "lucide-react";
 
 import { FaTwitter, FaInstagram, FaFacebook, FaLinkedin } from "react-icons/fa";
 import { SiTiktok } from "react-icons/si";
-
 import NavoStellerSection from "@/components/NavoStellerSection";
 import Swiper from "@/components/swiper-section";
-
 import NavogateUniverse from "@/components/navogateUniverse";
-import Header from "@/components/header";
 import WhatWeDo from "@/components/whatWeDo";
 import FloatingWhatsApp from "@/components/floating-whatsapp";
 import emailjs from "@emailjs/browser";
