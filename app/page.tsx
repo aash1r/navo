@@ -164,7 +164,7 @@ export default function Component() {
           playsInline
           className="absolute inset-0 w-full h-full object-cover"
         >
-          <source src="/NavoVideo.mp4" type="video/mp4" />
+          <source src="/api/video" type="video/mp4" />
           Your browser does not support the video tag.
         </video>
         <div className="absolute inset-0 bg-black/20" />
@@ -506,7 +506,7 @@ export default function Component() {
       {/* End Here */}
 
       {/* Floating WhatsApp Button */}
-      
+
       <FloatingWhatsApp />
     </div>
   );

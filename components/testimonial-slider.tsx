@@ -1,65 +1,32 @@
 "use client";
 
-import { useState } from "react";
+import { useState, memo } from "react";
 import Image from "next/image";
+import dynamic from "next/dynamic";
 import { Button } from "@/components/ui/button";
 import { ChevronLeft, ChevronRight, Star } from "lucide-react";
 import { cn } from "@/lib/utils";
+// import { motion } from "framer-motion";
 
-// Define the testimonial data structure
-interface Testimonial {
-  quote: string;
-  name: string;
-  role: string;
-  institutionLogo: string;
-  image: string;
-}
+// ✅ Import testimonial data from a separate file
+import { testimonials } from "./data/testimonials-data";
 
-// Sample testimonial data
-const testimonials: Testimonial[] = [
-  {
-    quote:
-      "Working with Navo was the best possible investment to secure my future. Their honesty and genuineness make them the best option to plan your future",
-    name: "Faiz Iqbal",
-    role: "",
-    institutionLogo: "/unies.png",
-    image: "/faiz.jpeg?height=48&width=48",
-  },
-  {
-    quote:
-      "Their expert guidance and unwavering support have been instrumental in navigating the complexities of university applications. I wholeheartedly recommend their services.",
-    name: "Muhammad Raahim Sodha",
-    role: "",
-    institutionLogo: "/ImperialUnilogo.png",
-    image: "/Rahim.jpeg?height=48&width=48",
-  },
-  {
-    quote: "Best counsellors. Transformative journey. Dream College.",
-    name: "Zaaria Butt",
-    role: "",
-    institutionLogo: "/Zaariya_Uni.png",
-    image: "/zaria.jpeg?height=48&width=48",
-  },
-];
-
-export function TestimonialSlider() {
+function TestimonialSliderComponent() {
   const [currentIndex, setCurrentIndex] = useState(0);
 
   const handlePrevious = () => {
-    setCurrentIndex((prevIndex) =>
-      prevIndex === 0 ? testimonials.length - 1 : prevIndex - 1
+    setCurrentIndex((prev) =>
+      prev === 0 ? testimonials.length - 1 : prev - 1
     );
   };
 
   const handleNext = () => {
-    setCurrentIndex((prevIndex) =>
-      prevIndex === testimonials.length - 1 ? 0 : prevIndex + 1
+    setCurrentIndex((prev) =>
+      prev === testimonials.length - 1 ? 0 : prev + 1
     );
   };
 
-  const goToTestimonial = (index: number) => {
-    setCurrentIndex(index);
-  };
+  const goToTestimonial = (index: number) => setCurrentIndex(index);
 
   const currentTestimonial = testimonials[currentIndex];
 
@@ -77,7 +44,7 @@ export function TestimonialSlider() {
 
       {/* Navigation and Content */}
       <div className="relative">
-        {/* Navigation Arrows */}
+        {/* Desktop Navigation Arrows */}
         <Button
           onClick={handlePrevious}
           className="hidden sm:flex absolute left-0 top-1/2 transform -translate-y-1/2 rounded-xl bg-blue-900 hover:bg-blue-800 h-10 w-10 sm:h-12 sm:w-12 items-center justify-center p-0 transition-colors z-10"
@@ -102,10 +69,7 @@ export function TestimonialSlider() {
                 <blockquote
                   key={index}
                   className={cn(
-                    "font-roboto font-medium text-lg sm:text-xl text-gray-800 leading-relaxed mb-8 sm:mb-12 text-center transition-opacity duration-500",
-                    currentIndex === index
-                      ? "opacity-100 block"
-                      : "opacity-0 hidden"
+                    "font-roboto font-medium text-lg sm:text-xl text-gray-800 leading-relaxed mb-8 sm:mb-12 text-center"
                   )}
                 >
                   "{testimonial.quote}"
@@ -119,35 +83,40 @@ export function TestimonialSlider() {
             <div className="flex items-center space-x-4">
               <div className="w-12 h-12 rounded-full overflow-hidden">
                 <Image
-                  src={currentTestimonial.image || "/placeholder.svg"}
+                  src={currentTestimonial.image}
                   alt={currentTestimonial.name}
                   width={48}
                   height={48}
                   className="object-cover w-full h-full"
+                  priority={currentIndex === 0}
                 />
               </div>
               <div className="text-center sm:text-left">
                 <div className="font-roboto font-semibold text-gray-900">
                   {currentTestimonial.name}
                 </div>
-                {/* <div className="font-roboto text-gray-600 text-sm">
-                  {currentTestimonial.role}
-                </div> */}
               </div>
             </div>
+
+            {/* Divider */}
             <div className="flex items-center space-x-2">
-              <img
-                className="w-[2px] h-[75px]"
-                alt="Divider"
+              <Image
                 src="/divider.svg"
+                alt="Divider"
+                width={2}
+                height={75}
+                priority={false}
               />
             </div>
 
+            {/* Institution Logo */}
             <div className="flex items-center space-x-2">
-              <img
-                className="w-[125.09px] h-[70.36px] object-cover"
-                alt="uni logo"
-                src={currentTestimonial.institutionLogo || "/placeholder.svg"}
+              <Image
+                src={currentTestimonial.institutionLogo}
+                alt="University logo"
+                width={125}
+                height={70}
+                className="object-cover"
               />
             </div>
           </div>
@@ -188,3 +157,5 @@ export function TestimonialSlider() {
     </div>
   );
 }
+
+export const TestimonialSlider = memo(TestimonialSliderComponent);
