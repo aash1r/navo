@@ -2,6 +2,10 @@
 @tailwind components;
 @tailwind utilities;
 
+html {
+  scroll-behavior: smooth;
+}
+
 @font-face {
   font-family: 'Guthen Bloots';
   src: url('/guthen-bloots-personal-use.regular.ttf') format('truetype');

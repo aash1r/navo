@@ -65,12 +65,12 @@ export default function GradeSevenToEigthSection(): JSX.Element {
   const collapseAll = (): void => setExpandedStep(null); // collapse all
 
   return (
-    <div className="min-h-screen bg-gray-100 py-12 px-4">
+    <div id="9to11" className="min-h-screen bg-gray-100 py-12 px-4">
       <div className="max-w-6xl mx-auto">
         {/* Header */}
         <div className="text-center mb-8">
-          <h1 className="text-5xl uppercase font-bold text-blue-900 mb-4 tracking-tight">
-            9th-11 Graders
+          <h1 className="text-3xl md:text-5xl uppercase font-bold text-blue-900 mb-4 tracking-tight">
+            9th-11th Graders
           </h1>
           <p className="text-gray-800 text-base max-w-3xl mx-auto">
             For families who first connect with us when their children are in
@@ -140,7 +140,7 @@ export default function GradeSevenToEigthSection(): JSX.Element {
                     </span>
 
                     {/* Heading / Title Logic */}
-                    <h2 className="text-2xl font-bold text-[#07306A] mb-3">
+                    <h2 className="md:text-2xl text-md font-bold text-[#07306A] mb-3">
                       {isExpanded ? step.title : step.heading}
                     </h2>
 
