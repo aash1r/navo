@@ -98,7 +98,7 @@ export default function Header() {
             <Image
               src="/logo1.png"
               alt="NAVO"
-              width={160} // yahan apni image ka actual size ya required size do
+              width={160}
               height={80}
               className="absolute left-1/2 transform -translate-x-1/2 mt-[-35px] block max-[1023px]:block min-[1024px]:hidden"
             />
