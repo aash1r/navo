@@ -70,7 +70,6 @@ export function MobileNav({
               {/* Dropdown menu */}
               {servicesOpen && (
                 <div className="absolute left-0 mt-0 w-80 bg-white shadow-lg rounded-lg py-2 z-50">
-                  
                   <Link
                     href="/undergraduate"
                     className="block px-4 py-2 text-sm text-gray-800 hover:bg-gray-100"
