@@ -22,7 +22,7 @@ export const testimonials: Testimonial[] = [
     name: "Faiz Iqbal",
     role: "",
     institutionLogo: "/unies.png",
-    image: "/faiz.jpeg?height=48&width=48",
+    image: "/faiz.jpeg",
   },
   {
     quote:
@@ -30,14 +30,14 @@ export const testimonials: Testimonial[] = [
     name: "Muhammad Raahim Sodha",
     role: "",
     institutionLogo: "/ImperialUnilogo.png",
-    image: "/Rahim.jpeg?height=48&width=48",
+    image: "/Rahim.jpeg",
   },
   {
     quote: "Best counsellors. Transformative journey. Dream College.",
     name: "Zaaria Butt",
     role: "",
     institutionLogo: "/Zaariya_Uni.png",
-    image: "/zaria.jpeg?height=48&width=48",
+    image: "/zaria.jpeg",
   },
 ];
 
