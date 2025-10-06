@@ -1,19 +1,18 @@
 import { Card, CardContent } from "@/components/ui/card";
 import Image from "next/image";
 import Link from "next/link";
-import path from "path";
 const serviceCards = [
   {
     icon: "/Navo-Book-Icon.png",
     title: "UNDERGRADUATE COUNSELING",
-    path:"undergraduate",
+    path: "undergraduate",
     description:
       "Expert guidance for high school students navigating college admissions from building a school list to crafting standout applications.",
   },
   {
     icon: "/Navo-Bird-Icon.png",
     title: "GRADUATE COUNSELLING",
-      path:"graduate",
+    path: "graduate",
     description:
       "Strategic support for applicants pursuing Master's, MBA, or PhD programs — from selecting programs to perfecting personal statements and CVs.",
   },
@@ -82,13 +81,12 @@ export default function WhatWeDo() {
                     {/* Icon */}
                     <div className="mb-4 md:mb-5 lg:mb-6">
                       <Image
-                      height={80}
-                      alt="icons"
-                      width={80}
+                        height={80}
+                        alt="icons"
+                        width={80}
                         src={service.icon}
                         className="w-[50px] h-[50px] md:w-[60px] md:h-[60px] lg:w-[70px] lg:h-[70px] text-white/80 group-hover:text-white"
                       />
-                  
                     </div>
 
                     {/* Title */}
@@ -100,15 +98,15 @@ export default function WhatWeDo() {
                     <p className="mt- [font-family:'Arial-Regular',Helvetica] font-normal text-white/80 text-[12px] md:text-[13px] lg:text-[14.2px] leading-[16px] md:leading-[17px] lg:leading-[18.1px] group-hover:text-white/90">
                       {service.description}
                     </p>
-                   <Link
-  href={service.path}
-  className="relative z-10 mt-auto w-full py-2 md:py-2.5 lg:py-3 rounded-full text-sm md:text-base
+                    <Link
+                      href={service.path}
+                      className="relative z-10 mt-auto w-full py-2 md:py-2.5 lg:py-3 rounded-full text-sm md:text-base
   bg-white text-black font-semibold transition
   group-hover:bg-gradient-to-br group-hover:from-[#635AD9] group-hover:to-[#FF4848]
   group-hover:text-white group-hover:opacity-90 text-center block"
->
-  View Details
-</Link>
+                    >
+                      View Details
+                    </Link>
                   </CardContent>
                 </Card>
               </div>

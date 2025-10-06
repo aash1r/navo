@@ -2,14 +2,47 @@
 
 import { useState, memo } from "react";
 import Image from "next/image";
-import dynamic from "next/dynamic";
+
 import { Button } from "@/components/ui/button";
 import { ChevronLeft, ChevronRight, Star } from "lucide-react";
 import { cn } from "@/lib/utils";
-// import { motion } from "framer-motion";
 
-// ✅ Import testimonial data from a separate file
-import { testimonials } from "./data/testimonials-data";
+
+interface Testimonial {
+  quote: string;
+  name: string;
+  role: string;
+  institutionLogo: string;
+  image: string;
+}
+export const testimonials: Testimonial[] = [
+  {
+    quote:
+      "Working with Navo was the best possible investment to secure my future. Their honesty and genuineness make them the best option to plan your future",
+    name: "Faiz Iqbal",
+    role: "",
+    institutionLogo: "/unies.png",
+    image: "/faiz.jpeg?height=48&width=48",
+  },
+  {
+    quote:
+      "Their expert guidance and unwavering support have been instrumental in navigating the complexities of university applications. I wholeheartedly recommend their services.",
+    name: "Muhammad Raahim Sodha",
+    role: "",
+    institutionLogo: "/ImperialUnilogo.png",
+    image: "/Rahim.jpeg?height=48&width=48",
+  },
+  {
+    quote: "Best counsellors. Transformative journey. Dream College.",
+    name: "Zaaria Butt",
+    role: "",
+    institutionLogo: "/Zaariya_Uni.png",
+    image: "/zaria.jpeg?height=48&width=48",
+  },
+];
+
+
+
 
 function TestimonialSliderComponent() {
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -64,18 +97,16 @@ function TestimonialSliderComponent() {
         {/* Testimonial Content */}
         <div className="sm:mx-16">
           <div className="relative w-full">
-            <div className="transition-all duration-500 ease-in-out">
-              {testimonials.map((testimonial, index) => (
-                <blockquote
-                  key={index}
-                  className={cn(
-                    "font-roboto font-medium text-lg sm:text-xl text-gray-800 leading-relaxed mb-8 sm:mb-12 text-center"
-                  )}
-                >
-                  "{testimonial.quote}"
-                </blockquote>
-              ))}
-            </div>
+           <div className="transition-all duration-500 ease-in-out">
+  <blockquote
+    className={cn(
+      "font-roboto font-medium text-lg sm:text-xl text-gray-800 leading-relaxed mb-8 sm:mb-12 text-center"
+    )}
+  >
+    "{currentTestimonial.quote}"
+  </blockquote>
+</div>
+
           </div>
 
           {/* Profile */}
