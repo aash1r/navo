@@ -59,17 +59,20 @@ export default function Header() {
               {/* Dropdown menu */}
               {servicesOpen && (
                 <div className="absolute left-0 mt-0 w-80 bg-white shadow-lg rounded-lg py-2 z-50">
-                  <Link
-                    href="/services/Undergraduate"
-                    className="block px-4 py-2 text-sm text-gray-800 hover:bg-gray-100"
-                  >
-                    Graduate Counselling
-                  </Link>
+                  
                   <Link
                     href="/undergraduate"
                     className="block px-4 py-2 text-sm text-gray-800 hover:bg-gray-100"
                   >
                       Undergraduate Counselling
+                  </Link>
+
+
+                  <Link
+                    href="/services/Undergraduate"
+                    className="block px-4 py-2 text-sm text-gray-800 hover:bg-gray-100"
+                  >
+                    Graduate & MBA
                   </Link>
                 </div>
               )}
