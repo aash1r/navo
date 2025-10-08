@@ -320,61 +320,67 @@ export default function Component() {
           </div>
 
           {/* Social Media */}
-          <div className="text-center bg-white rounded-2xl shadow-md p-6 hover:shadow-xl transition duration-300 transform hover:-translate-y-2">
-            <div className="flex justify-center mb-5">
-              <Hash className="w-12 h-12 md:w-14 md:h-14 lg:w-16 lg:h-16 text-[#03336d] transition-transform duration-300 hover:scale-110" />
-            </div>
-           <div className="grid grid-cols-3 gap-5 md:gap-6 justify-items-center mx-auto">
-  <a
-    href="https://www.facebook.com/profile.php?id=61574014345229"
-    target="_blank"
-    rel="noopener noreferrer"
-    className="text-blue-400 hover:text-blue-500 text-3xl md:text-4xl transition-transform transform hover:scale-125 duration-300"
-  >
-    <FaFacebook />
-  </a>
+         <div className="text-center bg-white rounded-2xl shadow-md p-6 hover:shadow-xl transition duration-300 transform hover:-translate-y-2">
+  {/* Top Icon */}
+  <div className="flex justify-center mb-5">
+    <Hash className="w-12 h-12 md:w-14 md:h-14 lg:w-16 lg:h-16 text-[#03336d] transition-transform duration-300 hover:scale-110" />
+  </div>
 
-  <a
-    href="https://www.instagram.com/navo.ed?igsh=eGd5ZDVuZjBrdGs="
-    target="_blank"
-    rel="noopener noreferrer"
-    className="text-pink-400 hover:text-pink-500 text-3xl md:text-4xl transition-transform transform hover:scale-125 duration-300"
-  >
-    <FaInstagram />
-  </a>
+  {/* Social Icons */}
+  <div className="flex flex-col items-center gap-6">
+    {/* Top Row (3 icons) */}
+    <div className="flex justify-center gap-5 md:gap-8">
+      <a
+        href="https://www.facebook.com/profile.php?id=61574014345229"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="text-blue-500 hover:text-blue-600 text-3xl md:text-4xl transition-transform transform hover:scale-125 duration-300"
+      >
+        <FaFacebook />
+      </a>
 
-  <a
-    href="https://www.linkedin.com/company/navo-ed/"
-    target="_blank"
-    rel="noopener noreferrer"
-    className="text-blue-400 hover:text-blue-500 text-3xl md:text-4xl transition-transform transform hover:scale-125 duration-300"
-  >
-    <FaLinkedin />
-  </a>
+      <a
+        href="https://www.instagram.com/navo.ed?igsh=eGd5ZDVuZjBrdGs="
+        target="_blank"
+        rel="noopener noreferrer"
+        className="text-pink-500 hover:text-pink-600 text-3xl md:text-4xl transition-transform transform hover:scale-125 duration-300"
+      >
+        <FaInstagram />
+      </a>
 
- 
-  <div className="col-span-3 flex justify-center gap-6 md:gap-10">
-    <a
-      href="https://twitter.com/"
-      target="_blank"
-      rel="noopener noreferrer"
-      className="text-blue-600 hover:text-[#03336d] text-3xl md:text-4xl transition-transform transform hover:scale-125 duration-300"
-    >
-      <FaTwitter />
-    </a>
+      <a
+        href="https://www.linkedin.com/company/navo-ed/"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="text-blue-400 hover:text-blue-500 text-3xl md:text-4xl transition-transform transform hover:scale-125 duration-300"
+      >
+        <FaLinkedin />
+      </a>
+    </div>
 
-    <a
-      href="https://www.tiktok.com/@navo1482?_t=ZS-8zxyInM47Hj&_r=1"
-      target="_blank"
-      rel="noopener noreferrer"
-      className="text-black text-3xl md:text-4xl transition-transform transform hover:scale-125 duration-300"
-    >
-      <SiTiktok />
-    </a>
+    {/* Bottom Row (2 icons) */}
+    <div className="flex justify-center gap-5 md:gap-8">
+      <a
+        href="https://twitter.com/"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="text-blue-600 hover:text-[#03336d] text-3xl md:text-4xl transition-transform transform hover:scale-125 duration-300"
+      >
+        <FaTwitter />
+      </a>
+
+      <a
+        href="https://www.tiktok.com/@navo1482?_t=ZS-8zxyInM47Hj&_r=1"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="text-black hover:text-gray-700 text-3xl md:text-4xl transition-transform transform hover:scale-125 duration-300"
+      >
+        <SiTiktok />
+      </a>
+    </div>
   </div>
 </div>
 
-          </div>
         </div>
       </div>
 

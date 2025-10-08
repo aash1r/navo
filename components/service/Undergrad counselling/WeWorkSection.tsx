@@ -1,8 +1,6 @@
 "use client";
-
 import { useState } from "react";
 import { FaPlay, FaTimes } from "react-icons/fa";
-
 export default function WeWorkSection() {
   const [isVideoPlaying, setIsVideoPlaying] = useState(false);
   const videoUrl = "https://www.youtube.com/embed/dQw4w9WgXcQ";
