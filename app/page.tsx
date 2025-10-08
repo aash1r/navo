@@ -320,7 +320,7 @@ export default function Component() {
           </div>
 
           {/* Social Media */}
-         <div className="text-center bg-white rounded-2xl shadow-md p-6 hover:shadow-xl transition duration-300 transform hover:-translate-y-2">
+     <div className="text-center bg-white rounded-2xl shadow-md p-6 hover:shadow-xl transition duration-300 transform hover:-translate-y-2">
   {/* Top Icon */}
   <div className="flex justify-center mb-5">
     <Hash className="w-12 h-12 md:w-14 md:h-14 lg:w-16 lg:h-16 text-[#03336d] transition-transform duration-300 hover:scale-110" />
@@ -328,8 +328,8 @@ export default function Component() {
 
   {/* Social Icons */}
   <div className="flex flex-col items-center gap-6">
-    {/* Top Row (3 icons) */}
-    <div className="flex justify-center gap-5 md:gap-8">
+    {/* All Icons — Mobile: single row | Large: split rows */}
+    <div className="flex flex-wrap justify-center gap-5 md:gap-8">
       <a
         href="https://www.facebook.com/profile.php?id=61574014345229"
         target="_blank"
@@ -356,10 +356,7 @@ export default function Component() {
       >
         <FaLinkedin />
       </a>
-    </div>
 
-    {/* Bottom Row (2 icons) */}
-    <div className="flex justify-center gap-5 md:gap-8">
       <a
         href="https://twitter.com/"
         target="_blank"
@@ -380,6 +377,7 @@ export default function Component() {
     </div>
   </div>
 </div>
+
 
         </div>
       </div>
